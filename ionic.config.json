@@ -1,0 +1,7 @@
+{
+  "name": "Triton",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
