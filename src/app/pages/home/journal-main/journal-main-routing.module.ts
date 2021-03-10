@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: JournalMainPage
+  },
+  {
+    path: 'journal-entries',
+    loadChildren: () => import('./journal-entries/journal-entries.module').then( m => m.JournalEntriesPageModule)
+  },
+  {
+    path: 'add-an-entry',
+    loadChildren: () => import('./add-an-entry/add-an-entry.module').then( m => m.AddAnEntryPageModule)
   }
 ];
 
