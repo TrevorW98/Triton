@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'events',
-    loadChildren: () => import('./events/events.module').then( m => m.EventsPageModule)
+    loadChildren: () => import('./events-notifs/events-notifs.module').then( m => m.EventsNotifsPageModule)
   },
   {
     path: 'settings',

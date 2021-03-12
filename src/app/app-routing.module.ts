@@ -12,10 +12,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'splash-screen',
-    loadChildren: () => import('./pages/splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
-  },
-  {
     path: 'events-notifs',
     loadChildren: () => import('./pages/home/events-notifs/events-notifs.module').then( m => m.EventsNotifsPageModule)
   },
