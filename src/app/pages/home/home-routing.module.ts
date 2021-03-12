@@ -8,8 +8,8 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'events',
-    loadChildren: () => import('./events/events.module').then( m => m.EventsPageModule)
+    path: 'events-notifs',
+    loadChildren: () => import('./events-notifs/events-notifs.module').then( m => m.EventsNotifsPageModule)
   },
   {
     path: 'settings',
