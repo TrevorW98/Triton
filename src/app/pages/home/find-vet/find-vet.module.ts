@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { FindVetPageRoutingModule } from './find-vet-routing.module';
 
 import { FindVetPage } from './find-vet.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FindVetPageRoutingModule
+    FindVetPageRoutingModule,
+    MatButtonModule
   ],
   declarations: [FindVetPage]
 })

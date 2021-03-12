@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { DocumentsMainPageRoutingModule } from './documents-main-routing.module';
-
+import {MatButtonModule} from '@angular/material/button';
 import { DocumentsMainPage } from './documents-main.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { DocumentsMainPage } from './documents-main.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DocumentsMainPageRoutingModule
+    DocumentsMainPageRoutingModule,
+    MatButtonModule,
   ],
   declarations: [DocumentsMainPage]
 })

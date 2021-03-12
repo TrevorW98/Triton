@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { EventsNotifsPageRoutingModule } from './events-notifs-routing.module';
 
 import { EventsNotifsPage } from './events-notifs.page';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EventsNotifsPageRoutingModule
+    EventsNotifsPageRoutingModule,
+    MatButtonModule
   ],
   declarations: [EventsNotifsPage]
 })

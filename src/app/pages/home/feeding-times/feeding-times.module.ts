@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { FeedingTimesPageRoutingModule } from './feeding-times-routing.module';
 
 import { FeedingTimesPage } from './feeding-times.page';
+import { MatButton, MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FeedingTimesPageRoutingModule
+    FeedingTimesPageRoutingModule,
+    MatButtonModule
   ],
   declarations: [FeedingTimesPage]
 })
