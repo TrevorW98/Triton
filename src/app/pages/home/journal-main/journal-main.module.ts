@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { JournalMainPageRoutingModule } from './journal-main-routing.module';
 
 import { JournalMainPage } from './journal-main.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    JournalMainPageRoutingModule
+    JournalMainPageRoutingModule,
+    MatButtonModule
   ],
   declarations: [JournalMainPage]
 })
