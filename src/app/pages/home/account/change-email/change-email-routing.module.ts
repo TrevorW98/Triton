@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ChangeEmailPage
-  }
+  },
+  {
+    path: 'account',
+    loadChildren: () => import('../account.module').then( m => m.AccountPageModule)
+  },
 ];
 
 @NgModule({

@@ -9,12 +9,22 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Home</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <ion-button mat-raised-button [routerLink] = "['./events-notifs']">Event Notifications</ion-button>
+    <ion-button mat-raised-button [routerLink] = "['./settings']">Settings</ion-button>
+    <ion-button mat-raised-button [routerLink] = "['./login']">Login Page</ion-button>
+    <ion-button mat-raised-button [routerLink] = "['./my-pets']">My Pets</ion-button>
+    <ion-button mat-raised-button [routerLink] = "['./find-vet']">Find Vets</ion-button>
+    <ion-button mat-raised-button [routerLink] = "['./documents-main']">Docs</ion-button>
+    <ion-button mat-raised-button [routerLink] = "['./account']">Account</ion-button>
+    <ion-button mat-raised-button [routerLink] = "['./feeding-times']">Feeding Times</ion-button>
+    <ion-button mat-raised-button [routerLink] = "['./index-main']">Index</ion-button>
+    <ion-button mat-raised-button [routerLink] = "['./journal-main']">Journal</ion-button>
+    <ion-button mat-raised-button [routerLink] = "['./quiz-main']">Quiz</ion-button>
   </div>
 </ion-content>
