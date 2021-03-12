@@ -1,9 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -27,4 +23,33 @@
     <ion-button mat-raised-button [routerLink] = "['./journal-main']">Journal</ion-button>
     <ion-button mat-raised-button [routerLink] = "['./quiz-main']">Quiz</ion-button>
   </div>
+
 </ion-content>
+
+
+<ion-footer>
+  <mat-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+          <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" >
+            <mat-icon >home</mat-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </mat-toolbar>
+</ion-footer>
+
+
+
