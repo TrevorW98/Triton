@@ -8,10 +8,7 @@ const routes: Routes = [
     path: '',
     component: DocumentsMainPage
   },
-  {
-    path: 'individual-pet-docs',
-    loadChildren: () => import('./individual-pet-docs/individual-pet-docs.module').then( m => m.IndividualPetDocsPageModule)
-  }
+
 ];
 
 @NgModule({
