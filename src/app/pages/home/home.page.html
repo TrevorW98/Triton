@@ -1,5 +1,7 @@
 <ion-header [translucent]="true">
-
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -25,8 +27,29 @@
 
 </ion-content>
 
-
 <ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="center">
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" >
+          <mat-icon >home</mat-icon>
+        </button>
+      </ion-col>
+      <ion-col class="center">
+        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </ion-col>
+      <ion-col class="center">
+        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+
+<!-- <ion-footer>
   <mat-toolbar>
     <ion-grid>
       <ion-row>
@@ -48,7 +71,7 @@
       </ion-row>
     </ion-grid>
   </mat-toolbar>
-</ion-footer>
+</ion-footer> -->
 
 
 
