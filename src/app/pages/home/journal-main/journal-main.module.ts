@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import {MatIconModule} from '@angular/material/icon';
 import { JournalMainPageRoutingModule } from './journal-main-routing.module';
 
 import { JournalMainPage } from './journal-main.page';
@@ -15,7 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     IonicModule,
     JournalMainPageRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   declarations: [JournalMainPage]
 })

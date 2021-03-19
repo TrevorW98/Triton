@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import {MatIconModule} from '@angular/material/icon';
 import { IonicModule } from '@ionic/angular';
 
 import { QuizMainPageRoutingModule } from './quiz-main-routing.module';
@@ -15,7 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     IonicModule,
     QuizMainPageRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   declarations: [QuizMainPage]
 })

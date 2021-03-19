@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RegisterPageRoutingModule } from './register-routing.module';
-
+import {MatIconModule} from '@angular/material/icon';
 import { RegisterPage } from './register.page';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -15,7 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     IonicModule,
     RegisterPageRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   declarations: [RegisterPage]
 })

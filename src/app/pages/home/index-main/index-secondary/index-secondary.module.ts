@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { IndexSecondaryPageRoutingModule } from './index-secondary-routing.module';
-
+import {MatIconModule} from '@angular/material/icon';
 import { IndexSecondaryPage } from './index-secondary.page';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
     IonicModule,
     IndexSecondaryPageRoutingModule,
     MatButtonModule,
+    MatIconModule
   ],
   declarations: [IndexSecondaryPage]
 })

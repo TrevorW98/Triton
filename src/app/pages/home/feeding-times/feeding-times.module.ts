@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { FeedingTimesPageRoutingModule } from './feeding-times-routing.module';
-
+import {MatIconModule} from '@angular/material/icon';
 import { FeedingTimesPage } from './feeding-times.page';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -15,7 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     IonicModule,
     FeedingTimesPageRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   declarations: [FeedingTimesPage]
 })
