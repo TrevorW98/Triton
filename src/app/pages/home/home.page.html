@@ -1,5 +1,7 @@
 <ion-header [translucent]="true">
-
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -10,24 +12,44 @@
   </ion-header>
 
   <div id="container">
-
-    <button mat-raised-button color="primary" [routerLink] = "['./events-notifs']">Event Notifications</button>
-    <button mat-raised-button color="primary" [routerLink] = "['./settings']">Settings</button>
-    <button mat-raised-button color="primary" [routerLink] = "['./login']">Login Page</button>
-    <button mat-raised-button color="primary" [routerLink] = "['./my-pets']">My Pets</button>
-    <button mat-raised-button color="primary" [routerLink] = "['./find-vet']">Find Vets</button>
-    <button mat-raised-button color="primary" [routerLink] = "['./documents-main']">Docs</button>
-    <button mat-raised-button color="primary" [routerLink] = "['./account']">Account</button>
-    <button mat-raised-button color="primary" [routerLink] = "['./feeding-times']">Feeding Times</button>
-    <button mat-raised-button color="primary" [routerLink] = "['./index-main']">Index</button>
-    <button mat-raised-button color="primary" [routerLink] = "['./journal-main']">Journal</button>
-    <button mat-raised-button color="primary" [routerLink] = "['./quiz-main']">Quiz</button>
+    <button mat-raised-button color="primary" routerLink = '/events-notifs'>Event Notifications</button>
+    <button mat-raised-button color="primary" routerLink = '/settings'>Settings</button>
+    <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button>
+    <button mat-raised-button color="primary" routerLink = '/my-pets'>My Pets</button>
+    <button mat-raised-button color="primary" routerLink = '/find-vet'>Find Vets</button>
+    <button mat-raised-button color="primary" routerLink = '/documents-main'>Docs</button>
+    <button mat-raised-button color="primary" routerLink = '/account'>Account</button>
+    <button mat-raised-button color="primary" routerLink = '/feeding-times'>Feeding Times</button>
+    <button mat-raised-button color="primary" routerLink = '/index-main'>Index</button>
+    <button mat-raised-button color="primary" routerLink = '/journal-main'>Journal</button>
+    <button mat-raised-button color="primary" routerLink = '/quiz-main'>Quiz</button>
   </div>
 
 </ion-content>
 
-
 <ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="center">
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" >
+          <mat-icon >home</mat-icon>
+        </button>
+      </ion-col>
+      <ion-col class="center">
+        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </ion-col>
+      <ion-col class="center">
+        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+
+<!-- <ion-footer>
   <mat-toolbar>
     <ion-grid>
       <ion-row>
@@ -49,7 +71,7 @@
       </ion-row>
     </ion-grid>
   </mat-toolbar>
-</ion-footer>
+</ion-footer> -->
 
 
 

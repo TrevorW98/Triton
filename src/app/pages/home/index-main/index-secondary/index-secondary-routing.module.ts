@@ -8,10 +8,6 @@ const routes: Routes = [
     path: '',
     component: IndexSecondaryPage
   },
-  {
-    path: 'animal-info',
-    loadChildren: () => import('./animal-info/animal-info.module').then( m => m.AnimalInfoPageModule)
-  }
 ];
 
 @NgModule({

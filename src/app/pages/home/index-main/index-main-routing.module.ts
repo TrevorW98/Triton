@@ -8,10 +8,7 @@ const routes: Routes = [
     path: '',
     component: IndexMainPage
   },
-  {
-    path: 'index-secondary',
-    loadChildren: () => import('./index-secondary/index-secondary.module').then( m => m.IndexSecondaryPageModule)
-  }
+
 ];
 
 @NgModule({

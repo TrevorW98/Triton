@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { MyPetsPageRoutingModule } from './my-pets-routing.module';
 
 import { MyPetsPage } from './my-pets.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MyPetsPageRoutingModule
+    MyPetsPageRoutingModule,
+    MatButtonModule
   ],
   declarations: [MyPetsPage]
 })

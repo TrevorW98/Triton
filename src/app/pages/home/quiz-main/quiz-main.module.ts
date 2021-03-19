@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { QuizMainPageRoutingModule } from './quiz-main-routing.module';
 
 import { QuizMainPage } from './quiz-main.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    QuizMainPageRoutingModule
+    QuizMainPageRoutingModule,
+    MatButtonModule
   ],
   declarations: [QuizMainPage]
 })

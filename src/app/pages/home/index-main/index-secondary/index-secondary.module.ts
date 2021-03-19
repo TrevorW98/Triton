@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { IndexSecondaryPageRoutingModule } from './index-secondary-routing.module';
 
 import { IndexSecondaryPage } from './index-secondary.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    IndexSecondaryPageRoutingModule
+    IndexSecondaryPageRoutingModule,
+    MatButtonModule,
   ],
   declarations: [IndexSecondaryPage]
 })
