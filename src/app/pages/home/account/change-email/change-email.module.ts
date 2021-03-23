@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ChangeEmailPageRoutingModule } from './change-email-routing.module';
 
 import { ChangeEmailPage } from './change-email.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { ChangeEmailPage } from './change-email.page';
     FormsModule,
     IonicModule,
     ChangeEmailPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   declarations: [ChangeEmailPage]
 })
