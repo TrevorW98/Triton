@@ -1,10 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>my-pets</ion-title>
+    <ion-row class="btwn">
+
+      <ion-col size="4">
+        <button mat-icon-button routerLink = '/my-pets'>
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <!-- <ion-col> -->
+        <button mat-icon-button routerLink = '/my-vet'>
+          <mat-icon>local_hospital</mat-icon>
+        </button>
+      </ion-col>
+    <!-- </ion-col> -->
+
+    <ion-col size="4" class="center">
+      <h1 class="noMar">My Pets</h1>
+    </ion-col>
+
+    <ion-col size="4" class="end">
+      <button mat-icon-button routerLink = '/my-pets'>
+      <mat-icon>settings</mat-icon>
+    </button>
+    <!-- <ion-col> -->
+      <button mat-icon-button routerLink = '/my-vet'>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </ion-col>
+
+  </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+<div id="container">
+  <div class="row">
+    <div class="col center">
+      
+    </div>
+  </div>
+</div>
 
   <button mat-raised-button routerLink = '/add-pet'>Add Pet</button>
   <button mat-raised-button routerLink = '/pet-info'>Pet Info</button>
