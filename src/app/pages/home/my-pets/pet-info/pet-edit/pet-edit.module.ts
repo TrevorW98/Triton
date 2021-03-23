@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PetEditPageRoutingModule } from './pet-edit-routing.module';
 
 import { PetEditPage } from './pet-edit.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { PetEditPage } from './pet-edit.page';
     FormsModule,
     IonicModule,
     PetEditPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   declarations: [PetEditPage]
 })

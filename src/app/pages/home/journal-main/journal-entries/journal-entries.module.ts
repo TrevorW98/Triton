@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { JournalEntriesPageRoutingModule } from './journal-entries-routing.module';
 
 import { JournalEntriesPage } from './journal-entries.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { JournalEntriesPage } from './journal-entries.page';
     FormsModule,
     IonicModule,
     JournalEntriesPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   declarations: [JournalEntriesPage]
 })

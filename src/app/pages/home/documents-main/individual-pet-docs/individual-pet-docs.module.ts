@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { IndividualPetDocsPageRoutingModule } from './individual-pet-docs-routing.module';
 
 import { IndividualPetDocsPage } from './individual-pet-docs.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { IndividualPetDocsPage } from './individual-pet-docs.page';
     FormsModule,
     IonicModule,
     IndividualPetDocsPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   declarations: [IndividualPetDocsPage]
 })

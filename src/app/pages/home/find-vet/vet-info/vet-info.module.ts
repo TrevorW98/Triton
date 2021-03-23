@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { VetInfoPageRoutingModule } from './vet-info-routing.module';
 
 import { VetInfoPage } from './vet-info.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { VetInfoPage } from './vet-info.page';
     FormsModule,
     IonicModule,
     VetInfoPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   declarations: [VetInfoPage]
 })

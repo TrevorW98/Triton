@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AnimalInfoPageRoutingModule } from './animal-info-routing.module';
 import {MatIconModule} from '@angular/material/icon';
 import { AnimalInfoPage } from './animal-info.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { AnimalInfoPage } from './animal-info.page';
     FormsModule,
     IonicModule,
     AnimalInfoPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   declarations: [AnimalInfoPage]
 })

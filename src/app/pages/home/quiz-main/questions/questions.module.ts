@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { QuestionsPageRoutingModule } from './questions-routing.module';
 
 import { QuestionsPage } from './questions.page';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { QuestionsPage } from './questions.page';
     FormsModule,
     IonicModule,
     QuestionsPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   declarations: [QuestionsPage]
 })
