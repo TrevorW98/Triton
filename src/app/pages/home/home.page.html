@@ -1,6 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Home</ion-title>
+    <ion-row class="btwn">
+      <div>
+        <button class="smolbtn" mat-icon-button>
+          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
+        </button>
+        <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
+          <mat-icon>local_hospital</mat-icon>
+        </button>
+      </div>
+
+      <h1 class="navTitle">Triton</h1>
+
+      <div class="end">
+        <button class="smolbtn" mat-icon-button routerLink='/settings'>
+          <mat-icon>settings</mat-icon>
+        </button>
+        <button class="smolbtn" mat-icon-button routerLink='/account'>
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </div>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
@@ -11,19 +31,27 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <button mat-raised-button color="primary" routerLink = '/events-notifs'>Event Notifications</button>
-    <button mat-raised-button color="primary" routerLink = '/settings'>Settings</button>
-    <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button>
-    <button mat-raised-button color="primary" routerLink = '/my-pets'>My Pets</button>
-    <button mat-raised-button color="primary" routerLink = '/find-vet'>Find Vets</button>
-    <button mat-raised-button color="primary" routerLink = '/documents-main'>Docs</button>
-    <button mat-raised-button color="primary" routerLink = '/account'>Account</button>
-    <button mat-raised-button color="primary" routerLink = '/feeding-times'>Feeding Times</button>
-    <button mat-raised-button color="primary" routerLink = '/index-main'>Index</button>
-    <button mat-raised-button color="primary" routerLink = '/journal-main'>Journal</button>
-    <button mat-raised-button color="primary" routerLink = '/quiz-main'>Quiz</button>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="center">
+        <button mat-raised-button color="primary" routerLink = '/my-pets'>My Pets</button>
+      </ion-col>
+      <ion-col size="12" class="center">
+        <button mat-raised-button color="primary" routerLink = '/feeding-times'>Feeding Times</button>
+      </ion-col>
+
+      <ion-col size="6">
+        <button mat-raised-button color="primary" routerLink = '/events-notifs'>Event Notifications</button>
+      </ion-col>
+      <ion-col size="6">
+        <button mat-raised-button color="primary" routerLink = '/index-main'>Index</button>
+        <button mat-raised-button color="primary" routerLink = '/quiz-main'>Pick My Pet</button>
+        <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button>
+        <button mat-raised-button color="primary" routerLink = '/documents-main'>Docs</button>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
 

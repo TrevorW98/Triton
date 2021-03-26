@@ -1,12 +1,65 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>indexMain</ion-title>
+
+    <ion-row class="btwn">
+      <div>
+        <button class="smolbtn" mat-icon-button>
+          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
+        </button>
+        <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
+          <mat-icon>local_hospital</mat-icon>
+        </button>
+      </div>
+
+      <h1 class="navTitle">Pet Index</h1>
+
+      <div class="end">
+        <button class="smolbtn" mat-icon-button routerLink='/settings'>
+          <mat-icon>settings</mat-icon>
+        </button>
+        <button class="smolbtn" mat-icon-button routerLink='/account'>
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </div>
+    </ion-row>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="center" size="12">
+      <button mat-raised-button color="primary" routerLink='/index-secondary'>Index Secondary</button>
 
-  <button mat-raised-button routerLink = '/index-secondary'>Index Secondary</button>
+      </ion-col>
+      <ion-col class="center" size="12">
+      <button mat-raised-button color="primary" routerLink='/index-secondary'>Index Secondary</button>
+
+      </ion-col>
+      <ion-col class="center" size="12">
+      <button mat-raised-button color="primary" routerLink='/index-secondary'>Index Secondary</button>
+
+      </ion-col>
+      <ion-col class="center" size="12">
+      <button mat-raised-button color="primary" routerLink='/index-secondary'>Index Secondary</button>
+
+      </ion-col>
+      <ion-col class="center" size="12">
+      <button mat-raised-button color="primary" routerLink='/index-secondary'>Index Secondary</button>
+
+      </ion-col>
+      <ion-col class="center" size="12">
+      <button mat-raised-button color="primary" routerLink='/index-secondary'>Index Secondary</button>
+
+      </ion-col>
+      <ion-col class="center" size="12">
+      <button mat-raised-button color="primary" routerLink='/index-secondary'>Index Secondary</button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
 
 </ion-content>
 
@@ -14,17 +67,18 @@
   <ion-grid>
     <ion-row>
       <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" routerLink='/my-pets'>
           <mat-icon>pets</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" routerLink = '/home'>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" routerLink='/home'>
           <mat-icon>home</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" routerLink = '/journal-entries'>
+        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon"
+          routerLink='/journal-entries'>
           <mat-icon>local_library</mat-icon>
         </button>
       </ion-col>

@@ -29,3 +29,23 @@
     display: flex;
     justify-content: center;
 }
+.btwn{
+    display: flex;
+    justify-content: space-between;
+}
+.end{
+    display: flex;
+    justify-content: flex-end;
+}
+.navTitle{
+    margin: 0px !important;
+    padding-top: 5px;
+    font-size: 28px;
+}
+.smolbtn{
+    width:35px !important;
+    height: 35px !important;
+}
+.backArrow{
+    font-size: 28px;
+}
