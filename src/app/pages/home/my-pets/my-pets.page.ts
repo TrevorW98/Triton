@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-pets.page.scss'],
 })
 export class MyPetsPage implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {
   }
+  petName = ["Nala", "Tauni", "Triton", "Yoda"];
+
+
+
+
+
+
+
 
 }

@@ -25,10 +25,21 @@
 </ion-header>
 
 <ion-content>
-  <button mat-raised-button routerLink = '/add-pet'>Add Pet</button>
-  <button mat-raised-button routerLink = '/pet-info'>Pet Info</button>
+  <ion-grid class="center">
+    <ion-row>
 
+      <ion-col size= "12" class="center" *ngFor="let items of petName">
+        <button mat-raised-button color="primary" routerLink = '/pet-info'>
+          {{items}}
+        </button>
+      </ion-col>
 
+      <ion-col size="12" class="center">
+        <button mat-raised-button color="primary" routerLink = '/add-pet'>Add Pet</button>
+      </ion-col>
+      
+    </ion-row>
+</ion-grid>
 </ion-content>
 
 <ion-footer>
