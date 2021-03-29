@@ -26,24 +26,57 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col class="center" size="12">
+        <ion-card >
+          <ion-item >
+            <ion-label class="center breedFont">Breed/Species</ion-label>
+            <ion-icon name="star-outline" slot="end"></ion-icon>
+          </ion-item>
+          <ion-card-content>
+            <img src="../../../../../../assets/Alaskan_Malamute.jpg" alt="An Alaskan Malamute">
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+         <ion-item>
+           <ion-label>Height:</ion-label>
+         </ion-item>
+         <ion-item>
+          <ion-label>Weight:</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Lifespan:</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Diet:</ion-label>
+        </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <ion-footer>
   <ion-grid>
     <ion-row>
       <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" routerLink='/my-pets'>
           <mat-icon>pets</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" routerLink = '/home'>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" routerLink='/home'>
           <mat-icon>home</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" routerLink = '/journal-entries'>
+        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon"
+          routerLink='/journal-entries'>
           <mat-icon>local_library</mat-icon>
         </button>
       </ion-col>
