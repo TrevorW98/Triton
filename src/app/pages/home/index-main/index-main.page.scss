@@ -1,4 +1,17 @@
 .center{
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
+}
+.indexBtns{
+  width: 250px;
+  height: 50px;
+  font-size: 25px;
+  margin-top: 30px;
+}
+.centerBtns{
+  display: flex;
+  align-items: center;
+}
+.dogs{
+  background: linear-gradient((#c6282883),(#c6282883)) , url(../../../../assets/Bulldog-laying-down.jpg);
+}

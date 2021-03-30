@@ -9,6 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { IndexSecondaryPage } from './index-secondary.page';
 import { MatButtonModule } from '@angular/material/button';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,7 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
     IonicModule,
     IndexSecondaryPageRoutingModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    
   ],
   declarations: [IndexSecondaryPage]
 })
