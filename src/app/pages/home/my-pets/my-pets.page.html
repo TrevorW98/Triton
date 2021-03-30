@@ -26,29 +26,29 @@
 
 <ion-content>
   <ion-grid class="center">
-    <ion-row>
+    <ion-row class="mt">
       <ion-col size= "12" *ngFor="let items of petName">
         <button class="btn1" mat-raised-button color="primary" routerLink = '/pet-info'>
-          <div class="start acenter">
+          <ion-grid class="start acenter">
             <ion-row>
               <ion-col>
-                <img src="../../../../assets/images/doge.jpg" class="animalPic" alt="Yoda">
-              </ion-col>
-              <ion-col>
-                <h2 class="noMar start">
-                  <u>
-                    {{items}}
-                  </u>
-                </h2>
-                <p class="noMar">
-                  <i>
-                    animal description
-                  </i>
+                <p class="start mr-2" style="float:left">
+                  <img src="../../../../assets/images/doge.jpg" class="animalPic" alt="Yoda">
                 </p>
+                <div class="noWrap">
+
+                  <h2 class="petName start">
+                    <u>
+                      {{items}}
+                    </u>
+                  </h2>
+                  <i class="start noWrap">animal descriptions</i>
+
+                </div>
               </ion-col>
             </ion-row>
 
-          </div>
+          </ion-grid>
         </button>
       </ion-col>
 
