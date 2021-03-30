@@ -3,7 +3,7 @@
     <ion-row class="btwn">
       <div>
         <button class="smolbtn" mat-icon-button>
-          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
+          <mat-icon routerLink="/home" class="backArrow">keyboard_arrow_left</mat-icon>
         </button>
         <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
           <mat-icon>local_hospital</mat-icon>
@@ -27,15 +27,33 @@
 <ion-content>
   <ion-grid class="center">
     <ion-row>
-      <ion-col size= "12" class="center" *ngFor="let items of petName">
+      <ion-col size= "12" *ngFor="let items of petName">
         <button class="btn" mat-raised-button color="primary" routerLink = '/pet-info'>
-        <img src="../../../../assets/images/doge.jpg" class="animalPic" alt="Yoda">
-          {{items}}
+          <div class="start acenter">
+            <ion-row>
+              <ion-col>
+                <img src="../../../../assets/images/doge.jpg" class="animalPic" alt="Yoda">
+              </ion-col>
+              <ion-col>
+                <h2 class="noMar start">
+                  <u>
+                    {{items}}
+                  </u>
+                </h2>
+                <p class="noMar">
+                  <i>
+                    animal description
+                  </i>
+                </p>
+              </ion-col>
+            </ion-row>
+
+          </div>
         </button>
       </ion-col>
 
       <ion-col size="12" class="center">
-        <button class="addPet" mat-raised-button color="primary" routerLink = '/add-pet'>Add Pet</button>
+        <button class="addPet" mat-raised-button color="primary" routerLink = '/add-pet'><u>+ Add Pet</u></button>
       </ion-col>
       
     </ion-row>
