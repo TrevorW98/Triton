@@ -3,7 +3,7 @@
     <ion-row class="btwn">
       <div>
         <button class="smolbtn" mat-icon-button>
-          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
+          <mat-icon routerLink="/home" class="backArrow">keyboard_arrow_left</mat-icon>
         </button>
         <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
           <mat-icon>local_hospital</mat-icon>
@@ -37,12 +37,12 @@
   <ion-grid>
     <ion-row>
       <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
           <mat-icon>pets</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" routerLink = '/home'>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink = '/home'>
           <mat-icon>home</mat-icon>
         </button>
       </ion-col>

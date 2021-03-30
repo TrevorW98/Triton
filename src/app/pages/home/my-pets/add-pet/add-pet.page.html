@@ -3,7 +3,7 @@
     <ion-row class="btwn">
       <div>
         <button class="smolbtn" mat-icon-button>
-          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
+          <mat-icon routerLink="/my-pets" class="backArrow">keyboard_arrow_left</mat-icon>
         </button>
         <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
           <mat-icon>local_hospital</mat-icon>
@@ -25,19 +25,26 @@
 </ion-header>
 
 <ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col class="center">
+      <h1>This is where you would put the animal picture, name, and description</h1>
 
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
 
 <ion-footer>
   <ion-grid>
     <ion-row>
       <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
           <mat-icon>pets</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" routerLink = '/home'>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink = '/home'>
           <mat-icon>home</mat-icon>
         </button>
       </ion-col>
