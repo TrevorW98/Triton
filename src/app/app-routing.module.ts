@@ -92,6 +92,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/my-pets/pet-info/pet-info.module').then( m => m.PetInfoPageModule)
   },
   {
+    path: 'pet-edit',
+    loadChildren: () => import('./pages/home/my-pets/pet-info/pet-edit/pet-edit.module').then( m => m.PetEditPageModule)
+  },
+  {
     path: 'quiz-main',
     loadChildren: () => import('./pages/home/quiz-main/quiz-main.module').then( m => m.QuizMainPageModule)
   },

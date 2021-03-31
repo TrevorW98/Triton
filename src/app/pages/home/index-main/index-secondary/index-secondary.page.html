@@ -27,78 +27,79 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col>
-        <ion-card>
+      <ion-col class="center">
+        <ion-card class="animalTypeSize">
           <ion-card-header>
-            <ion-card-title class="center">Animal Section Chosen</ion-card-title>
+            <ion-card-title class="center ">Animal Section Chosen</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item-divider>
+          <ion-label class="labelFont">A</ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-button class="animalBtns" routerLink='/animal-info'>Alaskan Malamute</ion-button>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-button class="animalBtns" routerLink='/animal-info'>Breed/Species</ion-button>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label class="labelFont">B</ion-label>
+        </ion-item-divider>
+
+        <ion-item lines="none">
+          <ion-button class="animalBtns" routerLink='/animal-info'>Breed/Species</ion-button>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label class="labelFont">C</ion-label>
+        </ion-item-divider>
+
+        <ion-item lines="none">
+          <ion-button class="animalBtns" routerLink='/animal-info'>Breed/Species</ion-button>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label class="labelFont">D</ion-label>
+        </ion-item-divider>
+
+        <ion-item lines="none">
+          <ion-button class="animalBtns" routerLink='/animal-info'>Breed/Species</ion-button>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label class="labelFont">E</ion-label>
+        </ion-item-divider>
+
+        <ion-item lines="none">
+          <ion-button class="animalBtns" routerLink='/animal-info'>Breed/Species</ion-button>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label class="labelFont">F</ion-label>
+        </ion-item-divider>
+
+        <ion-item lines="none">
+          <ion-button class="animalBtns" routerLink='/animal-info'>Breed/Species</ion-button>
+        </ion-item>
+
+        <ion-item-divider>
+          <ion-label class="labelFont">G</ion-label>
+        </ion-item-divider>
+
+        <ion-item lines="none">
+          <ion-button class="animalBtns" routerLink='/animal-info'>Breed/Species</ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
   </ion-grid>
-  <ion-list class="listMargin">
-    <ion-item-group >
-      <ion-item-divider>
-        <ion-label class="labelFont">A</ion-label>
-      </ion-item-divider>
 
-      <ion-item>
-        <ion-button class="animalBtns" routerLink='/animal-info'>Alaskan Malmute</ion-button>
-      </ion-item>
-
-      <ion-item lines="none">
-        <ion-button class="animalBtns" routerLink='/animal-info'>Animal Info</ion-button>
-      </ion-item>
-
-      <ion-item-divider>
-        <ion-label class="labelFont">B</ion-label>
-      </ion-item-divider>
-
-      <ion-item lines="none">
-        <ion-button class="animalBtns" routerLink='/animal-info'>Animal Info</ion-button>
-      </ion-item>
-
-      <ion-item-divider>
-        <ion-label class="labelFont">C</ion-label>
-      </ion-item-divider>
-
-      <ion-item lines="none">
-        <ion-button class="animalBtns" routerLink='/animal-info'>Animal Info</ion-button>
-      </ion-item>
-
-      <ion-item-divider>
-        <ion-label class="labelFont">D</ion-label>
-      </ion-item-divider>
-
-      <ion-item lines="none">
-        <ion-button class="animalBtns" routerLink='/animal-info'>Animal Info</ion-button>
-      </ion-item>
-
-      <ion-item-divider>
-        <ion-label class="labelFont">E</ion-label>
-      </ion-item-divider>
-
-      <ion-item lines="none">
-        <ion-button class="animalBtns" routerLink='/animal-info'>Animal Info</ion-button>
-      </ion-item>
-
-      <ion-item-divider>
-        <ion-label class="labelFont">F</ion-label>
-      </ion-item-divider>
-
-      <ion-item lines="none">
-        <ion-button class="animalBtns" routerLink='/animal-info'>Animal Info</ion-button>
-      </ion-item>
-
-      <ion-item-divider>
-        <ion-label class="labelFont">G</ion-label>
-      </ion-item-divider>
-
-      <ion-item lines="none">
-        <ion-button class="animalBtns" routerLink='/animal-info'>Animal Info</ion-button>
-      </ion-item>
-    </ion-item-group>
-  </ion-list>
 
 
 
@@ -108,13 +109,13 @@
   <ion-grid>
     <ion-row>
       <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink='/my-pets'>
 
           <mat-icon>pets</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink = '/home'>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink='/home'>
 
           <mat-icon>home</mat-icon>
         </button>
