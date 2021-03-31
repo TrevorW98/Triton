@@ -11,22 +11,16 @@ ion-content {
   background-position: center;
 }
 
+.row {
+  backdrop-filter: brightness(42%);
+}
+
 input {
   background: #ffffff55;
   border: none;
   border-radius: 5px;
-  color: white;
-  font-weight: bold;
 }
 
 a {
   color: cyan;
-}
-
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }

@@ -1,44 +1,70 @@
 <ion-content>
-  <button class="smolbtn" mat-icon-button>
-    <mat-icon routerLink="/home" class="backArrow">keyboard_arrow_left</mat-icon>
-  </button>
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col fixed-top mt-2">
+      <button class="smolbtn" mat-icon-button>
+        <mat-icon routerLink="/home" class="backArrow"
+          >keyboard_arrow_left</mat-icon
+        >
+      </button>
+    </div>
+    <div class="col-8">
+      <ion-grid class="vertical-center horizontal-center">
+        <ion-row>
+          <ion-col size="12">
+            <fieldset class="text-white">
+              <legend class="font-weight-bold">Register</legend>
+              <p>Already a user? <a routerLink="/login">Sign In</a></p>
 
-  <ion-grid class="vertical-center">
-    <ion-row>
-      <ion-col size="10">
-        <h1 class="font-weight-bold">Create An Account</h1>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="10">
-        <h2>Already a user? <a routerLink="/login">Sign In</a></h2>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">
-        <input type="text" placeholder="First Name" />
-      </ion-col>
-      <ion-col size="5">
-        <input type="text" placeholder="Last Name" />
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="10">
-        <input type="text" placeholder="Email Address" />
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="10">
-        <input type="password" placeholder="Password" />
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="10">
-        <button class="btn btn-info">
-          Register
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+              <form [formGroup]="LoginForm" (ngSubmit)="submitForm()">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    formControlName="firstName"
+                  />
+                  <label for="lastName">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    formControlName="lastName"
+                  />
+                </div>
 
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    formControlName="email"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    formControlName="password"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn btn-info my-2"
+                  [disabled]="!LoginForm.valid"
+                >
+                  Register
+                </button>
+              </form>
+            </fieldset>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 </ion-content>
