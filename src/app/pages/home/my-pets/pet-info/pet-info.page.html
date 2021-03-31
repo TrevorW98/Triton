@@ -29,21 +29,51 @@
     <ion-row>
       <ion-col size="6">
         <button mat-icon-button routerLink='/individual-pet-docs'>
-        <mat-icon>folder_special</mat-icon>
+          <mat-icon>folder_special</mat-icon>
         </button>
       </ion-col>
       <ion-col size="6" class="end">
         <button mat-icon-button routerLink='/pet-edit'>
           <mat-icon>create</mat-icon>
-          </button>
+        </button>
       </ion-col>
-    
-    
-    
+      <ion-col size="12" class="center">
+        <img class="animalPic" src="../../../../../assets/images/doge.jpg" alt="Yoda">
+      </ion-col>
+
+      <ion-col size="12">
+        <div class="overFlow">
+          <h2 class="text-center m-0">Pet Name</h2>
+          <p class="text-center"><i>Pet Description</i></p>
+        </div>
+
+
+      </ion-col>
+      <ion-col size="12" class="mx-3">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis reprehenderit doloribus aliquam expedita mollitia optio</p>
+      </ion-col>
+
+      <ion-col size="12">
+        <div class="d-flex justify-content-around">
+          <button mat-raised-button (click)="colorChange(myCard, 'dailyNeeds')" class="m-0" color="primary">Cyan</button>
+          <button mat-raised-button (click)="colorChange(myCard, 'food')" class="m-0" color="accent">Blue</button>
+          <button mat-raised-button (click)="colorChange(myCard, 'medical')" class="m-0" color="warn">Red</button>
+        </div>
+
+        <ion-card #myCard class="primaryBg">
+          <ion-card-header>
+            <ion-card-title>Card Title</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            Keep close to Nature's heart... and break clear away, once in awhile,
+            and climb a mountain or spend a week in the woods. Wash your spirit clean.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
     </ion-row>
-
-
-
 
   </ion-grid>
 
@@ -54,17 +84,18 @@
   <ion-grid>
     <ion-row>
       <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink='/my-pets'>
           <mat-icon>pets</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink = '/home'>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink='/home'>
           <mat-icon>home</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" routerLink = '/journal-entries'>
+        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon"
+          routerLink='/journal-entries'>
           <mat-icon>local_library</mat-icon>
         </button>
       </ion-col>
