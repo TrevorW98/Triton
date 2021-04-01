@@ -9,7 +9,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import './home.page.scss'
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +19,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   declarations: [HomePage]
 })

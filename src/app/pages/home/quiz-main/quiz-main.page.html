@@ -25,9 +25,45 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="descriptionSpecs">
+          <ion-card-content class="content text-center">
+            Are you ready to find the perfect pet for you? This quiz will help us determine what kind of animal would
+            best suit your environment and ability to care for them. You will encounter 25 questions and at the end,
+            receive
+            results based upon your answers. Click below to begin!
+          </ion-card-content>
+        </ion-card>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+              bred for hunting.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="center">
+        <button mat-raised-button class="startBtn" routerLink='/questions'>Get Started!</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <button mat-raised-button routerLink = '/questions'>Questions</button>
-  <button mat-raised-button routerLink = '/results'>Results</button>
 
 
 
@@ -37,17 +73,18 @@
   <ion-grid>
     <ion-row>
       <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink='/my-pets'>
           <mat-icon>pets</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink = '/home'>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink='/home'>
           <mat-icon>home</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" routerLink = '/journal-entries'>
+        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon"
+          routerLink='/journal-entries'>
           <mat-icon>local_library</mat-icon>
         </button>
       </ion-col>
