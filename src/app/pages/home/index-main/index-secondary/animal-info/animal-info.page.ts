@@ -20,6 +20,7 @@ export class AnimalInfoPage implements OnInit {
     // or updating the table of animals with a column called favorites with a boolean. If true, 
     //Load these items in the favorites tab of the Index
     console.log(document.getElementById("breedSpecies").innerText);
+    console.log(document.getElementById("favorite").className = ("selected"))
     //this.temporaryFavoritesArr.push(this.breedSpecies)
   }
 
