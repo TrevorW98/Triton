@@ -26,23 +26,52 @@
 
 <ion-content>
 
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="center">
+        <img class="circleProfile" src="../../../../../assets/images/doge.jpg" alt="Yoda">
+      </ion-col>
+
+      <ion-col size="12">
+        <div class="overFlow">
+          <h2 class="text-center m-0">Yoda</h2>
+          <p class="text-center"><i>Corgi</i></p>
+        </div>
+
+
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" *ngFor="let items of petDoxType">
+        <div>
+          <button mat-raised-button color="primary" class="full"><u class="start">{{items}}</u></button>
+          <mat-icon (click)="deleteMe(items)">delete</mat-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 </ion-content>
 
 <ion-footer>
   <ion-grid>
     <ion-row>
       <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink='/my-pets'>
           <mat-icon>pets</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink = '/home'>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink='/home'>
           <mat-icon>home</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" routerLink = '/journal-entries'>
+        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon"
+          routerLink='/journal-entries'>
           <mat-icon>local_library</mat-icon>
         </button>
       </ion-col>
