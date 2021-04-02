@@ -25,26 +25,24 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-grid class="mt-5">
     <ion-row>
-      <ion-col class="mt-3">
-        <ion-item>
+      <ion-col class="mt-3" size="3.7">
+        <ion-item class="questionNum">
           <ion-label>Question 1</ion-label>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="center" >
-        <ion-card>
-          <ion-card-header >
+      <ion-col class="center " >
+          <ion-card-header class="questionBG">
             <ion-card-title class="text-center">This is where the questions will be presented to the user being pulled from our API</ion-card-title>
           </ion-card-header>
-        </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <ion-list>
+      <ion-col >
+        <ion-list class="questionNum">
           <ion-item>
             <ion-label>Answer 1</ion-label>
             <ion-checkbox slot="end"></ion-checkbox>
@@ -65,14 +63,14 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col class="center">
         <!-- After 25 questions, this button wil disappear and the submit button will appear -->
-        <button mat-raised-button >Next Question</button>
+        <button mat-button class="answerBG answerBtn">Next Question</button>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <button mat-raised-button routerLink='/results'>Submit Answers</button>
+      <ion-col class="center mt-5">
+        <button mat-button routerLink='/results' class="answerBG answerBtn">Submit Answers</button>
       </ion-col>
     </ion-row>
   </ion-grid>

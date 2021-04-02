@@ -1,14 +1,13 @@
 .center{
     display: flex;
     justify-content: center;
-  }
-  .descriptionSpecs{
-    background-color: #283593;
-  }
+}
+ 
 .desc{
   color: white;
   font-size: 20px;
 }
+
 .content{
   font-size: 15px;
   color: white;
@@ -17,4 +16,7 @@
   background-color: #00838f !important;
   color: white;
   width: 380px;
+}
+ion-slides {
+  height: 100%;
 }

@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quiz-main.page.scss'],
 })
 export class QuizMainPage implements OnInit {
+  slideOpts = {
+    initialSlide: 0,
+    speed: 800,
+    slidesPerView: 1,
+    autoplay:true
+  };
 
   constructor() { }
 
