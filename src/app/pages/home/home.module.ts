@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule
+    
   ],
   declarations: [HomePage]
 })

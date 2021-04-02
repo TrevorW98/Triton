@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
     QuizMainPageRoutingModule,
     MatButtonModule,
     MatIconModule
+  
   ],
   declarations: [QuizMainPage]
 })

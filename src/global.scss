@@ -57,6 +57,19 @@
     overflow-x: scroll;
 }
 
+.primaryBg{
+    background:#00838F;
+    color: white;
+  }
+  .accentBg{
+      background: #283593;
+      color: white;
+  }
+  .warnBg{
+      background: #C62828;
+      color: white;
+  }
+
 .primary{
     color: #00838F;
 }
@@ -94,3 +107,4 @@
     display: flex;
     justify-content: flex-end;
 }
+
