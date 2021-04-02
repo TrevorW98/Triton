@@ -11,5 +11,7 @@ export class AddPetPage implements OnInit {
 
   ngOnInit() {
   }
-
+  removePetProfile(){
+    
+  }
 }

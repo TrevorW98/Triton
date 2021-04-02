@@ -82,3 +82,15 @@
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
+.circleProfile{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.bottomRight{
+    position:absolute;
+    bottom: 3px;
+    right: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
