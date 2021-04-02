@@ -1,4 +1,11 @@
-.center{
-    display: flex;
-    justify-content: center;
+
+  .picture{
+    height: 100px;
   }
+  .camera{
+    position:relative;
+    top: -15px;
+    left: 35px;
+    height: 0px;
+  }
+  

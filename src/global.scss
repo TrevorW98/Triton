@@ -55,9 +55,9 @@
 }
 .overFlow{
     overflow-x: scroll;
-  }
+}
 
-  .primaryBg{
+.primaryBg{
     background:#00838F;
     color: white;
   }
@@ -69,3 +69,42 @@
       background: #C62828;
       color: white;
   }
+
+.primary{
+    color: #00838F;
+}
+.accent{
+    color:#283593
+}
+.warn{
+    color:#C62828
+}
+.primaryBg{
+  background:#00838F;
+  color: white;
+}
+.accentBg{
+  background: #283593;
+  color: white;
+}
+.warnBg{
+  background: #C62828;
+  color: white;
+}
+.noMarY{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.circleProfile{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.bottomRight{
+    position:absolute;
+    bottom: 3px;
+    right: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+

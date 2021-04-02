@@ -11,5 +11,8 @@ export class PetEditPage implements OnInit {
 
   ngOnInit() {
   }
+  removePetProfile(){
+    
+  }
 
 }

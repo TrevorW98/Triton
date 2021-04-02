@@ -38,7 +38,7 @@
         </button>
       </ion-col>
       <ion-col size="12" class="center">
-        <img class="animalPic" src="../../../../../assets/images/doge.jpg" alt="Yoda">
+        <img class="circleProfile" src="../../../../../assets/images/doge.jpg" alt="Yoda">
       </ion-col>
 
       <ion-col size="12">
@@ -50,24 +50,34 @@
 
       </ion-col>
       <ion-col size="12" class="mx-3">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis reprehenderit doloribus aliquam expedita mollitia optio</p>
+        <div class="mr-4">
+          <p class='noMarY'><i>Upcoming Events:</i></p>
+          <p>(closest event goes here)</p>
+        </div>
       </ion-col>
 
-      <ion-col size="12">
-        <div class="d-flex justify-content-around">
-          <button mat-raised-button (click)="colorChange(myCard, 'dailyNeeds')" class="m-0" color="primary">Cyan</button>
-          <button mat-raised-button (click)="colorChange(myCard, 'food')" class="m-0" color="accent">Blue</button>
-          <button mat-raised-button (click)="colorChange(myCard, 'medical')" class="m-0" color="warn">Red</button>
+      <ion-col size="12" class="mb-0">
+        <div class="text-center">
+          <button mat-raised-button (click)="colorChange(myCard, 'dailyNeeds')" class="my-0 mr-1" color="primary">Daily Needs</button>
+          <button mat-raised-button (click)="colorChange(myCard, 'food')" class="my-0 mx-2" color="accent">Food</button>
+          <button mat-raised-button (click)="colorChange(myCard, 'medical')" class="my-0 ml-2" color="warn">Medical</button>
         </div>
 
         <ion-card #myCard class="primaryBg">
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-          </ion-card-header>
+          <ion-card-content class="p-2">
+            <!-- this is where all the bulletpoints will go. -->
+            <ul class="mb-2 lineFix">
+              <li>What is up?</li>
 
-          <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
+            </ul>
+            <div class="p-2" (click)="editMe()" *ngIf="!inputOn">
+              <p class="mb-0"><u>Edit Me!</u></p>
+            </div>
+            <div *ngIf="inputOn">
+              <ion-input #inputBox type="string" class="inputBox" placeholder="+ add more info"></ion-input>
+              <button (click)="inputOn = false">Exit</button>
+            </div>
+
           </ion-card-content>
         </ion-card>
       </ion-col>
