@@ -25,7 +25,45 @@
 </ion-header>
 
 <ion-content>
-  <h2>pet edit</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="end">
+        <button mat-icon-button routerLink='/pet-info'>
+          <mat-icon>save</mat-icon>
+        </button>
+      </ion-col>
+      <ion-col size="12" class="center">
+        <div class="picture">
+          <img class="circleProfile" src="../../../../../assets/images/doge.jpg" alt="Yoda">
+        </div>
+      </ion-col>
+      <ion-col size="12" class="center">
+        <div class="camera d-flex align-items-end">
+          <mat-icon>camera_enhance</mat-icon>
+        </div>
+      </ion-col>
+
+      <ion-col size="12">
+        <div class="overFlow">
+          <ion-item>
+            <ion-label position="stacked">Pet Name</ion-label>
+            <ion-input type="name" placeholder="Yoda"></ion-input>
+          </ion-item>
+        </div>
+        <div class="overFlow mt-1">
+          <ion-item>
+            <ion-label position="stacked">Pet Description</ion-label>
+            <ion-input type="text" placeholder="Corgi"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+
+      <ion-col class="bottomRight">
+        <p (click)="removePetProfile()"><u>Remove Pet Profile</u></p>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 
 </ion-content>
 

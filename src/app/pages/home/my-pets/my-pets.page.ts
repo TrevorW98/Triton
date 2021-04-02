@@ -11,7 +11,7 @@ export class MyPetsPage implements OnInit {
 
   ngOnInit() {
   }
-  petName = ["Nala", "Tauni", "Triton", "Yoda", "Molly", "Floofy McFloof Mc Floofer-Kins", "Ms Muffin", "Bruno"];
+  petName = ["Nala", "Tauni", "Triton", "Yoda", "Floofy McFloof Mc Floofer-Kins"];
 
 
 

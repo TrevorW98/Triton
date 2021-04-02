@@ -2,11 +2,24 @@
     display: flex;
     justify-content: center;
   }
-  .animalPic{
+  .circleProfile{
     border-radius: 50%;
     width: 100px;
     height: 100px;
   }
 .wrap{
   overflow-wrap: break-word;
+}
+li{
+  font-size: 17px;
+}
+// ion-card{
+//   height: 75%;
+// }
+.inputBox{
+
+  background: #22222246;
+}
+.lineFix{
+  padding-left: 25px;
 }
