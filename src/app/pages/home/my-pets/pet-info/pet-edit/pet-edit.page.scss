@@ -1,4 +1,25 @@
 .center{
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
+}
+.animalPic{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.picture{
+  height: 100px;
+}
+.camera{
+  position:relative;
+  top: -15px;
+  left: 35px;
+  height: 0px;
+}
+.bottomRight{
+  position:absolute;
+  bottom: 3px;
+  right: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
