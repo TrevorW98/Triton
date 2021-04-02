@@ -74,8 +74,7 @@
               <p class="mb-0"><u>Edit Me!</u></p>
             </div>
             <div *ngIf="inputOn">
-              <ion-input type="string" class="inputBox" placeholder="+ add more info">
-              </ion-input>
+              <ion-input #inputBox type="string" class="inputBox" placeholder="+ add more info"></ion-input>
               <button (click)="inputOn = false">Exit</button>
             </div>
 
