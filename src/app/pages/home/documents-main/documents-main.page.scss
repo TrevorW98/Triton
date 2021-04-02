@@ -2,3 +2,18 @@
     display: flex;
     justify-content: center;
   }
+  .btn1{
+    background: #131313;
+    width: 100%;
+    margin-top: 5px;
+    padding: 0px !important;
+  }
+  .animalPic{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+  }
+  .petName{
+    display: flex;
+    justify-content:center;
+  }

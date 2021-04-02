@@ -8,6 +8,8 @@ import { MyPetsPageRoutingModule } from './my-pets-routing.module';
 
 import { MyPetsPage } from './my-pets.page';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   imports: [
@@ -15,8 +17,10 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     IonicModule,
     MyPetsPageRoutingModule,
+    MatSliderModule,
+    MatToolbarModule,
+    MatIconModule,
     MatButtonModule,
-    MatIconModule
   ],
   declarations: [MyPetsPage]
 })

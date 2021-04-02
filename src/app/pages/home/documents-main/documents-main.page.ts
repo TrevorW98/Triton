@@ -11,5 +11,6 @@ export class DocumentsMainPage implements OnInit {
 
   ngOnInit() {
   }
+  petName = ['Nala', 'Yoda'];
 
 }

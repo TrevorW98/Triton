@@ -11,5 +11,9 @@ export class IndividualPetDocsPage implements OnInit {
 
   ngOnInit() {
   }
-
+  petDoxType = ["Vaccination Records", "Medicine", "Last Visit Info"]
+  
+  deleteMe(item){
+    // remove item from petDoxType
+  }
 }
