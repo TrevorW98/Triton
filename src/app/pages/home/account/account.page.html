@@ -25,17 +25,53 @@
 </ion-header>
 
 <ion-content>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <button mat-raised-button routerLink='/change-email'>Change Email</button>
-        <button mat-raised-button routerLink='/change-password'>Change Password</button>
-        <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button>
+  <!-- <button mat-raised-button routerLink='/change-email'>Change Email</button>
+  <button mat-raised-button routerLink='/change-password'>Change Password</button>
+  <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button> -->
 
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="end">
+        <button mat-icon-button routerLink='/home'>
+          <mat-icon>save</mat-icon>
+        </button>
+      </ion-col>
+      <ion-col size="12" class="center">
+        <div class="picture">
+          <img class="circleProfile" src="../../../../../assets/images/TritonDarkAccent.png" alt="Add Pet Picture">
+        </div>
+      </ion-col>
+      <ion-col size="12" class="center">
+        <div class="camera d-flex align-items-end">
+          <mat-icon>camera_enhance</mat-icon>
+        </div>
+      </ion-col>
 
-      </div>
-    </div>
-  </div>
+      <ion-col size="12">
+        <div class="overFlow">
+          <ion-item class="inputBox">
+            <ion-label position="stacked">Full Name</ion-label>
+            <ion-input type="text" placeholder="James Barnes"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="ml-2">
+        <p>JamesBuckyBarnes@Gmail.com</p>
+      </ion-col>
+      <ion-col size="12" class="change" routerLink='/change-email'>
+        <p><u>Change Email</u></p>
+      </ion-col>
+
+      <ion-col size="12" class="change" routerLink='/change-password'>
+        <p><u>Change Password</u></p>
+      </ion-col>
+
+      <ion-col class="bottomRight change">
+        <p><u>Sign Out</u></p>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 </ion-content>
 
 <ion-footer>
