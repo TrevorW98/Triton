@@ -27,40 +27,15 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <ion-col size="12" class="center">
-        <button mat-raised-button color="primary" routerLink="/my-pets">
-          My Pets
-        </button>
-        <button mat-raised-button color="primary" routerLink="/index-main">
-          Index
-        </button>
-        <button mat-raised-button color="accent" routerLink="/quiz-main">
-          Pick My Pet
-        </button>
-        <button mat-raised-button color="primary" routerLink="/login">
-          Login Page
-        </button>
-        <button mat-raised-button color="accent" routerLink="/documents-main">
-          Docs
-        </button>
-        <button mat-raised-button color="accent" routerLink="/feeding-times">
-          Feeding Times
-        </button>
-        <button mat-raised-button color="warn" routerLink="/events-notifs">
-          Event Notifications
-        </button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
       <ion-col size="12">
         <div class="card primaryBg">
-          <div class="card-body border-dark p-2">
-            <div class="d-flex pb-0 justify-content-between ">
-              <h2 class="card-title  mb-0">My Pets</h2>
-              <button class="smolbtn" mat-icon-button>
-                <mat-icon class="h1">keyboard_arrow_right</mat-icon>
-              </button>
+          <div class="card-body p-2">
+            <div
+              class="d-flex py-0 justify-content-between"
+              (click)="redirect('my-pets')"
+            >
+              <h2 class="card-title mb-0">My Pets</h2>
+              <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
             </div>
             <p class="card-text">
               Some quick example text to build on the card title and make up the
@@ -73,12 +48,13 @@
     <ion-row>
       <ion-col size="12">
         <div class="card primaryBg">
-          <div class="card-body border-dark p-2">
-            <div class="d-flex pb-0 justify-content-between ">
-              <h2 class="card-title  mb-0">Today's Feeding Times</h2>
-              <button class="smolbtn" mat-icon-button>
-                <mat-icon class="h1">keyboard_arrow_right</mat-icon>
-              </button>
+          <div class="card-body p-2">
+            <div
+              class="d-flex pb-0 justify-content-between"
+              (click)="redirect('feeding-times')"
+            >
+              <h2 class="card-title mb-0">Today's Feeding Times</h2>
+              <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
             </div>
             <p class="card-text">
               Some quick example text to build on the card title and make up the
@@ -90,13 +66,14 @@
     </ion-row>
     <ion-row>
       <ion-col size="6">
-        <div class="card primaryBg">
-          <div class="card-body border-dark p-2">
-            <div class="d-flex pb-0 justify-content-between ">
-              <h2 class="card-title  mb-0">Events</h2>
-              <button class="smolbtn" mat-icon-button>
-                <mat-icon class="h1">keyboard_arrow_right</mat-icon>
-              </button>
+        <div class="card primaryBg h-100">
+          <div class="card-body p-2">
+            <div
+              class="d-flex pb-0 justify-content-between"
+              (click)="redirect('events-notifs')"
+            >
+              <h2 class="card-title mb-0">Events</h2>
+              <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
             </div>
             <p class="card-text">
               Some quick example text to build on the card title and make up the
@@ -105,16 +82,19 @@
           </div>
         </div>
       </ion-col>
-      <ion-col size="6">
+      <ion-col size="6" class="p-0">
         <ion-row>
           <ion-col>
             <div class="card primaryBg">
-              <div class="card-body border-dark p-2">
-                <div class="d-flex pb-0 justify-content-between ">
-                  <h2 class="card-title  mb-0">Pet Index</h2>
-                  <button class="smolbtn" mat-icon-button>
-                    <mat-icon class="h1">keyboard_arrow_right</mat-icon>
-                  </button>
+              <div class="card-body p-2">
+                <div
+                  class="d-flex pb-0 justify-content-between"
+                  (click)="redirect('index-main')"
+                >
+                  <h2 class="card-title mb-0">Pet Index</h2>
+                  <mat-icon class="h1 mt-0 mt-n2"
+                    >keyboard_arrow_right</mat-icon
+                  >
                 </div>
                 <p class="card-text">
                   Learn about other creatures you can care for
@@ -126,12 +106,15 @@
         <ion-row>
           <ion-col>
             <div class="card primaryBg">
-              <div class="card-body border-dark p-2">
-                <div class="d-flex pb-0 justify-content-between ">
-                  <h2 class="card-title  mb-0">Pick My Pet</h2>
-                  <button class="smolbtn" mat-icon-button>
-                    <mat-icon class="h1">keyboard_arrow_right</mat-icon>
-                  </button>
+              <div class="card-body p-2">
+                <div
+                  class="d-flex pb-0 justify-content-between"
+                  (click)="redirect('quiz-main')"
+                >
+                  <h2 class="card-title mb-0">Pick My Pet</h2>
+                  <mat-icon class="h1 mt-0 mt-n2"
+                    >keyboard_arrow_right</mat-icon
+                  >
                 </div>
                 <p class="card-text">
                   Take our quiz to find out which pet is right for you
@@ -143,12 +126,15 @@
         <ion-row>
           <ion-col>
             <div class="card primaryBg">
-              <div class="card-body border-dark p-2">
-                <div class="d-flex pb-0 justify-content-between ">
-                  <h2 class="card-title  mb-0">Docs</h2>
-                  <button class="smolbtn" mat-icon-button>
-                    <mat-icon class="h1">keyboard_arrow_right</mat-icon>
-                  </button>
+              <div class="card-body p-2">
+                <div
+                  class="d-flex pb-0 justify-content-between"
+                  (click)="redirect('documents-main')"
+                >
+                  <h2 class="card-title mb-0">Docs</h2>
+                  <mat-icon class="h1 mt-0 mt-n2"
+                    >keyboard_arrow_right</mat-icon
+                  >
                 </div>
               </div>
             </div>
