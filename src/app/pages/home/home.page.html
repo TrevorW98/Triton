@@ -5,7 +5,7 @@
         <button class="smolbtn" mat-icon-button>
           <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
         </button>
-        <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
+        <button class="smolbtn" mat-icon-button routerLink="/vet-info">
           <mat-icon>local_hospital</mat-icon>
         </button>
       </div>
@@ -13,10 +13,10 @@
       <h1 class="navTitle">Triton</h1>
 
       <div class="end">
-        <button class="smolbtn" mat-icon-button routerLink='/settings'>
+        <button class="smolbtn" mat-icon-button routerLink="/settings">
           <mat-icon>settings</mat-icon>
         </button>
-        <button class="smolbtn" mat-icon-button routerLink='/account'>
+        <button class="smolbtn" mat-icon-button routerLink="/account">
           <mat-icon>account_circle</mat-icon>
         </button>
       </div>
@@ -25,51 +25,170 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-grid>
     <ion-row>
       <ion-col size="12" class="center">
-        <button mat-raised-button color="primary" routerLink = '/my-pets'>My Pets</button>
+        <button mat-raised-button color="primary" routerLink="/my-pets">
+          My Pets
+        </button>
+        <button mat-raised-button color="primary" routerLink="/index-main">
+          Index
+        </button>
+        <button mat-raised-button color="accent" routerLink="/quiz-main">
+          Pick My Pet
+        </button>
+        <button mat-raised-button color="primary" routerLink="/login">
+          Login Page
+        </button>
+        <button mat-raised-button color="accent" routerLink="/documents-main">
+          Docs
+        </button>
+        <button mat-raised-button color="accent" routerLink="/feeding-times">
+          Feeding Times
+        </button>
+        <button mat-raised-button color="warn" routerLink="/events-notifs">
+          Event Notifications
+        </button>
       </ion-col>
-      <ion-col size="12" class="center">
-        <button mat-raised-button color="accent" routerLink = '/feeding-times'>Feeding Times</button>
-      </ion-col>
+    </ion-row>
 
+    <ion-row>
+      <ion-col size="12">
+        <div class="card primaryBg">
+          <div class="card-body border-dark p-2">
+            <div class="d-flex pb-0 justify-content-between ">
+              <h2 class="card-title  mb-0">My Pets</h2>
+              <button class="smolbtn" mat-icon-button>
+                <mat-icon class="h1">keyboard_arrow_right</mat-icon>
+              </button>
+            </div>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <div class="card primaryBg">
+          <div class="card-body border-dark p-2">
+            <div class="d-flex pb-0 justify-content-between ">
+              <h2 class="card-title  mb-0">Today's Feeding Times</h2>
+              <button class="smolbtn" mat-icon-button>
+                <mat-icon class="h1">keyboard_arrow_right</mat-icon>
+              </button>
+            </div>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
       <ion-col size="6">
-        <button mat-raised-button color="warn" routerLink = '/events-notifs'>Event Notifications</button>
+        <div class="card primaryBg">
+          <div class="card-body border-dark p-2">
+            <div class="d-flex pb-0 justify-content-between ">
+              <h2 class="card-title  mb-0">Events</h2>
+              <button class="smolbtn" mat-icon-button>
+                <mat-icon class="h1">keyboard_arrow_right</mat-icon>
+              </button>
+            </div>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
       </ion-col>
       <ion-col size="6">
-        <button mat-raised-button color="primary" routerLink = '/index-main'>Index</button>
-        <button mat-raised-button color="accent" routerLink = '/quiz-main'>Pick My Pet</button>
-        <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button>
-        <button mat-raised-button color="accent" routerLink = '/documents-main'>Docs</button>
+        <ion-row>
+          <ion-col>
+            <div class="card primaryBg">
+              <div class="card-body border-dark p-2">
+                <div class="d-flex pb-0 justify-content-between ">
+                  <h2 class="card-title  mb-0">Pet Index</h2>
+                  <button class="smolbtn" mat-icon-button>
+                    <mat-icon class="h1">keyboard_arrow_right</mat-icon>
+                  </button>
+                </div>
+                <p class="card-text">
+                  Learn about other creatures you can care for
+                </p>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="card primaryBg">
+              <div class="card-body border-dark p-2">
+                <div class="d-flex pb-0 justify-content-between ">
+                  <h2 class="card-title  mb-0">Pick My Pet</h2>
+                  <button class="smolbtn" mat-icon-button>
+                    <mat-icon class="h1">keyboard_arrow_right</mat-icon>
+                  </button>
+                </div>
+                <p class="card-text">
+                  Take our quiz to find out which pet is right for you
+                </p>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="card primaryBg">
+              <div class="card-body border-dark p-2">
+                <div class="d-flex pb-0 justify-content-between ">
+                  <h2 class="card-title  mb-0">Docs</h2>
+                  <button class="smolbtn" mat-icon-button>
+                    <mat-icon class="h1">keyboard_arrow_right</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
       </ion-col>
-      
     </ion-row>
   </ion-grid>
-
 </ion-content>
 
 <ion-footer>
   <ion-grid>
     <ion-row>
       <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
+        <button
+          mat-icon-button
+          color="accent"
+          aria-label="Example icon button with a home icon"
+          routerLink="/my-pets"
+        >
           <mat-icon>pets</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink = '/home'>
+        <button
+          mat-icon-button
+          color="primary"
+          aria-label="Example icon button with a menu icon"
+          routerLink="/home"
+        >
           <mat-icon>home</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" routerLink = '/journal-entries'>
+        <button
+          mat-icon-button
+          color="warn"
+          aria-label="Example icon button with a heart icon"
+          routerLink="/journal-entries"
+        >
           <mat-icon>local_library</mat-icon>
         </button>
       </ion-col>
@@ -100,6 +219,3 @@
     </ion-grid>
   </mat-toolbar>
 </ion-footer> -->
-
-
-
