@@ -60,15 +60,15 @@
 .primaryBg{
     background:#00838F !important;
     color: white !important;
+}
+.accentBg{
+    background: #283593;
+    color: white;
   }
-  .accentBg{
-      background: #283593;
-      color: white;
-  }
-  .warnBg{
-      background: #C62828;
-      color: white;
-  }
+.warnBg{
+    background: #C62828;
+    color: white;
+}
 
 .primary{
     color: #00838F;
@@ -106,4 +106,7 @@
     right: 5px;
     display: flex;
     justify-content: flex-end;
+}
+.greyCamera{
+    color:rgb(207, 207, 207);
 }

@@ -11,20 +11,27 @@
 }
 .camera{
   position:relative;
-  top: -15px;
-  left: 35px;
+  top: -10px;
+  left: 55px;
   height: 0px;
 }
 .inputBox{
     border-radius: 5px;
-  }
-  .bottomLeft{
-    position: absolute;
-    bottom: 3px;
+}
+
+
+.bottomLeft{
+  position: absolute;
+  bottom: 3px;
 }
 .change{
     margin-left: 5px;
 }
 .change:hover{
     color: #00838F;
+}
+.profilePic{
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
 }
