@@ -25,7 +25,32 @@
 #container a {
   text-decoration: none;
 }
-.center{
+.center {
   display: flex;
   justify-content: center;
+}
+
+.scrolls {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 100px;
+  white-space: nowrap;
+}
+
+.scrolls-vertically {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 200px;
+  white-space: nowrap;
+}
+
+.animalPic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
 }
