@@ -1,23 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-row class="btwn">
-      <div>
-        <button class="smolbtn" mat-icon-button>
-          <mat-icon routerLink="/journal-main" class="backArrow">keyboard_arrow_left</mat-icon>
+    <ion-row>
+      <ion-col>
+        <button class="smolbtn" mat-icon-button routerLink='/journal-main'>
+          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
         </button>
         <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
           <mat-icon>local_hospital</mat-icon>
         </button>
-      </div>
+      </ion-col>
 
       <h1 class="navTitle">Pet Journal</h1>
 
-      <div class="end">
+      <ion-col class="end">
  
         <button class="smolbtn" mat-icon-button routerLink='/account'>
           <mat-icon>account_circle</mat-icon>
         </button>
-      </div>
+      </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-header>
