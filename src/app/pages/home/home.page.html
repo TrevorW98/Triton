@@ -30,46 +30,44 @@
       <ion-title size="large">Home</ion-title>
     </ion-toolbar>
   </ion-header>
-
   <ion-grid>
     <ion-row>
       <ion-col size="12" class="center">
-        <button mat-raised-button color="primary" routerLink = '/my-pets'>My Pets</button>
+        <button mat-raised-button color="primary" routerLink='/my-pets'>My Pets</button>
       </ion-col>
       <ion-col size="12" class="center">
-        <button mat-raised-button color="accent" routerLink = '/feeding-times'>Feeding Times</button>
+        <button mat-raised-button color="accent" routerLink='/feeding-times'>Feeding Times</button>
+      </ion-col>
+      <ion-col size="6">
+        <button mat-raised-button color="warn" routerLink='/events-notifs'>Event Notifications</button>
+      </ion-col>
+      <ion-col size="6">
+        <button mat-raised-button color="primary" routerLink='/index-main'>Index</button>
+        <button mat-raised-button color="accent" routerLink='/quiz-main'>Pick My Pet</button>
+        <button mat-raised-button color="primary" routerLink='/login'>Login Page</button>
+        <button mat-raised-button color="accent" routerLink='/documents-main'>Docs</button>
       </ion-col>
 
-      <ion-col size="6">
-        <button mat-raised-button color="warn" routerLink = '/events-notifs'>Event Notifications</button>
-      </ion-col>
-      <ion-col size="6">
-        <button mat-raised-button color="primary" routerLink = '/index-main'>Index</button>
-        <button mat-raised-button color="accent" routerLink = '/quiz-main'>Pick My Pet</button>
-        <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button>
-        <button mat-raised-button color="accent" routerLink = '/documents-main'>Docs</button>
-      </ion-col>
-      
     </ion-row>
   </ion-grid>
-
 </ion-content>
 
 <ion-footer>
   <ion-grid>
     <ion-row>
       <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink='/my-pets'>
           <mat-icon>pets</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink = '/home'>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink='/home'>
           <mat-icon>home</mat-icon>
         </button>
       </ion-col>
       <ion-col class="center">
-        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" routerLink = '/journal-entries'>
+        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon"
+          routerLink='/journal-entries'>
           <mat-icon>local_library</mat-icon>
         </button>
       </ion-col>
@@ -100,6 +98,3 @@
     </ion-grid>
   </mat-toolbar>
 </ion-footer> -->
-
-
-
