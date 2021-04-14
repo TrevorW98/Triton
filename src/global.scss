@@ -42,8 +42,11 @@
     justify-content: flex-end;
 }
 .navTitle{
-    margin: 0px !important;
-    padding-top: 5px;
+    display: flex;
+    justify-content:center;
+    margin-top: 10px !important;
+    width: 144px !important;
+    // padding-top: 5px !important;
     font-size: 28px;
 }
 .smolbtn{
@@ -58,17 +61,17 @@
 }
 
 .primaryBg{
-    background:#00838F;
+    background:#00838F !important;
+    color: white !important;
+}
+.accentBg{
+    background: #283593;
     color: white;
   }
-  .accentBg{
-      background: #283593;
-      color: white;
-  }
-  .warnBg{
-      background: #C62828;
-      color: white;
-  }
+.warnBg{
+    background: #C62828;
+    color: white;
+}
 
 .primary{
     color: #00838F;
@@ -107,4 +110,6 @@
     display: flex;
     justify-content: flex-end;
 }
-
+.greyCamera{
+    color:rgb(207, 207, 207);
+}

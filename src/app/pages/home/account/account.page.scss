@@ -5,4 +5,38 @@
 .center{
     display: flex;
     justify-content: center;
-  }
+}
+.picture{
+    height: 100px;
+}
+.camera{
+  position:relative;
+  top: -10px;
+  left: 55px;
+  height: 0px;
+}
+
+.bottomLeft{
+  position: absolute;
+  bottom: 3px;
+}
+.change{
+    margin-left: 5px;
+}
+.change:hover{
+    color: #00838F;
+}
+.profilePic{
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+}
+
+ion-toggle {
+    --background: #000;
+    --handle-background: #00838F;
+}
+ion-item{
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

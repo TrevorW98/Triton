@@ -117,6 +117,9 @@ $app-theme: mat-light-theme((
    * Dark Colors
    * -------------------------------------------
    */
+   ion-footer{
+    background: #121212;
+  }
 
   body {
     --ion-color-primary: #00838F;

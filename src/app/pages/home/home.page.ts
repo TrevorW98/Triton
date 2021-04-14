@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 // import {MatButtonModule} from '@angular/material/button';
 
 @Component({
@@ -8,6 +9,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  redirect(path:string){
+    this.router.navigate([path]);
+  }
 
 }

@@ -1,41 +1,88 @@
 <ion-header>
   <ion-toolbar>
-    <ion-row class="btwn">
-      <div>
-        <button class="smolbtn" mat-icon-button>
-          <mat-icon routerLink="/home" class="backArrow">keyboard_arrow_left</mat-icon>
+    <ion-row>
+      <ion-col>
+        <button class="smolbtn" mat-icon-button routerLink= '/home'>
+          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
         </button>
         <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
           <mat-icon>local_hospital</mat-icon>
         </button>
-      </div>
+      </ion-col>
 
       <h1 class="navTitle">Account</h1>
 
-      <div class="end">
-        <button class="smolbtn" mat-icon-button routerLink='/settings'>
-          <mat-icon>settings</mat-icon>
-        </button>
+      <ion-col class="end">
+ 
         <button class="smolbtn" mat-icon-button routerLink='/account'>
           <mat-icon>account_circle</mat-icon>
         </button>
-      </div>
+      </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <button mat-raised-button routerLink='/change-email'>Change Email</button>
-        <button mat-raised-button routerLink='/change-password'>Change Password</button>
-        <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button>
+  <!-- <button mat-raised-button routerLink='/change-email'>Change Email</button>
+  <button mat-raised-button routerLink='/change-password'>Change Password</button>
+  <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button> -->
 
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="end">
+        <button mat-icon-button routerLink='/home'>
+          <mat-icon>save</mat-icon>
+        </button>
+      </ion-col>
 
-      </div>
+  <ion-col size="4">
+    <div class="picture">
+      <img class="profilePic" src="../../../../../assets/images/TritonDarkAccent.png" alt="Add Pet Picture">
     </div>
-  </div>
+    <div class="camera d-flex align-items-end">
+      <mat-icon class="greyCamera">camera_enhance</mat-icon>
+    </div>
+  </ion-col>
+  
+  <ion-col size="8" class="mt-4">
+    <ion-item class="inputBox">
+      <ion-label position="stacked">My Name</ion-label>
+      <ion-input type="text" placeholder="James Barnes"></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+      <ion-label>Dark Mode</ion-label>
+      <ion-toggle slot="start" name="darkMode" color="primary" checked></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Notifications</ion-label>
+      <ion-toggle slot="start" name="notifications" color="primary" checked></ion-toggle>
+    </ion-item>
+  </ion-col>
+      <!-- <ion-col size="12" class="ml-2">
+    <p>SergBarnes@gmail.com</p>
+      </ion-col> -->
+      <ion-col size="12" class="change" routerLink='/change-email'>
+        <p><u>Change Email</u></p>
+      </ion-col>
+
+      <ion-col size="12" class="change" routerLink='/change-password'>
+        <p><u>Change Password</u></p>
+      </ion-col>
+
+      <!-- <ion-col size="12" class="change" routerLink='/change-password'>
+        <p><u>Notifications</u></p>
+
+      </ion-col> -->
+
+      <ion-col class="bottomRight change">
+        <p><u>Sign Out</u></p>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 </ion-content>
 
 <ion-footer>
