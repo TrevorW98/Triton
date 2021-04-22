@@ -1,25 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-row class="btwn">
-      <div>
-        <button class="smolbtn" mat-icon-button>
-          <mat-icon routerLink="/home" class="backArrow">keyboard_arrow_left</mat-icon>
+    <ion-row>
+      <ion-col>
+        <button class="smolbtn" mat-icon-button routerLink= '/home'>
+          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
         </button>
         <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
           <mat-icon>local_hospital</mat-icon>
         </button>
-      </div>
+      </ion-col>
 
       <h1 class="navTitle">Account</h1>
 
-      <div class="end">
-        <button class="smolbtn" mat-icon-button routerLink='/settings'>
-          <mat-icon>settings</mat-icon>
-        </button>
+      <ion-col class="end">
+ 
         <button class="smolbtn" mat-icon-button routerLink='/account'>
           <mat-icon>account_circle</mat-icon>
         </button>
-      </div>
+      </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-header>
@@ -52,7 +50,17 @@
       <ion-input type="text" placeholder="James Barnes"></ion-input>
     </ion-item>
   </ion-col>
+  <ion-col>
+    <ion-item>
+      <ion-label>Dark Mode</ion-label>
+      <ion-toggle slot="start" name="darkMode" color="primary" checked></ion-toggle>
+    </ion-item>
 
+    <ion-item>
+      <ion-label>Notifications</ion-label>
+      <ion-toggle slot="start" name="notifications" color="primary" checked></ion-toggle>
+    </ion-item>
+  </ion-col>
       <!-- <ion-col size="12" class="ml-2">
     <p>SergBarnes@gmail.com</p>
       </ion-col> -->

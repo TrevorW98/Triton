@@ -1,25 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-row class="btwn">
-      <div>
+    <ion-row>
+      <ion-col>
         <button class="smolbtn" mat-icon-button>
           <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
         </button>
         <button class="smolbtn" mat-icon-button routerLink="/vet-info">
           <mat-icon>local_hospital</mat-icon>
         </button>
-      </div>
+      </ion-col>
 
-      <h1 class="navTitle">Triton</h1>
+      <h1 class="navTitle">Account</h1>
 
-      <div class="end">
-        <button class="smolbtn" mat-icon-button routerLink="/settings">
-          <mat-icon>settings</mat-icon>
-        </button>
-        <button class="smolbtn" mat-icon-button routerLink="/account">
+      <ion-col class="end">
+ 
+        <button class="smolbtn" mat-icon-button routerLink='/account'>
+
           <mat-icon>account_circle</mat-icon>
         </button>
-      </div>
+      </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-header>
@@ -152,9 +151,6 @@
                 <span class="font-weight-bold lead">9:00am</span>
                 <p>Yoda</p>
               </div>
-
-
-
             </div>
           </div>
         </div>
