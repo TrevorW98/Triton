@@ -13,6 +13,14 @@
   line-height: 26px;
 }
 
+.h-200p {
+  height: 200px;
+}
+
+a {
+  color: white;
+}
+
 #container p {
   font-size: 16px;
   line-height: 22px;
@@ -40,7 +48,6 @@
 .scrolls-vertically {
   overflow-x: hidden;
   overflow-y: scroll;
-  width: 200px;
   white-space: nowrap;
 }
 
