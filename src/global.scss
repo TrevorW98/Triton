@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -26,91 +26,96 @@
 @import "~@ionic/angular/css/flex-utils.css";
 @import "~bootstrap/scss/bootstrap";
 
-.center{
-    display: flex;
-    justify-content: center;
+.center {
+  display: flex;
+  justify-content: center;
 }
-.btwn{
-    display: flex;
-    justify-content: space-between;
+.btwn {
+  display: flex;
+  justify-content: space-between;
 }
-.start{
-    display: flex;
-    justify-content: start;
+.start {
+  display: flex;
+  justify-content: start;
 }
-.end{
-    display: flex;
-    justify-content: flex-end;
+.end {
+  display: flex;
+  justify-content: flex-end;
 }
-.navTitle{
-    display: flex;
-    justify-content:center;
-    margin-top: 10px !important;
-    width: 144px !important;
-    // padding-top: 5px !important;
-    font-size: 28px;
+.navTitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px !important;
+  width: 144px !important;
+  // padding-top: 5px !important;
+  font-size: 28px;
 }
-.smolbtn{
-    width:35px !important;
-    height: 35px !important;
+.smolbtn {
+  width: 35px !important;
+  height: 35px !important;
 }
-.backArrow{
-    font-size: 28px;
+.backArrow {
+  font-size: 28px;
 }
-.overFlow{
-    overflow-x: scroll;
-}
-
-.primaryBg{
-    background:#00838F !important;
-    color: white !important;
-}
-.accentBg{
-    background: #283593;
-    color: white;
-  }
-.warnBg{
-    background: #C62828;
-    color: white;
+.overFlow {
+  overflow-x: scroll;
 }
 
-.primary{
-    color: #00838F;
+.primaryBg {
+  background: #00838f !important;
+  color: white !important;
 }
-.accent{
-    color:#283593
+
+.primaryBg-gradient {
+  background: linear-gradient(320deg, #00838f, #000000) !important;
+  color: white !important;
 }
-.warn{
-    color:#C62828
-}
-.primaryBg{
-  background:#00838F;
-  color: white;
-}
-.accentBg{
+.accentBg {
   background: #283593;
   color: white;
 }
-.warnBg{
-  background: #C62828;
+.warnBg {
+  background: #c62828;
   color: white;
 }
-.noMarY{
+
+.primary {
+  color: #00838f;
+}
+.accent {
+  color: #283593;
+}
+.warn {
+  color: #c62828;
+}
+.primaryBg {
+  background: #00838f;
+  color: white;
+}
+.accentBg {
+  background: #283593;
+  color: white;
+}
+.warnBg {
+  background: #c62828;
+  color: white;
+}
+.noMarY {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
-.circleProfile{
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+.circleProfile {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
-.bottomRight{
-    position:absolute;
-    bottom: 3px;
-    right: 5px;
-    display: flex;
-    justify-content: flex-end;
+.bottomRight {
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+  display: flex;
+  justify-content: flex-end;
 }
-.greyCamera{
-    color:rgb(207, 207, 207);
+.greyCamera {
+  color: rgb(207, 207, 207);
 }
