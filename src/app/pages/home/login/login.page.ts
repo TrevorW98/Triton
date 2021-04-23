@@ -22,8 +22,8 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.LoginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(2)]]
+      Email: ['', Validators.required],
+      Password: ['', [Validators.required, Validators.minLength(2)]]
     });
   }
 
@@ -32,6 +32,7 @@ export class LoginPage implements OnInit {
     if (this.LoginForm.invalid) {
       alert('Fix errors on form');
     } else {
+      this.dService.signIn(this.LoginForm.value);
       alert('Submitted');
       this.LoginForm.reset();
     }
