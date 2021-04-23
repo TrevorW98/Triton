@@ -110,7 +110,7 @@ const routes: Routes = [
   {
     path: 'settings',
     loadChildren: () => import('./pages/home/settings/settings.module').then( m => m.SettingsPageModule)
-  },
+  }
 ];
 
 @NgModule({
