@@ -5,6 +5,8 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
+// import { Data } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -14,7 +16,8 @@ export class RegisterPage implements OnInit {
 
   LoginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private dService:DataService) { }
 
   ngOnInit() {this.LoginForm = this.formBuilder.group({
     firstName: ['', Validators.required],
@@ -30,6 +33,7 @@ export class RegisterPage implements OnInit {
     if (this.LoginForm.invalid) {
       alert('Fix errors on form');
     } else {
+      this.dService.addUser(this.LoginForm.value);
       alert('Submitted');
       this.LoginForm.reset();
     }

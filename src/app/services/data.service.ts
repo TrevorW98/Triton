@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Ilogin } from 'src/app/interfaces/ilogin';
+import { InewUser } from 'src/app/interfaces/inew-user';
 import { Router } from '@angular/router';
 
 
@@ -8,29 +9,48 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class DataService {
-  private url: string = "https://tritondatabasedeployment.azurewebsites.net/Triton/login";
+  private loginUrl: string = "https://tritondatabasedeployment.azurewebsites.net/Triton/login";
+  private addUserUrl: string = "https://tritondatabasedeployment.azurewebsites.net/Triton/newUser";
 
-  private userOBJ: Ilogin = {
+  private loginOBJ: Ilogin = {
     Email: "",
     Password: ""
   }
+  public newUserOBJ: InewUser = {
+    Email: "",
+    Password: "",
+    ProfilePicture: "",
+    StaySignedIn: false
+  } 
 
   constructor(private http: HttpClient, private route:Router) { }
 
   signIn(loginOBJ){
     console.log(loginOBJ);
-    this.http.post(this.url, loginOBJ).subscribe(data => {
+    this.http.post(this.loginUrl, loginOBJ).subscribe(data => {
       console.log(data);
-      this.setOBJ(loginOBJ);
+      this.setloginOBJ(loginOBJ);
       this.route.navigate(["home"])
     })
   }
 
-  setOBJ(object:Ilogin):void{
-    this.userOBJ = object;
+  setloginOBJ(object:Ilogin):void{
+    this.loginOBJ = object;
+  }
+  setnewUserOBJ(object:InewUser):void{
+    this.newUserOBJ = object;
   }
 
-  getOBJ():Ilogin{
-    return this.userOBJ;
+  getloginOBJ():Ilogin{
+    return this.loginOBJ;
+  }
+
+  addUser(newUserOBJ){
+    console.log(newUserOBJ);
+    this.http.post(this.addUserUrl, newUserOBJ).subscribe(data2 => {
+      console.log(data2);
+      this.setnewUserOBJ(newUserOBJ);
+      this.route.navigate(["home"])
+    })
   }
 }
