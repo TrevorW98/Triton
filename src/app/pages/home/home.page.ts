@@ -22,7 +22,7 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit(): void {
-    this.SignedInUser = this.dService.getOBJ()
+    this.SignedInUser = this.dService.getloginOBJ()
   }
 
 }
