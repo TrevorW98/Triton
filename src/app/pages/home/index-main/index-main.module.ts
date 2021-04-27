@@ -8,6 +8,8 @@ import { IndexMainPageRoutingModule } from './index-main-routing.module';
 import {MatIconModule} from '@angular/material/icon';
 import { IndexMainPage } from './index-main.page';
 import { MatButtonModule } from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -18,6 +20,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [IndexMainPage]
+  declarations: [IndexMainPage, BottomNavComponent, TopNavComponent]
 })
 export class IndexMainPageModule {}

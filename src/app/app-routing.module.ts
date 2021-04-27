@@ -107,10 +107,6 @@ const routes: Routes = [
     path: 'results',
     loadChildren: () => import('./pages/home/quiz-main/results/results.module').then( m => m.ResultsPageModule)
   },
-  {
-    path: 'settings',
-    loadChildren: () => import('./pages/home/settings/settings.module').then( m => m.SettingsPageModule)
-  }
 ];
 
 @NgModule({

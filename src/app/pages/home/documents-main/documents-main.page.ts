@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./documents-main.page.scss'],
 })
 export class DocumentsMainPage implements OnInit {
+  backLocation = 'home';
+  title = 'Documents';
 
   constructor() { }
 
