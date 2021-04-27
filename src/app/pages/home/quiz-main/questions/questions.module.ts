@@ -8,6 +8,7 @@ import { QuestionsPageRoutingModule } from './questions-routing.module';
 
 import { QuestionsPage } from './questions.page';
 import { MatButtonModule } from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule
   ],
-  declarations: [QuestionsPage]
+  declarations: [QuestionsPage, BottomNavComponent]
 })
 export class QuestionsPageModule {}

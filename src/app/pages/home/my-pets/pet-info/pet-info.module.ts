@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { PetInfoPageRoutingModule } from './pet-info-routing.module';
 import { PetInfoPage } from './pet-info.page';
 import { MatButtonModule } from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule,
   ],
-  declarations: [PetInfoPage]
+  declarations: [PetInfoPage, BottomNavComponent]
 })
 export class PetInfoPageModule {}

@@ -8,6 +8,7 @@ import { SettingsPageRoutingModule } from './settings-routing.module';
 
 import { SettingsPage } from './settings.page';
 import { MatButtonModule } from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [SettingsPage]
+  declarations: [SettingsPage, BottomNavComponent]
 })
 export class SettingsPageModule {}

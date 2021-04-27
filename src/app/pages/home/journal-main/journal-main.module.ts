@@ -8,6 +8,7 @@ import { JournalMainPageRoutingModule } from './journal-main-routing.module';
 
 import { JournalMainPage } from './journal-main.page';
 import { MatButtonModule } from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [JournalMainPage]
+  declarations: [JournalMainPage, BottomNavComponent]
 })
 export class JournalMainPageModule {}

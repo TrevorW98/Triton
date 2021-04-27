@@ -8,6 +8,7 @@ import { AddPetPageRoutingModule } from './add-pet-routing.module';
 
 import { AddPetPage } from './add-pet.page';
 import { MatButtonModule } from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule
   ],
-  declarations: [AddPetPage]
+  declarations: [AddPetPage, BottomNavComponent]
 })
 export class AddPetPageModule {}

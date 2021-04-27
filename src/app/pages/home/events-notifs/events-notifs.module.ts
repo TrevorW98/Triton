@@ -8,6 +8,7 @@ import { EventsNotifsPageRoutingModule } from './events-notifs-routing.module';
 import {MatIconModule} from '@angular/material/icon';
 import { EventsNotifsPage } from './events-notifs.page';
 import {MatButtonModule} from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import {MatButtonModule} from '@angular/material/button';
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [EventsNotifsPage]
+  declarations: [EventsNotifsPage, BottomNavComponent]
 })
 export class EventsNotifsPageModule {}

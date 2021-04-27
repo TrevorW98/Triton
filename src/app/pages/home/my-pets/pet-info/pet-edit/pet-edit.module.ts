@@ -8,6 +8,7 @@ import { PetEditPageRoutingModule } from './pet-edit-routing.module';
 
 import { PetEditPage } from './pet-edit.page';
 import { MatButtonModule } from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule
   ],
-  declarations: [PetEditPage]
+  declarations: [PetEditPage, BottomNavComponent]
 })
 export class PetEditPageModule {}
