@@ -11,6 +11,9 @@ import { Ilogin } from 'src/app/interfaces/ilogin';
 })
 export class HomePage implements OnInit {
 
+  backLocation: string = 'home';
+  title: string = 'Home';
+
   SignedInUser:Ilogin ={
     Email: "",
     Password: ""

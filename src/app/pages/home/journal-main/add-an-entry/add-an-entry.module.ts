@@ -9,6 +9,7 @@ import { AddAnEntryPageRoutingModule } from './add-an-entry-routing.module';
 import { AddAnEntryPage } from './add-an-entry.page';
 import { MatButtonModule } from '@angular/material/button';
 import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.com
     MatIconModule,
     MatButtonModule
   ],
-  declarations: [AddAnEntryPage, BottomNavComponent]
+  declarations: [AddAnEntryPage, BottomNavComponent, TopNavComponent]
 })
 export class AddAnEntryPageModule {}

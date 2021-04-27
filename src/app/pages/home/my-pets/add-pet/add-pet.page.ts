@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-pet.page.scss'],
 })
 export class AddPetPage implements OnInit {
+  backLocation = 'my-pets';
+  title = 'Add Pets';
 
   constructor() { }
 

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index-main.page.scss'],
 })
 export class IndexMainPage implements OnInit {
+  backLocation = 'home';
+  title = 'Pet Index';
 
   constructor() { }
 

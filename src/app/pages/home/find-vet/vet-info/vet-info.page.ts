@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vet-info.page.scss'],
 })
 export class VetInfoPage implements OnInit {
+  backLocation = 'find-vet';
+  title = 'My Vet';
 
   constructor() { }
 

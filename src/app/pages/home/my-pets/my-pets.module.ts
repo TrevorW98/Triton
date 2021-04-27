@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
 import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,6 @@ import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.com
     MatIconModule,
     MatButtonModule,
   ],
-  declarations: [MyPetsPage, BottomNavComponent]
+  declarations: [MyPetsPage, BottomNavComponent, TopNavComponent]
 })
 export class MyPetsPageModule {}

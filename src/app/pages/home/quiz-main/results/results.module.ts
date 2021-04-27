@@ -9,6 +9,7 @@ import { ResultsPageRoutingModule } from './results-routing.module';
 import { ResultsPage } from './results.page';
 import { MatButtonModule } from '@angular/material/button';
 import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.com
     MatIconModule,
     MatButtonModule
   ],
-  declarations: [ResultsPage, BottomNavComponent]
+  declarations: [ResultsPage, BottomNavComponent, TopNavComponent]
 })
 export class ResultsPageModule {}

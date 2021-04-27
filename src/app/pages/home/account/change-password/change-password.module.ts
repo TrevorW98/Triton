@@ -9,6 +9,7 @@ import { ChangePasswordPageRoutingModule } from './change-password-routing.modul
 import { ChangePasswordPage } from './change-password.page';
 import { MatButtonModule } from '@angular/material/button';
 import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.com
     MatIconModule,
     MatButtonModule
   ],
-  declarations: [ChangePasswordPage, BottomNavComponent]
+  declarations: [ChangePasswordPage, BottomNavComponent, TopNavComponent]
 })
 export class ChangePasswordPageModule {}

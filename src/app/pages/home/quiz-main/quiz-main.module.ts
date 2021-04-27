@@ -9,6 +9,7 @@ import { QuizMainPageRoutingModule } from './quiz-main-routing.module';
 import { QuizMainPage } from './quiz-main.page';
 import { MatButtonModule } from '@angular/material/button';
 import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.com
     MatIconModule
   
   ],
-  declarations: [QuizMainPage, BottomNavComponent]
+  declarations: [QuizMainPage, BottomNavComponent, TopNavComponent]
 })
 export class QuizMainPageModule {}

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./journal-main.page.scss'],
 })
 export class JournalMainPage implements OnInit {
+  backLocation = 'home';
+  title = 'Pet Journal';
 
   constructor() { }
 

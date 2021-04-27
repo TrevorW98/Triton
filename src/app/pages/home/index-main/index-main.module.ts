@@ -9,6 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { IndexMainPage } from './index-main.page';
 import { MatButtonModule } from '@angular/material/button';
 import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.com
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [IndexMainPage, BottomNavComponent]
+  declarations: [IndexMainPage, BottomNavComponent, TopNavComponent]
 })
 export class IndexMainPageModule {}
