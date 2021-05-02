@@ -8,6 +8,8 @@ import { FeedingTimesPageRoutingModule } from './feeding-times-routing.module';
 import {MatIconModule} from '@angular/material/icon';
 import { FeedingTimesPage } from './feeding-times.page';
 import { MatButtonModule } from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -18,6 +20,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [FeedingTimesPage]
+  declarations: [
+    FeedingTimesPage,
+    BottomNavComponent,
+    TopNavComponent,]
 })
 export class FeedingTimesPageModule {}

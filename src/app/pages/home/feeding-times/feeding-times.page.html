@@ -1,49 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-row>
-      <ion-col>
-        <button class="smolbtn" mat-icon-button routerLink= '/home'>
-          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
-        </button>
-        <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
-          <mat-icon>local_hospital</mat-icon>
-        </button>
-      </ion-col>
-
-      <h1 class="navTitle">Feeding Time</h1>
-
-      <ion-col class="end">
- 
-        <button class="smolbtn" mat-icon-button routerLink='/account'>
-          <mat-icon>account_circle</mat-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
-</ion-header>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 <ion-content>
+  <div *ngFor="let i of [1,2,3,4,5]" class="row my-4">
+      
+    <div
+      class="col-7 px-5 font-weight-bold d-flex flex-column justify-content-center"
+    >
+      <p class="lead my-0">Nala</p>
+      <p class="my-0">Repeats Daily</p>
+    </div>
+    <div
+      class="col-2 font-weight-bold d-flex flex-column justify-content-center px-0"
+    >
+      <span class="lead">8:30am</span>
+    </div>
+    <div
+      class="col-1 font-weight-bold d-flex align-items-center justify-content-end px-0"
+    >
+      <mat-icon class="backArrow">edit</mat-icon>
+    </div>
+    <div
+      class="col-1 font-weight-bold d-flex align-items-center justify-content-end px-0"
+    >
+      <mat-icon class="backArrow">close</mat-icon>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-1 mx-2">
+      <mat-icon class="display-4">add</mat-icon>
+    </div>
+    <div class="col pl-4  d-flex align-items-center">
+      <p class="h2 my-0">Add Feeding Time</p>
+    </div>
+  </div>
 </ion-content>
 
-<ion-footer>
-  <ion-grid>
-    <ion-row>
-      <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
-          <mat-icon>pets</mat-icon>
-        </button>
-      </ion-col>
-      <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink = '/home'>
-          <mat-icon>home</mat-icon>
-        </button>
-      </ion-col>
-      <ion-col class="center">
-        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" routerLink = '/journal-entries'>
-          <mat-icon>local_library</mat-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-footer>
+<app-bottom-nav></app-bottom-nav>

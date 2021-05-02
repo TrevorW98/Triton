@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feeding-times.page.scss'],
 })
 export class FeedingTimesPage implements OnInit {
+  backLocation = 'home';
+  title = 'Feeding Times';
 
   constructor() { }
 

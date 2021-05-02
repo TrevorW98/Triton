@@ -1,81 +1,49 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-row>
-      <ion-col>
-        <button class="smolbtn" mat-icon-button routerLink= '/home'>
-          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
-        </button>
-        <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
-          <mat-icon>local_hospital</mat-icon>
-        </button>
-      </ion-col>
-
-      <h1 class="navTitle">My Pets</h1>
-
-      <ion-col class="end">
- 
-        <button class="smolbtn" mat-icon-button routerLink='/account'>
-          <mat-icon>account_circle</mat-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
-</ion-header>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 <ion-content>
   <ion-grid class="center">
     <ion-row class="mt">
-      <ion-col size= "12" *ngFor="let items of petName">
-        <button class="btn1" mat-raised-button color="primary" routerLink = '/pet-info'>
+      <ion-col size="12" *ngFor="let items of petName">
+        <button
+          class="btn1"
+          mat-raised-button
+          color="primary"
+          routerLink="/pet-info"
+        >
           <ion-grid class="start acenter">
             <ion-row>
               <ion-col>
-                <p class="start mr-2" style="float:left">
-                  <img src="../../../../assets/images/doge.jpg" class="animalPic" alt="Yoda">
+                <p class="start mr-2" style="float: left">
+                  <img
+                    src="../../../../assets/images/doge.jpg"
+                    class="animalPic"
+                    alt="Yoda"
+                  />
                 </p>
                 <div class="overFlow">
-
                   <h2 class="petName start">
-                    <u>
-                      {{items}}
-                    </u>
+                    <u> {{items}} </u>
                   </h2>
                   <i class="start overFlow">animal descriptions</i>
-
                 </div>
               </ion-col>
             </ion-row>
-
           </ion-grid>
         </button>
       </ion-col>
 
       <ion-col size="12" class="center">
-        <button class="addPet" mat-raised-button color="primary" routerLink = '/add-pet'><u>+ Add Pet</u></button>
-      </ion-col>
-      
-    </ion-row>
-</ion-grid>
-</ion-content>
-
-<ion-footer>
-  <ion-grid>
-    <ion-row>
-      <ion-col class="center">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a home icon" routerLink = '/my-pets'>
-          <mat-icon>pets</mat-icon>
-        </button>
-      </ion-col>
-      <ion-col class="center">
-        <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon" routerLink = '/home'>
-          <mat-icon>home</mat-icon>
-        </button>
-      </ion-col>
-      <ion-col class="center">
-        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" routerLink = '/journal-entries'>
-          <mat-icon>local_library</mat-icon>
+        <button
+          class="addPet"
+          mat-raised-button
+          color="primary"
+          routerLink="/add-pet"
+        >
+          <u>+ Add Pet</u>
         </button>
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-footer>
+</ion-content>
+
+<app-bottom-nav></app-bottom-nav>

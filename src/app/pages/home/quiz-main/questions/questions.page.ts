@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./questions.page.scss'],
 })
 export class QuestionsPage implements OnInit {
+  title = 'Pick My Pet';
+  backLocation = 'quiz-main';
 
   constructor() { }
 

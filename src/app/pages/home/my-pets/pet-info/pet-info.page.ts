@@ -7,6 +7,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./pet-info.page.scss'],
 })
 export class PetInfoPage implements OnInit {
+  backLocation = 'my-pets';
+  title = 'My Pets';
+  
   inputOn: boolean = false;
   inputBox = '';
   addInfo: FormGroup;

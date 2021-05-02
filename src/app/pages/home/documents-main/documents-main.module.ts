@@ -7,6 +7,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { DocumentsMainPageRoutingModule } from './documents-main-routing.module';
 import {MatButtonModule} from '@angular/material/button';
 import { DocumentsMainPage } from './documents-main.page';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -17,6 +19,6 @@ import { DocumentsMainPage } from './documents-main.page';
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [DocumentsMainPage]
+  declarations: [DocumentsMainPage, BottomNavComponent, TopNavComponent]
 })
 export class DocumentsMainPageModule {}

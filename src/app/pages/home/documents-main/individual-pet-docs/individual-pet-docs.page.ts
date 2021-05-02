@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./individual-pet-docs.page.scss'],
 })
 export class IndividualPetDocsPage implements OnInit {
+  backLocation = 'documents';
+  title = 'Documents;'
 
   constructor() { }
 
