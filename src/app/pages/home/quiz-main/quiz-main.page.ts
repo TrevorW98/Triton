@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quiz-main.page.scss'],
 })
 export class QuizMainPage implements OnInit {
+  backLocation = 'home';
+  title = 'Pick My Pet';
   slideOpts = {
     initialSlide: 0,
     speed: 800,

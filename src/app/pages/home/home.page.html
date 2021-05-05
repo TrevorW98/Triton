@@ -1,25 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-row>
-      <ion-col>
-        <button class="smolbtn" mat-icon-button>
-          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
-        </button>
-        <button class="smolbtn" mat-icon-button routerLink="/vet-info">
-          <mat-icon>local_hospital</mat-icon>
-        </button>
-      </ion-col>
-
-      <h1 class="navTitle">Account</h1>
-
-      <ion-col class="end">
-        <button class="smolbtn" mat-icon-button routerLink="/account">
-          <mat-icon>account_circle</mat-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
-</ion-header>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 <ion-content [fullscreen]="true">
   <ion-grid>
@@ -231,63 +210,5 @@
   </ion-grid>
 </ion-content>
 
-<ion-footer>
-  <ion-grid>
-    <ion-row>
-      <ion-col class="center">
-        <button
-          mat-icon-button
-          color="accent"
-          aria-label="Example icon button with a home icon"
-          routerLink="/my-pets"
-        >
-          <mat-icon>pets</mat-icon>
-        </button>
-      </ion-col>
-      <ion-col class="center">
-        <button
-          mat-icon-button
-          color="primary"
-          aria-label="Example icon button with a menu icon"
-          routerLink="/home"
-        >
-          <mat-icon>home</mat-icon>
-        </button>
-      </ion-col>
-      <ion-col class="center">
-        <button
-          mat-icon-button
-          color="warn"
-          aria-label="Example icon button with a heart icon"
-          routerLink="/journal-entries"
-        >
-          <mat-icon>local_library</mat-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-footer>
+<app-bottom-nav></app-bottom-nav>
 
-<!-- <ion-footer>
-  <mat-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col >
-          <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" >
-            <mat-icon >home</mat-icon>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
-            <mat-icon>favorite</mat-icon>
-          </button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </mat-toolbar>
-</ion-footer> -->

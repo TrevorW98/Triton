@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pet-edit.page.scss'],
 })
 export class PetEditPage implements OnInit {
+  backLocation = 'my-pets';
+  title = 'My Pets';
 
   constructor() { }
 

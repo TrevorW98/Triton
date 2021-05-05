@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./events-notifs.page.scss'],
 })
 export class EventsNotifsPage implements OnInit {
+  backLocation = 'home';
+  title = 'Events';
 
   constructor() { }
 

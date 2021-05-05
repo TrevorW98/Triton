@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./change-email.page.scss'],
 })
 export class ChangeEmailPage implements OnInit {
+  backLocation = 'account';
+  title = 'Account';
 
   constructor() { }
 
