@@ -11,6 +11,8 @@ import './home.page.scss'
 import {MatButtonModule} from '@angular/material/button';
 import { BottomNavComponent } from '../../components/bottom-nav/bottom-nav.component';
 import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
+import { EventComponent } from './home-components/event/event.component';
+import { FeedComponent } from './home-components/feed/feed.component';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
   declarations: [
     HomePage,
     BottomNavComponent,
-    TopNavComponent
+    TopNavComponent,
+    EventComponent,
+    FeedComponent
   ]
 })
 export class HomePageModule {}
