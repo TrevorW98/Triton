@@ -2,6 +2,32 @@
 
 
 <ion-content>
+<ion-grid>
+    <ion-row class="mx-3">
+        <ion-col class="my-2" size="12">
+          <h2 class="text-center m-0">{{myMainVet}}</h2>
+        </ion-col>
+        <ion-col size="12">
+            <h3 class="mb-0">Address:</h3>
+            <p>{{vetAddress}}</p>
+        
+        </ion-col>
+        <ion-col size="12">
+            <h3 class="mb-0">Hours:</h3>
+            <p>{{vetHours}}</p>
+        </ion-col>
+
+        <ion-col size="12" class="box center mt-4">
+        <p>google map goes here</p>
+        </ion-col>
+
+        <ion-col class="bottomLeft change">
+            <p routerLink="/find-vet"><u>+ Find A Vet</u></p>
+          </ion-col>
+    </ion-row>
+</ion-grid>
+
+
 
 </ion-content>
 
