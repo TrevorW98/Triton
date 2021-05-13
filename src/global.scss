@@ -116,6 +116,12 @@
   display: flex;
   justify-content: flex-end;
 }
+.bottomLeft {
+  position: absolute;
+  bottom: 3px;
+  left: 15px;
+  display: flex;
+}
 .greyCamera {
   color: rgb(207, 207, 207);
 }
