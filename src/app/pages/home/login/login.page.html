@@ -1,5 +1,5 @@
 <ion-content>
-  <div class="row d-flex justify-content-center align-items-center h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100 black-filter">
     <div class="col fixed-top mt-2">
       <button class="smolbtn" mat-icon-button>
         <mat-icon routerLink="/home" class="backArrow">keyboard_arrow_left</mat-icon>
@@ -26,7 +26,7 @@
 
                 <div class="form-group">
                   <input type="checkbox" id="persistence" />
-                  <label for="persistence">Keep me signed in</label>
+                  <label for="persistence" class="mx-2">Keep me signed in</label>
                 </div>
 
                 <button type="submit" class="btn btn-info my-2" [disabled]="!LoginForm.valid">
