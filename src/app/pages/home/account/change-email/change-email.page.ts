@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangeEmailPage implements OnInit {
   backLocation = 'account';
-  title = 'Account';
+  title = 'Email';
 
   constructor() { }
 
