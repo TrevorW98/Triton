@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class DataService {
-  private loginUrl: string = "https://tritondatabasedeployment.azurewebsites.net/Triton/login";
-  private addUserUrl: string = "https://tritondatabasedeployment.azurewebsites.net/Triton/newUser";
+  private loginUrl: string = "https://tritondatabasedeployment.azurewebsites.net/auth/login";
+  private addUserUrl: string = "https://tritondatabasedeployment.azurewebsites.net/auth/newUser";
 
   private loginOBJ: Ilogin = {
     Email: "",

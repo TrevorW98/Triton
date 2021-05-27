@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Ilogin } from 'src/app/interfaces/ilogin';
+import { DataService } from 'src/app/services/data.service';
+
 
 @Component({
   selector: 'app-index-main',
@@ -9,9 +12,15 @@ export class IndexMainPage implements OnInit {
   backLocation = 'home';
   title = 'Pet Index';
 
-  constructor() { }
+  SignedInUser: Ilogin = {
+    Email: '',
+    Password: ''
+  };
+
+  constructor(private dService: DataService) { }
 
   ngOnInit() {
+    this.SignedInUser = this.dService.getloginOBJ();
   }
 
 }
