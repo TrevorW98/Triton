@@ -4,21 +4,12 @@
   <ion-grid class="center">
     <ion-row class="mt">
       <ion-col size="12" *ngFor="let items of petName">
-        <button
-          class="btn1"
-          mat-raised-button
-          color="primary"
-          routerLink="/pet-info"
-        >
+        <button class="btn1" mat-raised-button color="primary" routerLink="/pet-info">
           <ion-grid class="start acenter">
             <ion-row>
               <ion-col>
                 <p class="start mr-2" style="float: left">
-                  <img
-                    src="../../../../assets/images/doge.jpg"
-                    class="animalPic"
-                    alt="Yoda"
-                  />
+                  <img src="../../../../assets/images/doge.jpg" class="animalPic" alt="Yoda" />
                 </p>
                 <div class="overFlow">
                   <h2 class="petName start">
@@ -33,12 +24,7 @@
       </ion-col>
 
       <ion-col size="12" class="center">
-        <button
-          class="addPet"
-          mat-raised-button
-          color="primary"
-          routerLink="/add-pet"
-        >
+        <button class="addPet" mat-raised-button color="primary" routerLink="/add-pet">
           <u>+ Add Pet</u>
         </button>
       </ion-col>

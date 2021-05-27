@@ -8,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class JournalMainPage implements OnInit {
   backLocation = 'home';
   title = 'Pet Journal';
-
+  entry = [];
   constructor() { }
 
   ngOnInit() {
+    this.entry = ["February 20th, 2021", "February 21st, 2021"]
   }
+
 
 }
