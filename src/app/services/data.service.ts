@@ -4,53 +4,58 @@ import { Ilogin } from 'src/app/interfaces/ilogin';
 import { InewUser } from 'src/app/interfaces/inew-user';
 import { Router } from '@angular/router';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-  private loginUrl: string = "https://tritondatabasedeployment.azurewebsites.net/Triton/login";
-  private addUserUrl: string = "https://tritondatabasedeployment.azurewebsites.net/Triton/newUser";
+  //LIVE
+  //private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  //DEV
+  private baseUrl: string = "http://localhost:5000";
+
+
+  private loginUrl: string = this.baseUrl + '/auth/login';
+  private addUserUrl: string = this.baseUrl + '/auth/newUser';
 
   private loginOBJ: Ilogin = {
-    Email: "",
-    Password: ""
-  }
+    Email: '',
+    Password: '',
+  };
   public newUserOBJ: InewUser = {
-    Email: "",
-    Password: "",
-    ProfilePicture: "",
-    StaySignedIn: false
-  } 
+    Email: '',
+    Password: '',
+    ProfilePicture: '',
+    StaySignedIn: false,
+  };
 
-  constructor(private http: HttpClient, private route:Router) { }
+  constructor(private http: HttpClient, private route: Router) {}
 
-  signIn(loginOBJ){
+  signIn(loginOBJ) {
     console.log(loginOBJ);
-    this.http.post(this.loginUrl, loginOBJ).subscribe(data => {
+    this.http.post(this.loginUrl, loginOBJ).subscribe((data) => {
       console.log(data);
       this.setloginOBJ(loginOBJ);
-      this.route.navigate(["home"])
-    })
+      this.route.navigate(['home']);
+    });
   }
 
-  setloginOBJ(object:Ilogin):void{
+  setloginOBJ(object: Ilogin): void {
     this.loginOBJ = object;
   }
-  setnewUserOBJ(object:InewUser):void{
+  setnewUserOBJ(object: InewUser): void {
     this.newUserOBJ = object;
   }
 
-  getloginOBJ():Ilogin{
+  getloginOBJ(): Ilogin {
     return this.loginOBJ;
   }
 
-  addUser(newUserOBJ){
+  addUser(newUserOBJ) {
     console.log(newUserOBJ);
-    this.http.post(this.addUserUrl, newUserOBJ).subscribe(data2 => {
+    this.http.post(this.addUserUrl, newUserOBJ).subscribe((data2) => {
       console.log(data2);
       this.setnewUserOBJ(newUserOBJ);
-      this.route.navigate(["home"])
-    })
+      this.route.navigate(['home']);
+    });
   }
 }
