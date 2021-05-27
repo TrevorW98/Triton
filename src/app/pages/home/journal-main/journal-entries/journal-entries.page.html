@@ -1,29 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-row>
-      <ion-col>
-        <button class="smolbtn" mat-icon-button routerLink= '/journal-main'>
-          <mat-icon class="backArrow">keyboard_arrow_left</mat-icon>
-        </button>
-        <button class="smolbtn" mat-icon-button routerLink='/vet-info'>
-          <mat-icon>local_hospital</mat-icon>
-        </button>
-      </ion-col>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-      <h1 class="navTitle">Pet Journal</h1>
-
-      <ion-col class="end">
- 
-        <button class="smolbtn" mat-icon-button routerLink='/account'>
-          <mat-icon>account_circle</mat-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
-
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
 
 <app-bottom-nav></app-bottom-nav>
