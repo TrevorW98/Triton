@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Ilogin } from 'src/app/interfaces/ilogin';
 import { InewUser } from 'src/app/interfaces/inew-user';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { IAnimals } from '../interfaces/animals';
 
 
 @Injectable({
@@ -11,6 +13,8 @@ import { Router } from '@angular/router';
 export class DataService {
   private loginUrl: string = "https://tritondatabasedeployment.azurewebsites.net/auth/login";
   private addUserUrl: string = "https://tritondatabasedeployment.azurewebsites.net/auth/newUser";
+  
+  
 
   private loginOBJ: Ilogin = {
     Email: "",
@@ -22,8 +26,26 @@ export class DataService {
     ProfilePicture: "",
     StaySignedIn: false
   } 
+  public animalOBJ: IAnimals = {
+    id: 0,
+    breedSpeciesName: "",
+    breedSpeciesPicture: "",
+    height: "",
+    weight: "",
+    lifeSpan: "",
+    diet: "",
+    dangerousFood: "",
+    goodFood: "",
+    about: "",
+    groomingAndHealth: "",
+    careAndHabitat: "",
+    personality: "",
+    category: ""
+  }
 
   constructor(private http: HttpClient, private route:Router) { }
+
+  animalList = [];
 
   signIn(loginOBJ){
     console.log(loginOBJ);
@@ -53,4 +75,8 @@ export class DataService {
       this.route.navigate(["home"])
     })
   }
+
+ 
+
+  
 }

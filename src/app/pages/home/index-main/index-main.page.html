@@ -5,7 +5,7 @@
   <ion-grid>
     <ion-row>
       <ion-col class="center" size="12">
-        <button class="indexBtns dog" mat-raised-button color="primary" routerLink='/index-secondary' value="Dogs">Dogs</button>
+        <button (click)="setCategoryIndexMain('Dog')" class="indexBtns dog" mat-raised-button color="primary" routerLink='/index-secondary' >Dogs</button>
       </ion-col>
       <ion-col class="center" size="12">
         <button class="indexBtns cat" mat-raised-button color="primary" routerLink='/index-secondary'>Cats</button>
