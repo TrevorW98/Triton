@@ -21,7 +21,7 @@ export class IndexSecondaryPage implements OnInit {
 
   ngOnInit() {
     this.animals = this.iService.animalArr.filter(a => {
-      console.log(a);
+      
       return a.category == this.iService.category;
     });
     console.log(this.animals);

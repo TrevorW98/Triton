@@ -22,7 +22,7 @@ export class IndexMainPage implements OnInit {
   
   constructor(private dService: DataService, private iService: IndexService) { }
   
-  category;
+  public category;
   
 
   ngOnInit() {
