@@ -32,9 +32,7 @@ export class IndexMainPage implements OnInit {
 
   
 
-  dogs(){
-    this.category = "dog";
-  }
+  
   getCategory(){
     return this.category;
   }

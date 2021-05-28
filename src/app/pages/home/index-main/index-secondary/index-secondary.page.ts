@@ -18,26 +18,49 @@ export class IndexSecondaryPage implements OnInit {
   // And also an item divider and label for each letter of the alphabet that is represented in the array
   constructor(private iService: IndexService) { }
 
-  animals: IAnimals[];
+ public animals: IAnimals[];
+  Title: string = "";
 
   ngOnInit() {
     this.animals = this.iService.animalArr.filter(a => {
       return a.category == this.iService.category;
     });
     console.log(this.animals);
-    for(let i = 0; i < this.animals.length; i++){
+    this.buildList();
+    this.setTitle();
+    
+   
+  }
+  
+  buildList(){
+     for(let i = 0; i < this.animals.length; i++){
       console.log(this.animals[i].breedSpeciesName);
       let button = document.createElement('ion-button');
       let item = document.createElement('ion-item');
       let col = document.createElement('ion-col');
       let row = document.createElement('ion-row');
-      let matButtonAtt = document.createAttribute("mat-button");
+      let animalList = document.getElementById("animalList");
       button.innerText = this.animals[i].breedSpeciesName;
-      button.setAttribute("mat-button", "");
-      button.classList.add("animalBtns")
-
+      button.setAttribute("mat-button", "")
+      item.appendChild(button);
+      col.appendChild(item);
+      row.appendChild(col);
+      animalList.appendChild(row);
     }
-   
+  }
+  setTitle(){
+    switch(this.iService.category){
+      case "Dog": this.Title = "Dogs"; break;
+      case "Cat": this.Title = "Cats"; break;
+      case "Reptile": this.Title = "Reptiles"; break;
+      case "Bird": this.Title = "Birds"; break;
+      case "Amphibian": this.Title = "Amphibians"; break;
+      case "Small": this.Title = "Small Animals"; break;
+      case "Insect": this.Title = "Insects"; break;
+      case "Aquatic": this.Title = "Aquatic Animals"; break;
+    }
+    let categoryTitle = document.getElementById("categoryTitle");
+    categoryTitle.innerText = this.Title;
   }
 
 }
