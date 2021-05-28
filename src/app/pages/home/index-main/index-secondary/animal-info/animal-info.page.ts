@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { IAnimals } from 'src/app/interfaces/animals';
+import { IndexService } from 'src/app/services/index.service';
 
 @Component({
   selector: 'app-animal-info',
@@ -9,19 +11,18 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class AnimalInfoPage implements OnInit {
 
   
-  constructor() { 
+  constructor(private iService: IndexService) { 
     
   }
-  
+  animalChoice: IAnimals[];
+
   ngOnInit() {
+    this.animalChoice = this.iService.animalArr.filter(b => {
+      return b.breedSpeciesName == this.iService.animalChoice;
+    })
+    console.log(this.animalChoice);
+
   }
-  favoriteBtn(){
-    //This function will handle adding this breed/species of animal to an array of favorites,
-    // or updating the table of animals with a column called favorites with a boolean. If true, 
-    //Load these items in the favorites tab of the Index
-    console.log(document.getElementById("breedSpecies").innerText);
-    console.log(document.getElementById("favorite").className = ("selected"))
-    //this.temporaryFavoritesArr.push(this.breedSpecies)
-  }
+  
 
 }

@@ -1,5 +1,6 @@
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { DomController } from '@ionic/angular';
 import { generate } from 'rxjs';
 import { Button } from 'selenium-webdriver';
@@ -18,8 +19,9 @@ export class IndexSecondaryPage implements OnInit {
   // And also an item divider and label for each letter of the alphabet that is represented in the array
   constructor(private iService: IndexService) { }
 
- public animals: IAnimals[];
+  public animals: IAnimals[];
   Title: string = "";
+  public animalChoice: string = "";
 
   ngOnInit() {
     this.animals = this.iService.animalArr.filter(a => {
@@ -33,21 +35,23 @@ export class IndexSecondaryPage implements OnInit {
   }
   
   buildList(){
-     for(let i = 0; i < this.animals.length; i++){
-      console.log(this.animals[i].breedSpeciesName);
-      let button = document.createElement('ion-button');
-      let item = document.createElement('ion-item');
-      let col = document.createElement('ion-col');
-      let row = document.createElement('ion-row');
-      let animalList = document.getElementById("animalList");
-      button.innerText = this.animals[i].breedSpeciesName;
-      button.setAttribute("mat-button", "")
-      item.appendChild(button);
-      col.appendChild(item);
-      row.appendChild(col);
-      animalList.appendChild(row);
-    }
+    //  for(let i = 0; i < this.animals.length; i++){
+    //   console.log(this.animals[i].breedSpeciesName);
+    //   this.animalChoice = this.animals[i].breedSpeciesName;
+    //   let listButton = document.createElement('ion-button');
+    //   let item = document.createElement('ion-item');
+    //   let col = document.createElement('ion-col');
+    //   let row = document.createElement('ion-row');
+    //   let animalList = document.getElementById("animalList");
+    //   listButton.innerText = this.animals[i].breedSpeciesName;
+    //   listButton.setAttribute("mat-button", "");
+    //   item.appendChild(listButton);
+    //   col.appendChild(item);
+    //   row.appendChild(col);
+    //   animalList.appendChild(row);
+    // }
   }
+  
   setTitle(){
     switch(this.iService.category){
       case "Dog": this.Title = "Dogs"; break;
@@ -62,5 +66,12 @@ export class IndexSecondaryPage implements OnInit {
     let categoryTitle = document.getElementById("categoryTitle");
     categoryTitle.innerText = this.Title;
   }
+
+  setAnimalChoice(name: string){
+    this.iService.setAnimalChoice(name);
+  }
+
+  
+
 
 }

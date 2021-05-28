@@ -29,8 +29,8 @@
       <ion-col class="center" size="12">
         <ion-card >
           <ion-item >
-            <ion-label class="center breedFont" id="breedSpecies">Breed/Species</ion-label>
-            <ion-icon name="star-outline" slot="end" id="favorite" (click)="favoriteBtn()"></ion-icon>
+            <ion-label class="center breedFont" id="breedSpecies">{{animalChoice[0].breedSpeciesName}}</ion-label>
+            <ion-icon name="star-outline" slot="end" id="favorite"></ion-icon>
           </ion-item>
           <ion-card-content>
             <img src="../../../../../../assets/Alaskan_Malamute.jpg" alt="An Alaskan Malamute">
@@ -42,7 +42,7 @@
       <ion-col>
         <ion-card>
          <ion-item>
-           <ion-label>Height:</ion-label>
+           <ion-label>Height: {{animalChoice[0].height}}</ion-label>
          </ion-item>
          <ion-item>
           <ion-label>Weight:</ion-label>
@@ -62,12 +62,8 @@
           <ion-card-header>
             <!-- This can be hardcoded, the title and subtitle, but the content will be what is pulled from the API -->
             <ion-card-title class="center">Caution!</ion-card-title>
-            <ion-card-subtitle>These foods and ingredients can cause serious harm to this animal!</ion-card-subtitle>
+            <ion-card-subtitle>{{animalChoice[0].dangerousFood}}</ion-card-subtitle>
           </ion-card-header>
-        
-          <ion-card-content>
-            This content wil be pulled from the Animal Table- bad foods column
-          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>

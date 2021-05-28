@@ -14,6 +14,7 @@ export class IndexService {
 
   public animalArr: IAnimals[];
   public category;
+  public animalChoice: string;
  
 
   getAnimals(){
@@ -24,6 +25,10 @@ export class IndexService {
 
   setCategory(category: string){
     this.category = category;
+  }
+
+  setAnimalChoice(breedSpeciesName: string): void{
+    this.animalChoice = breedSpeciesName;
   }
 
 }
