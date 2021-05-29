@@ -29,26 +29,26 @@ export class DataService {
     ProfilePicture: "",
     StaySignedIn: false
   } 
-  public animalOBJ: IAnimals = {
-    id: 0,
-    breedSpeciesName: "",
-    breedSpeciesPicture: "",
-    height: "",
-    weight: "",
-    lifeSpan: "",
-    diet: "",
-    dangerousFood: "",
-    goodFood: "",
-    about: "",
-    groomingAndHealth: "",
-    careAndHabitat: "",
-    personality: "",
-    category: ""
-  }
+  // public animalOBJ: IAnimals = {
+  //   id: 0,
+  //   breedSpeciesName: "",
+  //   breedSpeciesPicture: "",
+  //   height: "",
+  //   weight: "",
+  //   lifespan: "",
+  //   diet: "",
+  //   dangerousFood: "",
+  //   goodFood: "",
+  //   about: "",
+  //   groomingAndHealth: "",
+  //   careAndHabitat: "",
+  //   personality: "",
+  //   category: ""
+  // }
 
   constructor(private http: HttpClient, private route: Router) {}
 
-  animalList = [];
+  // animalList = [];
 
   signIn(loginOBJ){
     console.log(loginOBJ);
