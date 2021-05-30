@@ -28,73 +28,19 @@
       <ion-col class="center">
         <ion-card class="animalTypeSize">
           <ion-card-header >
-            <ion-card-title class="center ">Animal Section Chosen</ion-card-title>
+            <ion-card-title class="text-center" id="categoryTitle"></ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="12">
-        <ion-row>
+      <ion-col size="12" id="animalList">
+        <ion-row *ngFor="let animal of animals" >
           <ion-col>
-            <ion-item-divider>
-              <ion-label class="labelFont">A</ion-label>
-            </ion-item-divider>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="center">
             <ion-item>
-              <button class="animalBtns" mat-button routerLink='/animal-info'>Breed/Species</button>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="center">
-            <ion-item lines="none">
-              <button class="animalBtns" mat-button routerLink='/animal-info'>Breed/Species</button>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-item-divider>
-              <ion-label class="labelFont">B</ion-label>
-            </ion-item-divider>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="center">
-            <ion-item lines="none">
-              <button class="animalBtns" mat-button routerLink='/animal-info'>Breed/Species</button>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-item-divider>
-              <ion-label class="labelFont">C</ion-label>
-            </ion-item-divider>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="center">
-            <ion-item lines="none">
-              <button class="animalBtns" mat-button routerLink='/animal-info'>Breed/Species</button>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-item-divider>
-              <ion-label class="labelFont">D</ion-label>
-            </ion-item-divider>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="center">
-            <ion-item lines="none">
-              <button class="animalBtns" mat-button routerLink='/animal-info'>Breed/Species</button>
+              <button mat-button routerLink="/animal-info" (click)="setAnimalChoice(animal.breedSpeciesName)" >
+                {{animal.breedSpeciesName}}
+              </button>
             </ion-item>
           </ion-col>
         </ion-row>

@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./journal-entries.page.scss'],
 })
 export class JournalEntriesPage implements OnInit {
-
+  backLocation = 'home';
+  title = 'Pet Journal';
   constructor() { }
 
   ngOnInit() {

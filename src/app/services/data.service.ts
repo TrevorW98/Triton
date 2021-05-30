@@ -4,6 +4,8 @@ import { ILogin } from 'src/app/interfaces/ILogin';
 import { ILoginResponse } from 'src/app/interfaces/ILoginResponse';
 import { IUser } from 'src/app/interfaces/IUser';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { IAnimals } from '../interfaces/animals';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +24,7 @@ export class DataService {
     Email: '',
     Password: '',
   };
+
   public User: IUser = {
     Id: 0,
     Email: '',
@@ -38,6 +41,7 @@ export class DataService {
       console.log(response);
       this.setUser(response.user);
       console.log(this.User, response.user);
+
       this.route.navigate(['home']);
     });
   }
@@ -62,4 +66,8 @@ export class DataService {
       this.route.navigate(['home']);
     });
   }
+
+ 
+
+  
 }

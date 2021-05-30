@@ -6,6 +6,7 @@ import { IEvent } from 'src/app/interfaces/IEvent';
 import { EventService } from 'src/app/services/event.service';
 // import {MatButtonModule} from '@angular/material/button';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
