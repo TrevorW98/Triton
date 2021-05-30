@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { EVENTS } from './mock-events';
-import { IEvent } from '../interfaces/event';
+import { IEvent } from '../interfaces/IEvent';
 
 @Injectable({
   providedIn: 'root'

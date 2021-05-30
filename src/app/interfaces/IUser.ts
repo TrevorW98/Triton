@@ -1,6 +1,6 @@
-export interface InewUser {
+export interface IUser {
+    Id: number;
     Email: string;
-    Password: string;
     ProfilePicture: string;
     StaySignedIn: boolean;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IAnimals } from 'src/app/interfaces/animals';
-import { Ilogin } from 'src/app/interfaces/ilogin';
+import { ILogin } from 'src/app/interfaces/ILogin';
 import { DataService } from 'src/app/services/data.service';
 import { IndexService } from 'src/app/services/index.service';
 
@@ -14,7 +14,7 @@ export class IndexMainPage implements OnInit {
   backLocation = 'home';
   title = 'Pet Index';
 
-  SignedInUser: Ilogin = {
+  SignedInUser: ILogin = {
     Email: '',
     Password: ''
   };
@@ -26,7 +26,7 @@ export class IndexMainPage implements OnInit {
   
 
   ngOnInit() {
-    this.SignedInUser = this.dService.getloginOBJ();
+    this.SignedInUser = this.dService.getlogin();
     this.getAnimals();
   }
 
