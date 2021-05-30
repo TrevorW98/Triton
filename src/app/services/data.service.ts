@@ -11,9 +11,9 @@ import { IAnimals } from '../interfaces/animals';
 })
 export class DataService {
   //LIVE
-  //private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
   //DEV
-  private baseUrl: string = "http://localhost:5000";
+  // private baseUrl: string = "http://localhost:5000";
 
 
   private loginUrl: string = this.baseUrl + '/auth/login';
