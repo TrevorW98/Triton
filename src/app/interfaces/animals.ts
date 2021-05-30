@@ -4,7 +4,7 @@ export interface IAnimals{
     breedSpeciesPicture: string;
     height: string;
     weight: string;
-    lifeSpan: string;
+    lifespan: string;
     diet: string;
     dangerousFood: string;
     goodFood: string;
