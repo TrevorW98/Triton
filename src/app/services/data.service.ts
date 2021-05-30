@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Ilogin } from 'src/app/interfaces/ilogin';
-import { InewUser } from 'src/app/interfaces/inew-user';
+import { ILogin } from 'src/app/interfaces/ILogin';
+import { ILoginResponse } from 'src/app/interfaces/ILoginResponse';
+import { IUser } from 'src/app/interfaces/IUser';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { IAnimals } from '../interfaces/animals';
@@ -19,62 +20,49 @@ export class DataService {
   private loginUrl: string = this.baseUrl + '/auth/login';
   private addUserUrl: string = this.baseUrl + '/auth/newUser';
 
-  private loginOBJ: Ilogin = {
+  private login: ILogin = {
     Email: '',
     Password: '',
   };
-  public newUserOBJ: InewUser = {
-    Email: "",
-    Password: "",
-    ProfilePicture: "",
-    StaySignedIn: false
-  } 
-  public animalOBJ: IAnimals = {
-    id: 0,
-    breedSpeciesName: "",
-    breedSpeciesPicture: "",
-    height: "",
-    weight: "",
-    lifeSpan: "",
-    diet: "",
-    dangerousFood: "",
-    goodFood: "",
-    about: "",
-    groomingAndHealth: "",
-    careAndHabitat: "",
-    personality: "",
-    category: ""
-  }
+
+  public User: IUser = {
+    Id: 0,
+    Email: '',
+    ProfilePicture: '',
+    StaySignedIn: false,
+  };
 
   constructor(private http: HttpClient, private route: Router) {}
 
-  animalList = [];
+  signIn(login) {
+    console.log(login);
+    this.http.post(this.loginUrl, login).subscribe((response: ILoginResponse) => {
+      //this.setLogin(login);
+      console.log(response);
+      this.setUser(response.user);
+      console.log(this.User, response.user);
 
-  signIn(loginOBJ){
-    console.log(loginOBJ);
-    this.http.post(this.loginUrl, loginOBJ).subscribe((data) => {
-      console.log(data);
-      this.setloginOBJ(loginOBJ);
       this.route.navigate(['home']);
     });
   }
 
-  setloginOBJ(object: Ilogin): void {
-    this.loginOBJ = object;
+  setLogin(login: ILogin): void {
+    this.login = login;
   }
-  setnewUserOBJ(object: InewUser): void {
-    this.newUserOBJ = object;
-  }
-
-  getloginOBJ(): Ilogin {
-    return this.loginOBJ;
+  setUser(user: IUser): void {
+    console.log("Setting user...");
+    this.User = user;
   }
 
-  addUser(newUserOBJ) {
-    console.log(newUserOBJ);
-    this.http.post(this.addUserUrl, newUserOBJ).subscribe((data2) => {
+  getlogin(): ILogin {
+    return this.login;
+  }
+
+  addUser(user) {
+    console.log(user);
+    this.http.post(this.addUserUrl, user).subscribe((data2) => {
       console.log(data2);
-      this.setnewUserOBJ(newUserOBJ);
+      this.setUser(user);
       this.route.navigate(['home']);
     });
   }

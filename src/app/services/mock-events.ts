@@ -1,9 +1,9 @@
-import { IEvent } from '../interfaces/event';
+import { IEvent } from '../interfaces/IEvent';
 
 export const EVENTS: IEvent[] = [
   {
     ID: 1,
-    Email: 'huegogh@gmail.com',
+    UserId: 42,
     Petname: 'Tauni',
     Datetime: 'May 10, 2021 09:00:00',
     Occurrence: 'Once',
@@ -11,7 +11,7 @@ export const EVENTS: IEvent[] = [
   },
   {
     ID: 2,
-    Email: 'huegogh@gmail.com',
+    UserId: 42,
     Petname: 'Yoda',
     Datetime: 'May 10, 2021 09:00:00',
     Occurrence: 'Daily',
@@ -19,7 +19,7 @@ export const EVENTS: IEvent[] = [
   },
   {
     ID: 3,
-    Email: 'huegogh@gmail.com',
+    UserId: 42,
     Petname: 'Triton',
     Datetime: 'May 10, 2021 09:00:00',
     Occurrence: 'Daily',
@@ -27,7 +27,7 @@ export const EVENTS: IEvent[] = [
   },
   {
     ID: 4,
-    Email: 'huegogh@gmail.com',
+    UserId: 42,
     Petname: 'Nala',
     Datetime: 'May 10, 2021 09:00:00',
     Occurrence: 'Daily',
@@ -35,7 +35,7 @@ export const EVENTS: IEvent[] = [
   },
   {
     ID: 5,
-    Email: 'huegogh@gmail.com',
+    UserId: 42,
     Petname: 'Lyra',
     Datetime: 'May 10, 2021 09:00:00',
     Occurrence: 'Daily',
@@ -43,7 +43,7 @@ export const EVENTS: IEvent[] = [
   },
   {
     ID: 6,
-    Email: 'huegogh@gmail.com',
+    UserId: 42,
     Petname: 'Webster',
     Datetime: 'May 10, 2021 09:00:00',
     Occurrence: 'Daily',
@@ -51,7 +51,7 @@ export const EVENTS: IEvent[] = [
   },
   {
     ID: 7,
-    Email: 'huegogh@gmail.com',
+    UserId: 42,
     Petname: 'Albert',
     Datetime: 'May 10, 2021 09:00:00',
     Occurrence: 'Daily',
@@ -59,7 +59,7 @@ export const EVENTS: IEvent[] = [
   },
   {
     ID: 8,
-    Email: 'huegogh@gmail.com',
+    UserId: 42,
     Petname: 'Ochaco-chan',
     Datetime: 'May 10, 2021 09:00:00',
     Occurrence: 'Daily',
