@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IAnimals } from 'src/app/interfaces/animals';
 import { ILogin } from 'src/app/interfaces/ILogin';
 import { DataService } from 'src/app/services/data.service';
+import { FavoritesService } from 'src/app/services/favorites.service';
 import { IndexService } from 'src/app/services/index.service';
 
 
@@ -20,7 +21,7 @@ export class IndexMainPage implements OnInit {
   };
 
   
-  constructor(private dService: DataService, private iService: IndexService) { }
+  constructor(private dService: DataService, private iService: IndexService,  private fService: FavoritesService) { }
   
   public category;
   
@@ -28,17 +29,22 @@ export class IndexMainPage implements OnInit {
   ngOnInit() {
     this.SignedInUser = this.dService.getlogin();
     this.getAnimals();
+    this.getFavorites();
   }
 
   
 
   
-  getCategory(){
-    return this.category;
-  }
+ 
   
   getAnimals(): void{
     this.iService.getAnimals();
+  }
+  getFavorites(): void{
+    this.fService.getFavorites();
+  }
+  setFavBool(){
+    this.fService.setFavBool();
   }
   setCategoryIndexMain(string){
     this.iService.setCategory(string);

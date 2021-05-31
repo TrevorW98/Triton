@@ -34,7 +34,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="12" id="animalList">
+      <ion-col size="12" id="animalList" *ngIf="favoritesBool==false;">
         <ion-row *ngFor="let animal of animals" >
           <ion-col>
             <ion-item>
@@ -46,6 +46,19 @@
         </ion-row>
       </ion-col>
     </ion-row>
+    <!-- <ion-row>
+      <ion-col size="12" id="animalList" >
+        <ion-row *ngFor="let favorite of favorites" >
+          <ion-col>
+            <ion-item>
+              <button mat-button routerLink="/animal-info" (click)="setAnimalChoice(favorite.breedSpeciesName)" >
+                {{favorite.breedSpeciesName}}
+              </button>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row> -->
   </ion-grid>
 
 

@@ -1,5 +1,5 @@
 export interface IEvent {
-  ID: number,
+  ID: number;
   UserId: number;
   Petname: string;
   Datetime: string;

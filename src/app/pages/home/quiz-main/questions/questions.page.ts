@@ -26,6 +26,7 @@ export class QuestionsPage implements OnInit {
 
   nextBtn: boolean = false;
   selected: boolean = false;
+  result: string;
   ngOnInit() {
     this.Questions = this.Qservice.questionArr;
     console.log(this.Questions);
@@ -117,6 +118,15 @@ export class QuestionsPage implements OnInit {
     let next = document.getElementById("next");
     next.remove();
     this.nextBtn = false;
+  }
+  generateResult(){
+   if(this.amphibiansFish > this.birdsReptiles && this.amphibiansFish > this.catsDogs && this.amphibiansFish > this.insectsSmallAnimals)
+   {
+     this.result = "Amphibians Fish result text here"
+   } else if(this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.catsDogs && this.amphibiansFish > this.insectsSmallAnimals)
+   {
+    this.result = "Birds Reptiles result text here"
+   }
   }
 
 
