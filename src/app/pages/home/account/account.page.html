@@ -18,7 +18,7 @@
     <div class="picture">
       <img class="profilePic" src="{{ imgSrc || '../../../../../assets/images/TritonDarkAccent.png' }}" alt="Add Pet Picture">
     </div>
-    <div class="camera d-flex align-items-end">
+    <div *ngIf="dService.User.Id != 0" class="camera d-flex align-items-end">
       <label for="fileInput">
         <mat-icon class="greyCamera">camera_enhance</mat-icon>
       </label>
@@ -60,7 +60,7 @@
       </ion-col> -->
 
       <ion-col class="bottomRight change">
-        <p routerLink="/login"><u>Sign Out</u></p>
+        <p routerLink="/login"><u>Sign {{ dService.User.Id == 0 ? 'In' : 'Out' }}</u></p>
       </ion-col>
     </ion-row>
 

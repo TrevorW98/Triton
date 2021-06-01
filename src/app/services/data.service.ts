@@ -12,13 +12,14 @@ import { IAnimals } from '../interfaces/animals';
 })
 export class DataService {
   //LIVE
-  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  // private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
   //DEV
-  // private baseUrl: string = "http://localhost:5000";
+  private baseUrl: string = "http://localhost:5000";
 
 
   private loginUrl: string = this.baseUrl + '/auth/login';
   private addUserUrl: string = this.baseUrl + '/auth/newUser';
+  private updateUserUrl: string = this.baseUrl + '/auth/update';
 
   private login: ILogin = {
     Email: '',
@@ -49,6 +50,7 @@ export class DataService {
   setLogin(login: ILogin): void {
     this.login = login;
   }
+
   setUser(user: IUser): void {
     console.log("Setting user...");
     this.User = user;
@@ -65,6 +67,11 @@ export class DataService {
       this.setUser(user);
       this.route.navigate(['home']);
     });
+  }
+
+  updateUser() {
+    console.log("sending photo...");
+    this.http.put(this.updateUserUrl, this.User).subscribe(response => {console.log(response)});
   }
 
  
