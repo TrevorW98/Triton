@@ -120,13 +120,8 @@ export class QuestionsPage implements OnInit {
     this.nextBtn = false;
   }
   generateResult(){
-   if(this.amphibiansFish > this.birdsReptiles && this.amphibiansFish > this.catsDogs && this.amphibiansFish > this.insectsSmallAnimals)
-   {
-     this.result = "Amphibians Fish result text here"
-   } else if(this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.catsDogs && this.amphibiansFish > this.insectsSmallAnimals)
-   {
-    this.result = "Birds Reptiles result text here"
-   }
+   let result = Math.max(this.amphibiansFish,this.birdsReptiles,this.insectsSmallAnimals,this.catsDogs)
+   console.log(result);
   }
 
 

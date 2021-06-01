@@ -55,6 +55,9 @@ export class DataService {
     console.log("Setting user...");
     this.User = user;
   }
+  getUser(): string{
+    return this.User.Email;
+  }
 
   getlogin(): ILogin {
     return this.login;

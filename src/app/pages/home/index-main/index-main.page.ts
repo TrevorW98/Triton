@@ -15,10 +15,8 @@ export class IndexMainPage implements OnInit {
   backLocation = 'home';
   title = 'Pet Index';
 
-  SignedInUser: ILogin = {
-    Email: '',
-    Password: ''
-  };
+  CurrentUser: string;
+    
 
   
   constructor(private dService: DataService, private iService: IndexService,  private fService: FavoritesService) { }
@@ -27,21 +25,16 @@ export class IndexMainPage implements OnInit {
   
 
   ngOnInit() {
-    this.SignedInUser = this.dService.getlogin();
+    this.CurrentUser = this.dService.getUser();
     this.getAnimals();
-    this.getFavorites();
+    this.getFavorites(this.CurrentUser);
   }
-
-  
-
-  
  
-  
   getAnimals(): void{
     this.iService.getAnimals();
   }
-  getFavorites(): void{
-    this.fService.getFavorites();
+  getFavorites(email: string): void{
+    this.fService.getFavorites(email);
   }
   setFavBool(){
     this.fService.setFavBool();

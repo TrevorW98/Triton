@@ -10,19 +10,19 @@ import { DataService } from './data.service';
 })
 export class FavoritesService {
 
-  private favsUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs";
+  // private favsUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs?email=";
 
-  // private favsUrl: string = "http://localhost:5000/animals/favs";
+  private favsUrl: string = "http://localhost:5000/animals/favs?email=";
 
   constructor(private http: HttpClient) { }
 
-  public favsArr: IFavorites[];
+  public favsArr;
   public favoritesBool: boolean = false;
   
 
 
-  getFavorites(){
-    return this.http.get(this.favsUrl).subscribe((favsData: IFavorites[]) =>{
+  getFavorites(email){
+    return this.http.get(this.favsUrl,email).subscribe((favsData) =>{
       this.favsArr = favsData;
       console.log(this.favsArr);
     });

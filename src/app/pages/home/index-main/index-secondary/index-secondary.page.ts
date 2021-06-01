@@ -37,9 +37,7 @@ export class IndexSecondaryPage implements OnInit {
     this.animals = this.iService.animalArr.filter(a => {
       return a.category == this.iService.category;
     });
-    this.favorites = this.fService.favsArr.filter(b => {
-      return b.email == this.SignedInUser.Email;
-    })
+    this.favorites = this.fService.favsArr;
     console.log(this.animals);
     console.log(this.favorites);
     this.setTitle();
