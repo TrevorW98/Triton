@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageService } from 'src/app/services/image.service';
 
 @Component({
   selector: 'app-account',
@@ -9,9 +10,20 @@ export class AccountPage implements OnInit {
   backLocation = 'home';
   title = 'Account';
 
-  constructor() { }
+  constructor(private imageConverter: ImageService) { }
 
-  ngOnInit() {
+  imgSrc;
+
+  ngOnInit() { }
+
+  onFileSelected(event) {
+
+    let file: File = event.target.files[0];
+
+    if(file){
+      this.imageConverter.convertToString(file).then(str => this.imgSrc = str);
+    }
+
   }
 
 }

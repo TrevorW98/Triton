@@ -16,6 +16,10 @@
   height: 0px;
 }
 
+.camera>input {
+    display: none;
+}
+
 .bottomLeft{
   position: absolute;
   bottom: 3px;

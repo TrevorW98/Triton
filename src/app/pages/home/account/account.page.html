@@ -16,10 +16,13 @@
 
   <ion-col size="4">
     <div class="picture">
-      <img class="profilePic" src="../../../../../assets/images/TritonDarkAccent.png" alt="Add Pet Picture">
+      <img class="profilePic" src="{{ imgSrc || '../../../../../assets/images/TritonDarkAccent.png' }}" alt="Add Pet Picture">
     </div>
     <div class="camera d-flex align-items-end">
-      <mat-icon class="greyCamera">camera_enhance</mat-icon>
+      <label for="fileInput">
+        <mat-icon class="greyCamera">camera_enhance</mat-icon>
+      </label>
+      <input type="file" name="profilePhoto" id="fileInput" (change)="onFileSelected($event)">
     </div>
   </ion-col>
   
