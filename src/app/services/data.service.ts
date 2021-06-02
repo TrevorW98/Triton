@@ -29,7 +29,7 @@ export class DataService {
   public User: IUser = {
     Id: 0,
     Email: '',
-    ProfilePicture: '',
+    profilePicture: '',
     StaySignedIn: false,
   };
 
