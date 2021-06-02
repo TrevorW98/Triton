@@ -1,7 +1,18 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 <ion-content>
-
+<ion-grid>
+    <ion-row class="center">
+        <ion-col size="10">
+            <h2>Create An Entry</h2>
+            <ion-item>
+                <ion-label position="stacked">Notes</ion-label>
+                <ion-textarea placeholder="placeholder"></ion-textarea>
+            </ion-item>
+            <!-- This is where the calendar is going to be! -->
+        </ion-col>
+    </ion-row>
+</ion-grid>
 </ion-content>
 
 <app-bottom-nav></app-bottom-nav>
