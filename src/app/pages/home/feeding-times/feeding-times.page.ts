@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedingTimesPage implements OnInit {
   backLocation = 'home';
-  title = 'Feeding Times';
+  title = 'Feeding Time';
 
   constructor() { }
 
