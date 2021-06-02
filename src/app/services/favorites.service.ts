@@ -29,6 +29,7 @@ export class FavoritesService {
   }
   setFavBool(){
     this.favoritesBool = true;
+    console.log(this.favoritesBool);
   }
 
 

@@ -32,7 +32,7 @@ export class IndexSecondaryPage implements OnInit {
 
 
   ngOnInit() {
-    this.setBool();
+    this.favoritesBool = this.fService.favoritesBool;
     this.SignedInUser = this.dService.getlogin();
     this.animals = this.iService.animalArr.filter(a => {
       return a.category == this.iService.category;
@@ -45,7 +45,7 @@ export class IndexSecondaryPage implements OnInit {
   
   
   setTitle(){
-    
+    if(!this.favoritesBool){
       switch(this.iService.category){
         case "Dog": this.Title = "Dogs"; break;
         case "Cat": this.Title = "Cats"; break;
@@ -56,6 +56,9 @@ export class IndexSecondaryPage implements OnInit {
         case "Insect": this.Title = "Insects"; break;
         case "Aquatic": this.Title = "Aquatic Animals"; break;
       }
+    } else{
+      this.Title = "Favorites";
+    }
       let categoryTitle = document.getElementById("categoryTitle");
       categoryTitle.innerText = this.Title;
   }
@@ -63,9 +66,7 @@ export class IndexSecondaryPage implements OnInit {
   setAnimalChoice(name: string){
     this.iService.setAnimalChoice(name);
   }
-  setBool(){
-    this.favoritesBool = this.fService.favoritesBool;
-  }
+ 
 
   
 
