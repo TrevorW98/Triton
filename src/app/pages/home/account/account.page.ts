@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { ImageService } from 'src/app/services/image.service';
 
@@ -7,7 +7,7 @@ import { ImageService } from 'src/app/services/image.service';
   templateUrl: './account.page.html',
   styleUrls: ['./account.page.scss'],
 })
-export class AccountPage implements OnInit {
+export class AccountPage implements DoCheck {
   backLocation = 'home';
   title = 'Account';
 
@@ -16,10 +16,10 @@ export class AccountPage implements OnInit {
 
   imgSrc;
 
-  ngOnInit() {
-    if (this.dService.User.ProfilePicture != ''){
-      console.log(this.dService.User.ProfilePicture);
-      this.imgSrc = this.dService.User.ProfilePicture;
+  ngDoCheck() {
+    if (this.dService.User.profilePicture != ''){
+      console.log(this.dService.User.profilePicture);
+      this.imgSrc = this.dService.User.profilePicture;
       console.log(this.imgSrc);
 
     }
@@ -40,7 +40,7 @@ export class AccountPage implements OnInit {
   }
 
   updateProfile(imageString: string) {
-    this.dService.User.ProfilePicture = imageString;
+    this.dService.User.profilePicture = imageString;
     this.dService.updateUser();
   }
 

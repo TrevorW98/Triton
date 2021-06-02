@@ -22,7 +22,7 @@ export class HomePage implements OnInit {
   };
   constructor(
     private router: Router,
-    private dService: DataService,
+    public dService: DataService,
     private eventService: EventService
   ) {}
 

@@ -1,6 +1,6 @@
 export interface IUser {
     Id: number;
     Email: string;
-    ProfilePicture: string;
+    profilePicture: string;
     StaySignedIn: boolean;
 }
