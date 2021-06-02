@@ -2,33 +2,31 @@
 
 <ion-content>
 
-<div *ngFor="let i of [1,2,3,4,5]" class="row my-4">
-  <div class="col-2 font-weight-bold d-flex flex-column justify-content-center align-items-center">
-    <p class="lead my-0">APR</p><p class="lead my-0">09</p>
+<ion-row *ngFor="let i of [1,2,3,4,5]" class="my-4">
+  <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+    <p class="my-0">APR</p><p class="lead my-0">09</p>
   </div>
-  <div class="col-5 font-weight-bold d-flex flex-column justify-content-center">
+  <div class="col-4 d-flex flex-column justify-content-center px-0">
     <p class="lead my-0">Nala | Vet</p>
     <p class="my-0">Only Once</p>
   </div>
-  <div class="col-2 font-weight-bold d-flex flex-column justify-content-center px-0">
+  <div class="col-3 d-flex flex-column justify-content-center px-0">
     <span class="lead">8:30am</span>
   </div>
-  <div class="col-1 font-weight-bold d-flex align-items-center justify-content-end px-0">
+  <div class="col-1 d-flex align-items-center justify-content-end px-0">
     <mat-icon class="backArrow">edit</mat-icon>
   </div>
-  <div class="col-1 font-weight-bold d-flex align-items-center justify-content-end px-0">
+  <div class="col-1 d-flex align-items-center justify-content-end px-0">
     <mat-icon class="backArrow">close</mat-icon>
   </div>
-</div>
+</ion-row>
 
-<div class="row">
-  <div class="col-1">
-    <mat-icon class="display-4">add</mat-icon>
-  </div>
-  <div class="col pl-4">
-    <p class="display-4">Add Event</p>
-  </div>
-</div>
+<ion-row>
+  <ion-col size="12" class="center">
+    <!-- <mat-icon style="font-size:25px;">add</mat-icon> -->
+    <p>+ <u>Add Event</u></p>
+  </ion-col>
+</ion-row>
 
 </ion-content>
 
