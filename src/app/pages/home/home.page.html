@@ -2,6 +2,10 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid>
+
+    <ion-row *ngIf="dService.User.Id == 0" class="d-flex justify-content-center">
+        <app-sign-in-suggestion></app-sign-in-suggestion>
+    </ion-row>
     <ion-row>
       <ion-col size="12">
         <div class="rounded primaryBg-gradient">

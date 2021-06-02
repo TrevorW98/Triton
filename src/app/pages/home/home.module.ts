@@ -13,6 +13,7 @@ import { BottomNavComponent } from '../../components/bottom-nav/bottom-nav.compo
 import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 import { EventComponent } from './home-components/event/event.component';
 import { FeedComponent } from './home-components/feed/feed.component';
+import { SignInSuggestionComponent } from './sign-in-suggestion/sign-in-suggestion.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { FeedComponent } from './home-components/feed/feed.component';
     BottomNavComponent,
     TopNavComponent,
     EventComponent,
-    FeedComponent
+    FeedComponent,
+    SignInSuggestionComponent,
   ]
 })
 export class HomePageModule {}
