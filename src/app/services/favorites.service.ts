@@ -31,9 +31,9 @@ export class FavoritesService {
 
 
   getFavorites(email){
-    return this.http.get(this.favsUrl,email).subscribe((favsData) =>{
+    return this.http.get(this.favsUrl+email).subscribe((favsData) =>{
       this.favsArr = favsData;
-      console.log(this.favsArr);
+   
     });
   }
   setFavBool(){
@@ -41,13 +41,15 @@ export class FavoritesService {
     console.log(this.favoritesBool);
   }
   newFav(animal: IFavorites[]){
-    this.http.post(this.addFavUrl,animal).subscribe(()=>{
-      console.log("success add")
+    console.log(animal);
+    this.http.post(this.addFavUrl,animal).subscribe((response)=>{
+      console.log(response);
     });
   }
   removeFav(animal){
-    this.http.delete(this.deleteFavUrl,animal).subscribe(()=>{
-      console.log("success delete");
+    console.log(animal);
+    this.http.delete(this.deleteFavUrl,animal).subscribe((response)=>{
+      console.log(response);
     })
   }
 

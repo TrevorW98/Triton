@@ -32,14 +32,14 @@ export class IndexSecondaryPage implements OnInit {
 
 
   ngOnInit() {
-    this.favoritesBool = this.fService.favoritesBool;
-    this.SignedInUser = this.dService.getlogin();
+    // this.favoritesBool = this.fService.favoritesBool;
+    // this.SignedInUser = this.dService.getlogin();
     this.animals = this.iService.animalArr.filter(a => {
       return a.category == this.iService.category;
     });
-    this.favorites = this.fService.favsArr;
+    // this.favorites = this.fService.favsArr;
     console.log(this.animals);
-    console.log(this.favorites);
+    // console.log(this.favorites);
     this.setTitle();
   }
   

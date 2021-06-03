@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IAnimals } from 'src/app/interfaces/animals';
 import { ILogin } from 'src/app/interfaces/ILogin';
+import { IUser } from 'src/app/interfaces/IUser';
 import { DataService } from 'src/app/services/data.service';
 import { FavoritesService } from 'src/app/services/favorites.service';
 import { IndexService } from 'src/app/services/index.service';
@@ -15,8 +16,12 @@ export class IndexMainPage implements OnInit {
   backLocation = 'home';
   title = 'Pet Index';
 
-  CurrentUser: string;
-    
+  public login: IUser = {
+    Id: 0,
+    Email: '',
+    profilePicture: '',
+    StaySignedIn: false,
+  };  
 
   
   constructor(private dService: DataService, private iService: IndexService,  private fService: FavoritesService) { }
@@ -25,20 +30,21 @@ export class IndexMainPage implements OnInit {
   
 
   ngOnInit() {
-    this.CurrentUser = this.dService.getUser();
+    // this.login = this.dService.User;
+    // console.log(this.login.Email);
     this.getAnimals();
-    this.getFavorites(this.CurrentUser);
+    // this.getFavorites(this.login.Email);
   }
  
   getAnimals(): void{
     this.iService.getAnimals();
   }
-  getFavorites(email: string): void{
-    this.fService.getFavorites(email);
-  }
-  setFavBool(){
-    this.fService.setFavBool();
-  }
+  // getFavorites(email: string): void{
+  //   this.fService.getFavorites(email);
+  // }
+  // setFavBool(){
+  //   this.fService.setFavBool();
+  // }
   setCategoryIndexMain(string){
     this.iService.setCategory(string);
   }

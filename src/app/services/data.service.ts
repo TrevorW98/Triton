@@ -42,7 +42,6 @@ export class DataService {
       console.log(response);
       this.setUser(response.user);
       console.log(this.User, response.user);
-
       this.route.navigate(['home']);
     });
   }
@@ -55,12 +54,13 @@ export class DataService {
     console.log("Setting user...");
     this.User = user;
   }
-  getUser(): string{
-    return this.User.Email;
-  }
 
   getlogin(): ILogin {
     return this.login;
+  }
+
+  getUser(): IUser{
+    return this.User;
   }
 
   addUser(user) {
