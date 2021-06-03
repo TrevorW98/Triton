@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: EventsNotifsPage
+  },  {
+    path: 'add-events',
+    loadChildren: () => import('./add-events/add-events.module').then( m => m.AddEventsPageModule)
   },
+
   
 
 ];
