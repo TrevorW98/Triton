@@ -13,7 +13,8 @@ export class QuestionsPage implements OnInit {
 
   constructor(private Qservice: QuizService) { }
 
-  public Questions: Iquizdata[];
+  public firstQuestions: Iquizdata[];
+  public lastQuestions: Iquizdata[];
   questionNum: number = 0;
   //btn1
   amphibiansFish: number = 0;
@@ -27,9 +28,15 @@ export class QuestionsPage implements OnInit {
   nextBtn: boolean = false;
   selected: boolean = false;
   result: string;
+
   ngOnInit() {
-    this.Questions = this.Qservice.questionArr;
-    console.log(this.Questions);
+    this.firstQuestions = this.Qservice.questionArr.filter((s)=>{
+      return s.important == false;
+    });
+    this.lastQuestions = this.Qservice.questionArr.filter((s)=>{
+      return s.important == true;
+    });
+    console.log(this.firstQuestions);
   }
   nextQuestion() {
     this.questionNum++;
