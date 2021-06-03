@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: FeedingTimesPage
+  },  {
+    path: 'add-feeding',
+    loadChildren: () => import('./add-feeding/add-feeding.module').then( m => m.AddFeedingPageModule)
   }
+
 ];
 
 @NgModule({

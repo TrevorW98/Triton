@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class AddPetPage implements OnInit {
   backLocation = 'my-pets';
   title = 'Add Pets';
+  petName = '';
+  petInfo = '';
+  petPic = '';
+
 
   constructor() { }
 
@@ -15,5 +19,11 @@ export class AddPetPage implements OnInit {
   }
   removePetProfile(){
     
+  }
+
+  // Here we are going to add a pet by pushing into the db
+  // We will push picture, name, and description into the db here.
+  addPet(){
+
   }
 }
