@@ -36,8 +36,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/events-notifs/events-notifs.module').then( m => m.EventsNotifsPageModule)
   },
   {
+    path: 'add-events',
+    loadChildren: () => import('./pages/home/events-notifs/add-events/add-events.module').then( m => m.AddEventsPageModule)
+  },
+  {
     path: 'feeding-times',
     loadChildren: () => import('./pages/home/feeding-times/feeding-times.module').then( m => m.FeedingTimesPageModule)
+  },
+  {
+    path: 'add-feeding',
+    loadChildren: () => import('./pages/home/feeding-times/add-feeding/add-feeding.module').then( m => m.AddFeedingPageModule)
   },
   {
     path: 'find-vet',

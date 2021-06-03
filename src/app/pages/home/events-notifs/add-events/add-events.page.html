@@ -1,0 +1,45 @@
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="center mt-4">
+      <ion-col size="10">
+        <h2 class="center">Create An Event</h2>
+        <ion-item class="mb-2">
+          <ion-label>My Pet</ion-label>
+          <ion-select value="" okText="Save" cancelText="Cancel">
+            <ion-select-option *ngFor="let i of pets" value="{{i}}">{{i}}</ion-select-option>
+
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          
+          <ion-label position="stacked">Event Title</ion-label>
+          <ion-input placeholder="Triton's Day Off"></ion-input>
+
+        </ion-item>
+        <!-- This is where the calendar is going to be! -->
+        <input class="my-2" type="date">
+        <input type="time">
+        <ion-item class="mt-2">
+          <ion-label>Repeats</ion-label>
+          <ion-select value="" okText="Save" cancelText="Cancel">
+            <ion-select-option *ngFor="let i of repeat" value="{{i}}">{{i}}</ion-select-option>
+
+          </ion-select>
+        </ion-item>
+
+      </ion-col>
+      <ion-col size="10" class="end">
+        <button mat-raised-button class="mr-1 grey">Cancel</button>
+        <button class="btn1" mat-raised-button color="primary">Save</button>
+        <!-- save these changes to db push to users entries -->
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+</ion-content>
+
+<app-bottom-nav></app-bottom-nav>
