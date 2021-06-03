@@ -1,4 +1,5 @@
-export interface IFavorites {
+export interface IFavoritesID {
+    id: number;
     email: string;
     breedSpeciesName: string;
     breedSpeciesPicture: string;

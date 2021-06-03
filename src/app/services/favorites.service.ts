@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { IFavorites } from '../interfaces/IFavorites';
 import { ILogin } from '../interfaces/ILogin';
 import { DataService } from './data.service';
+import { IFavoritesID } from '../interfaces/IFavoritesID';
 
 
 @Injectable({
@@ -12,7 +13,15 @@ export class FavoritesService {
 
   // private favsUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs?email=";
 
+  // private addFavUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs/new";
+
+  // private deleteFavUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs/delete";
+
   private favsUrl: string = "http://localhost:5000/animals/favs?email=";
+
+  private addFavUrl: string = "http://localhost:5000/animals/favs/new";
+
+  private deleteFavUrl: string = "http://localhost:5000/animals/favs/delete";
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +39,16 @@ export class FavoritesService {
   setFavBool(){
     this.favoritesBool = true;
     console.log(this.favoritesBool);
+  }
+  newFav(animal: IFavorites[]){
+    this.http.post(this.addFavUrl,animal).subscribe(()=>{
+      console.log("success add")
+    });
+  }
+  removeFav(animal){
+    this.http.delete(this.deleteFavUrl,animal).subscribe(()=>{
+      console.log("success delete");
+    })
   }
 
 
