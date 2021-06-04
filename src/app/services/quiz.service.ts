@@ -10,12 +10,16 @@ export class QuizService {
   constructor(private http: HttpClient) { }
 
   public questionArr: Iquizdata[];
+  public result: string;
 
   getQuestions(){
     return this.http.get(this.quizUrl).subscribe((quizData: Iquizdata[]) =>{
       this.questionArr = quizData;
       console.log(this.questionArr);
     });
+  }
+  setResults(animal: string){
+    this.result = animal;
   }
 
 

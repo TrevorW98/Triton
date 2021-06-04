@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Iquizdata } from 'src/app/interfaces/iquizdata';
 import { QuizService } from 'src/app/services/quiz.service';
 
@@ -11,7 +12,7 @@ export class QuestionsPage implements OnInit {
   title = 'Pick My Pet';
   backLocation = 'quiz-main';
 
-  constructor(private Qservice: QuizService) { }
+  constructor(private Qservice: QuizService, private router: Router) { }
 
   public firstQuestions: Iquizdata[];
   public lastQuestions: Iquizdata[];
@@ -38,8 +39,8 @@ export class QuestionsPage implements OnInit {
     });
     console.log(this.firstQuestions);
   }
+
   nextQuestion() {
-    this.questionNum++;
     let btn1 = document.getElementById("btn1");
     let btn2 = document.getElementById("btn2");
     let btn3 = document.getElementById("btn3");
@@ -58,35 +59,48 @@ export class QuestionsPage implements OnInit {
     btn2.removeAttribute("checked");
     btn3.removeAttribute("checked");
     btn4.removeAttribute("checked");
-    this.deleteNextBtn();
-    this.narrowResults();
+    if(this.questionNum < 10){
+      this.questionNum++;
+      this.deleteNextBtn();
+    } else if(this.questionNum >= 10) {
+      btn1.setAttribute("disabled", "true");
+      btn2.setAttribute("disabled", "true");
+      btn3.setAttribute("disabled", "true");
+      btn4.setAttribute("disabled", "true");
+      this.narrowResults();
+    }
   }
 
   choiceSelect1() {
-    //This handles limiting the number of selected answers to one
-    let btn1 = document.getElementById("btn1");
-    let btn2 = document.getElementById("btn2");
-    let btn3 = document.getElementById("btn3");
-    let btn4 = document.getElementById("btn4");
-    btn1.setAttribute("checked", "true");
-    btn2.removeAttribute("checked");
-    btn3.removeAttribute("checked");
-    btn4.removeAttribute("checked");
-    this.generateNextBtn();
+   
+      //This handles limiting the number of selected answers to one
+      let btn1 = document.getElementById("btn1");
+      let btn2 = document.getElementById("btn2");
+      let btn3 = document.getElementById("btn3");
+      let btn4 = document.getElementById("btn4");
+      btn1.setAttribute("checked", "true");
+      btn2.removeAttribute("checked");
+      btn3.removeAttribute("checked");
+      btn4.removeAttribute("checked");
+      this.generateNextBtn();
+    
   }
   choiceSelect2() {
-    //This handles limiting the number of selected answers to one
-    let btn1 = document.getElementById("btn1");
-    let btn2 = document.getElementById("btn2");
-    let btn3 = document.getElementById("btn3");
-    let btn4 = document.getElementById("btn4");
-    btn2.setAttribute("checked", "true");
-    btn1.removeAttribute("checked");
-    btn3.removeAttribute("checked");
-    btn4.removeAttribute("checked");
-    this.generateNextBtn();
+   
+      //This handles limiting the number of selected answers to one
+      let btn1 = document.getElementById("btn1");
+      let btn2 = document.getElementById("btn2");
+      let btn3 = document.getElementById("btn3");
+      let btn4 = document.getElementById("btn4");
+      btn2.setAttribute("checked", "true");
+      btn1.removeAttribute("checked");
+      btn3.removeAttribute("checked");
+      btn4.removeAttribute("checked");
+      this.generateNextBtn();
+   
   }
   choiceSelect3() {
+  
     //This handles limiting the number of selected answers to one
     let btn1 = document.getElementById("btn1");
     let btn2 = document.getElementById("btn2");
@@ -97,8 +111,10 @@ export class QuestionsPage implements OnInit {
     btn1.removeAttribute("checked");
     btn2.removeAttribute("checked");
     this.generateNextBtn();
+  
   }
   choiceSelect4() {
+   
     //This handles limiting the number of selected answers to one
     let btn1 = document.getElementById("btn1");
     let btn2 = document.getElementById("btn2");
@@ -109,6 +125,7 @@ export class QuestionsPage implements OnInit {
     btn2.removeAttribute("checked");
     btn3.removeAttribute("checked");
     this.generateNextBtn();
+ 
   }
   generateNextBtn() {
     if (!this.nextBtn) {
@@ -117,7 +134,11 @@ export class QuestionsPage implements OnInit {
       next.setAttribute("mat-button", "");
       next.id = "next"
       next.classList.add("answerBG", "answerBtn");
-      next.innerText = "Next Question";
+      if(this.questionNum < 10){
+        next.innerText = "Next Question";
+      } else if(this.questionNum == 10){
+        next.innerText = "Submit answers";
+      }
       holder.appendChild(next);
       this.nextBtn = true;
     }
@@ -128,20 +149,49 @@ export class QuestionsPage implements OnInit {
     this.nextBtn = false;
   }
   narrowResults() {
-    if(this.questionNum == 10 && this.nextSection == false){
-      if (this.amphibiansFish > this.birdsReptiles && this.amphibiansFish > this.insectsSmallAnimals && this.amphibiansFish > this.catsDogs) {
-        this.group = "amphibiansFish";
-      } else if (this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.insectsSmallAnimals && this.birdsReptiles > this.catsDogs) {
-        this.group = "birdsReptiles";
-      } else if (this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.insectsSmallAnimals && this.birdsReptiles > this.catsDogs) {
-        this.group = "insectsSmallAnimals";
-      } else if (this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.insectsSmallAnimals && this.birdsReptiles > this.catsDogs) {
-        this.group = "catsDogs";
+    console.log("running")
+    if (this.amphibiansFish > this.birdsReptiles && this.amphibiansFish > this.insectsSmallAnimals && this.amphibiansFish > this.catsDogs) {
+      let r = Math.floor(Math.random() * 2);
+      if (r === 1) {
+        this.result = "Amphibians";
+      } else {
+        this.result = "Fish";
       }
-      this.firstQuestions = this.Qservice.questionArr.filter((s) => {
-        return s.important == false && s.category == this.group;
-      });
-      this.nextSection = true;
+      console.log(this.result);
+      this.Qservice.setResults(this.result);
+      console.log(this.Qservice.result);
+     
+    } else if (this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.insectsSmallAnimals && this.birdsReptiles > this.catsDogs) {
+      let r = Math.floor(Math.random() * 2);
+      if (r == 1) {
+        this.result = "Birds";
+      } else {
+        this.result = "Reptiles";
+      }
+      console.log(this.result);
+      this.Qservice.setResults(this.result);
+      console.log(this.Qservice.result);
+    } else if (this.insectsSmallAnimals > this.amphibiansFish && this.insectsSmallAnimals > this.birdsReptiles && this.insectsSmallAnimals > this.catsDogs) {
+      let r = Math.floor(Math.random() * 2);
+      if (r == 1) {
+        this.result = "Insects";
+      } else {
+        this.result = "Small animals";
+      }
+      console.log(this.result);
+      this.Qservice.setResults(this.result);
+      console.log(this.Qservice.result);
+    } else if (this.catsDogs > this.amphibiansFish && this.catsDogs > this.insectsSmallAnimals && this.catsDogs > this.birdsReptiles) {
+      let r = Math.floor(Math.random() * 2);
+      if (r == 1) {
+        this.result = "Cats";
+      } else {
+        this.result = "Dogs";
+      }
+      console.log(this.result);
+      this.Qservice.setResults(this.result);
+      console.log(this.Qservice.result);
     }
+    this.router.navigate(['results']);
   }
 }
