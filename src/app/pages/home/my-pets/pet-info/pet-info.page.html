@@ -19,8 +19,8 @@
 
       <ion-col size="12">
         <div class="overFlow">
-          <h2 class="text-center m-0">Yoda</h2>
-          <p class="text-center"><i>Corgi</i></p>
+          <h2 class="text-center m-0">{{chosenPet[0].petName}}</h2>
+          <p class="text-center"><i>{{chosenPet[0].petDescription}}</i></p>
         </div>
 
 
@@ -28,7 +28,7 @@
       <ion-col size="12" class="mx-3">
         <div class="mr-4">
           <p class='noMarY'><i>Upcoming Events:</i></p>
-          <p>(closest event goes here)</p>
+          <p></p>
         </div>
       </ion-col>
 
@@ -45,8 +45,7 @@
           <ion-card-content class="p-2">
             <!-- this is where all the bulletpoints will go. -->
             <ul class="mb-2 lineFix">
-              <li>What is up?</li>
-
+              <li>{{currentDetail}}</li>
             </ul>
             <div class="p-2" (click)="editMe()" *ngIf="!inputOn">
               <p class="mb-0"><u>Edit Me!</u></p>

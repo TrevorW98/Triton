@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { IAnimals } from 'src/app/interfaces/animals';
 import { ILogin } from 'src/app/interfaces/ILogin';
 import { IUser } from 'src/app/interfaces/IUser';
@@ -18,7 +18,7 @@ export class IndexMainPage implements OnInit {
 
   public login: IUser = {
     Id: 0,
-    Email: '',
+    email: '',
     profilePicture: '',
     StaySignedIn: false,
   };  
@@ -30,21 +30,23 @@ export class IndexMainPage implements OnInit {
   
 
   ngOnInit() {
-    // this.login = this.dService.User;
-    // console.log(this.login.Email);
+    this.login = this.dService.User;
+    console.log(this.login.email);
     this.getAnimals();
-    // this.getFavorites(this.login.Email);
+    this.getFavorites(this.login.email);
+    console.log(this.fService.favsArr);
+    console.log()
   }
  
   getAnimals(): void{
     this.iService.getAnimals();
   }
-  // getFavorites(email: string): void{
-  //   this.fService.getFavorites(email);
-  // }
-  // setFavBool(){
-  //   this.fService.setFavBool();
-  // }
+  getFavorites(email: string): void{
+    this.fService.getFavorites(email);
+  }
+  setFavBool(){
+    this.fService.setFavBool();
+  }
   setCategoryIndexMain(string){
     this.iService.setCategory(string);
   }

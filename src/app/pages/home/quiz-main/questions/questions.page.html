@@ -5,26 +5,26 @@
     <ion-row>
       <ion-col class="center " >
           <ion-card-header class="questionBG">
-            <ion-card-title class="text-center">{{Questions[questionNum].question}}</ion-card-title>
+            <ion-card-title class="text-center">{{firstQuestions[questionNum].question}}</ion-card-title>
           </ion-card-header>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col >
           <ion-item class="questionNum" (click)="choiceSelect1()">
-            <ion-label>{{Questions[questionNum].optionOne}}</ion-label>
+            <ion-label>{{firstQuestions[questionNum].optionOne}}</ion-label>
             <ion-checkbox slot="end" id="btn1"></ion-checkbox>
           </ion-item>
           <ion-item class="questionNum" (click)="choiceSelect2()">
-            <ion-label>{{Questions[questionNum].optionTwo}}</ion-label>
+            <ion-label>{{firstQuestions[questionNum].optionTwo}}</ion-label>
             <ion-checkbox slot="end" id="btn2"></ion-checkbox>
           </ion-item>
           <ion-item class="questionNum" (click)="choiceSelect3()">
-            <ion-label>{{Questions[questionNum].optionThree}}</ion-label>
+            <ion-label>{{firstQuestions[questionNum].optionThree}}</ion-label>
             <ion-checkbox slot="end" id="btn3"></ion-checkbox>
           </ion-item>
           <ion-item class="questionNum" (click)="choiceSelect4()">
-            <ion-label>{{Questions[questionNum].optionFour}}</ion-label>
+            <ion-label>{{firstQuestions[questionNum].optionFour}}</ion-label>
             <ion-checkbox slot="end" id="btn4"></ion-checkbox>
           </ion-item>
       </ion-col>

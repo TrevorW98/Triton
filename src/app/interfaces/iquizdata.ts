@@ -6,4 +6,5 @@ export interface Iquizdata {
     optionThree: string;
     optionFour: string;
     important: boolean;
+    category: string;
 }

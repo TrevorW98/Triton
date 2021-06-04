@@ -28,7 +28,7 @@ export class DataService {
 
   public User: IUser = {
     Id: 0,
-    Email: '',
+    email: '',
     profilePicture: '',
     StaySignedIn: false,
   };

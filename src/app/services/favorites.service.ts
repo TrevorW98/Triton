@@ -33,7 +33,6 @@ export class FavoritesService {
   getFavorites(email){
     return this.http.get(this.favsUrl+email).subscribe((favsData) =>{
       this.favsArr = favsData;
-   
     });
   }
   setFavBool(){
