@@ -30,7 +30,8 @@
         <ion-card >
           <ion-item >
             <ion-label class="center breedFont" id="breedSpecies">{{animalChoice[0].breedSpeciesName}}</ion-label>
-            <ion-icon name="star-outline" slot="end" id="favorite"></ion-icon>
+            <!-- <ion-icon *ngIf="!favoriteBool" (click)="setFavorite()" name="star" slot="end" id="star" class="white"></ion-icon>
+            <ion-icon *ngIf="favoriteBool" (click)="deleteFavorite()" name="star" slot="end" id="star" class="yellow"></ion-icon> -->
           </ion-item>
           <ion-card-content>
             <img src="../../../../../../assets/Alaskan_Malamute.jpg" alt="An Alaskan Malamute">

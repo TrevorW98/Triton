@@ -13,8 +13,15 @@ export class QuestionsPage implements OnInit {
 
   constructor(private Qservice: QuizService) { }
 
-  public Questions: Iquizdata[];
+  public firstQuestions: Iquizdata[];
+  public lastQuestions: Iquizdata[];
   questionNum: number = 0;
+  nextBtn: boolean = false;
+  selected: boolean = false;
+  nextSection: boolean = false;
+  group: string;
+  result: string;
+
   //btn1
   amphibiansFish: number = 0;
   //btn2
@@ -24,12 +31,12 @@ export class QuestionsPage implements OnInit {
   //btn4
   catsDogs: number = 0;
 
-  nextBtn: boolean = false;
-  selected: boolean = false;
-  result: string;
+
   ngOnInit() {
-    this.Questions = this.Qservice.questionArr;
-    console.log(this.Questions);
+    this.firstQuestions = this.Qservice.questionArr.filter((s) => {
+      return s.important == true;
+    });
+    console.log(this.firstQuestions);
   }
   nextQuestion() {
     this.questionNum++;
@@ -37,13 +44,13 @@ export class QuestionsPage implements OnInit {
     let btn2 = document.getElementById("btn2");
     let btn3 = document.getElementById("btn3");
     let btn4 = document.getElementById("btn4");
-    if(btn1.hasAttribute("checked")){
+    if (btn1.hasAttribute("checked")) {
       this.amphibiansFish++;
-    }else if( btn2.hasAttribute("checked")){
+    } else if (btn2.hasAttribute("checked")) {
       this.birdsReptiles++;
-    } else if(btn3.hasAttribute("checked")){
+    } else if (btn3.hasAttribute("checked")) {
       this.insectsSmallAnimals++;
-    } else if(btn4.hasAttribute("checked")) {
+    } else if (btn4.hasAttribute("checked")) {
       this.catsDogs++;
     };
     console.log(this.amphibiansFish, this.birdsReptiles, this.insectsSmallAnimals, this.catsDogs);
@@ -52,6 +59,7 @@ export class QuestionsPage implements OnInit {
     btn3.removeAttribute("checked");
     btn4.removeAttribute("checked");
     this.deleteNextBtn();
+    this.narrowResults();
   }
 
   choiceSelect1() {
@@ -119,15 +127,21 @@ export class QuestionsPage implements OnInit {
     next.remove();
     this.nextBtn = false;
   }
-  generateResult(){
-   if(this.amphibiansFish > this.birdsReptiles && this.amphibiansFish > this.catsDogs && this.amphibiansFish > this.insectsSmallAnimals)
-   {
-     this.result = "Amphibians Fish result text here"
-   } else if(this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.catsDogs && this.amphibiansFish > this.insectsSmallAnimals)
-   {
-    this.result = "Birds Reptiles result text here"
-   }
+  narrowResults() {
+    if(this.questionNum == 10 && this.nextSection == false){
+      if (this.amphibiansFish > this.birdsReptiles && this.amphibiansFish > this.insectsSmallAnimals && this.amphibiansFish > this.catsDogs) {
+        this.group = "amphibiansFish";
+      } else if (this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.insectsSmallAnimals && this.birdsReptiles > this.catsDogs) {
+        this.group = "birdsReptiles";
+      } else if (this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.insectsSmallAnimals && this.birdsReptiles > this.catsDogs) {
+        this.group = "insectsSmallAnimals";
+      } else if (this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.insectsSmallAnimals && this.birdsReptiles > this.catsDogs) {
+        this.group = "catsDogs";
+      }
+      this.firstQuestions = this.Qservice.questionArr.filter((s) => {
+        return s.important == false && s.category == this.group;
+      });
+      this.nextSection = true;
+    }
   }
-
-
 }

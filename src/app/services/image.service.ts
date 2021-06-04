@@ -13,7 +13,7 @@ export class ImageService {
   }
 
   /**
-   * @param image File to be conververted to string
+   * @param image File to be converted to string
    * @returns promise of the file as a string
    */
   convertToString(image: File): Promise<string> {

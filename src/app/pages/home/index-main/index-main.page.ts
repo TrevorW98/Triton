@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { IAnimals } from 'src/app/interfaces/animals';
 import { ILogin } from 'src/app/interfaces/ILogin';
+import { IUser } from 'src/app/interfaces/IUser';
 import { DataService } from 'src/app/services/data.service';
 import { FavoritesService } from 'src/app/services/favorites.service';
 import { IndexService } from 'src/app/services/index.service';
@@ -15,10 +16,12 @@ export class IndexMainPage implements OnInit {
   backLocation = 'home';
   title = 'Pet Index';
 
-  SignedInUser: ILogin = {
-    Email: '',
-    Password: ''
-  };
+  public login: IUser = {
+    Id: 0,
+    email: '',
+    profilePicture: '',
+    StaySignedIn: false,
+  };  
 
   
   constructor(private dService: DataService, private iService: IndexService,  private fService: FavoritesService) { }
@@ -27,21 +30,19 @@ export class IndexMainPage implements OnInit {
   
 
   ngOnInit() {
-    this.SignedInUser = this.dService.getlogin();
+    this.login = this.dService.User;
+    console.log(this.login.email);
     this.getAnimals();
-    this.getFavorites();
+    this.getFavorites(this.login.email);
+    console.log(this.fService.favsArr);
+    console.log()
   }
-
-  
-
-  
  
-  
   getAnimals(): void{
     this.iService.getAnimals();
   }
-  getFavorites(): void{
-    this.fService.getFavorites();
+  getFavorites(email: string): void{
+    this.fService.getFavorites(email);
   }
   setFavBool(){
     this.fService.setFavBool();

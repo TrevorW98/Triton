@@ -28,7 +28,7 @@ export class DataService {
 
   public User: IUser = {
     Id: 0,
-    Email: '',
+    email: '',
     profilePicture: '',
     StaySignedIn: false,
   };
@@ -42,7 +42,6 @@ export class DataService {
       console.log(response);
       this.setUser(response.user);
       console.log(this.User, response.user);
-
       this.route.navigate(['home']);
     });
   }
@@ -58,6 +57,10 @@ export class DataService {
 
   getlogin(): ILogin {
     return this.login;
+  }
+
+  getUser(): IUser{
+    return this.User;
   }
 
   addUser(user) {
