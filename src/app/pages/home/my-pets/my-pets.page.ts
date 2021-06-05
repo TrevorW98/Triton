@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IMyPets } from 'src/app/interfaces/imypets';
+import { IMyPets } from 'src/app/interfaces/IMyPets';
 import { IUser } from 'src/app/interfaces/IUser';
 import { DataService } from 'src/app/services/data.service';
 import { MypetsService } from 'src/app/services/mypets.service';
