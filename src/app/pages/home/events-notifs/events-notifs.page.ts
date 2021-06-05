@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { IEvent } from 'src/app/interfaces/IEvent';
+import { IUser } from 'src/app/interfaces/IUser';
+import { DataService } from 'src/app/services/data.service';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-events-notifs',
@@ -8,10 +12,26 @@ import { Component, OnInit } from '@angular/core';
 export class EventsNotifsPage implements OnInit {
   backLocation = 'home';
   title = 'Events';
-
-  constructor() { }
+  public event: IEvent[];
+  constructor(private eService: EventService, private dService: DataService) { }
+  public login: IUser = {
+    Id: 0,
+    email: '',
+    profilePicture: '',
+    StaySignedIn: false
+  };
 
   ngOnInit() {
+    this.login = this.dService.User;
+    // user Id will eventually go into the getUserEvents(userId)
+    this.eService.getUserEvents('4').subscribe((response:IEvent[]) => {
+      console.log(response);
+      this.event = response;
+    });
   }
+
+
+
+
 
 }
