@@ -16,9 +16,9 @@
           <h2 class="mb-0">Recent<br />Entries</h2>
         </div>
       </ion-col>
-      <ion-col size="9" class="mt-2" *ngFor="let items of entry">
+      <ion-col size="9" class="mt-2" *ngFor="let items of journal">
         <button class="btn-block border-accent" mat-stroked-button color="white" routerLink="/journal-entries">
-          {{items}}
+          {{items.date | date: 'longDate'}}
           <mat-icon>chevron_right</mat-icon>
         </button>
       </ion-col>
