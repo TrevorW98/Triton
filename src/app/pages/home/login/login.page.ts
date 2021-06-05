@@ -33,7 +33,6 @@ export class LoginPage implements OnInit {
       alert('Fix errors on form');
     } else {
       this.dService.signIn(this.LoginForm.value);
-      alert('Submitted');
       this.LoginForm.reset();
     }
   }

@@ -2,7 +2,7 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
+    <ion-row *ngIf="chosenPet">
       <ion-col size="6">
         <button mat-icon-button routerLink='/individual-pet-docs'>
           <mat-icon>folder_special</mat-icon>
@@ -14,13 +14,13 @@
         </button>
       </ion-col>
       <ion-col size="12" class="center">
-        <img class="circleProfile" src="../../../../../assets/images/doge.jpg" alt="Yoda">
+        <img class="circleProfile" src="{{chosenPet.petPicture == 'temp.string' ? chosenPet.petPicture : '../../../../assets/images/doge.jpg'}}" alt="Yoda">
       </ion-col>
 
       <ion-col size="12">
         <div class="overFlow">
-          <h2 class="text-center m-0">{{chosenPet[0].petName}}</h2>
-          <p class="text-center"><i>{{chosenPet[0].petDescription}}</i></p>
+          <h2 class="text-center m-0">{{chosenPet.petName}}</h2>
+          <p class="text-center"><i>{{chosenPet.petDescription}}</i></p>
         </div>
 
 
