@@ -4,54 +4,31 @@
   <ion-grid>
 
     <ion-row *ngIf="dService.User.Id == 0" class="d-flex justify-content-center">
-        <app-sign-in-suggestion></app-sign-in-suggestion>
+      <app-sign-in-suggestion></app-sign-in-suggestion>
     </ion-row>
     <ion-row>
       <ion-col size="12">
         <div class="rounded primaryBg-gradient">
           <div class="card-body p-2">
-            <div
-              class="d-flex py-0 justify-content-between"
-              (click)="redirect('my-pets')"
-            >
+            <div class="d-flex py-0 justify-content-between" (click)="routeToLogin('my-pets')">
               <h2 class="card-title mb-0">My Pets</h2>
               <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
             </div>
             <div class="scrolls my-2 h-125">
               <a routerLink="/pet-info">
-                <img
-                  src="../../../../assets/images/doge.jpg"
-                  class="animalPic mx-2"
-                  alt="Yoda"
-                />
+                <img src="../../../../assets/images/doge.jpg" class="animalPic mx-2" alt="Yoda" />
               </a>
               <a routerLink="/pet-info">
-                <img
-                  src="../../../../assets/images/doge.jpg"
-                  class="animalPic mx-2"
-                  alt="Yoda"
-                />
+                <img src="../../../../assets/images/doge.jpg" class="animalPic mx-2" alt="Yoda" />
               </a>
               <a routerLink="/pet-info">
-                <img
-                  src="../../../../assets/images/doge.jpg"
-                  class="animalPic mx-2"
-                  alt="Yoda"
-                />
+                <img src="../../../../assets/images/doge.jpg" class="animalPic mx-2" alt="Yoda" />
               </a>
               <a routerLink="/pet-info">
-                <img
-                  src="../../../../assets/images/doge.jpg"
-                  class="animalPic mx-2"
-                  alt="Yoda"
-                />
+                <img src="../../../../assets/images/doge.jpg" class="animalPic mx-2" alt="Yoda" />
               </a>
               <a routerLink="/pet-info">
-                <img
-                  src="../../../../assets/images/doge.jpg"
-                  class="animalPic mx-2"
-                  alt="Yoda"
-                />
+                <img src="../../../../assets/images/doge.jpg" class="animalPic mx-2" alt="Yoda" />
               </a>
             </div>
           </div>
@@ -62,17 +39,14 @@
       <ion-col size="12">
         <div class="rounded primaryBg-gradient">
           <div class="card-body p-2">
-            <div
-              class="d-flex pb-0 justify-content-between"
-              (click)="redirect('feeding-times')"
-            >
+            <div class="d-flex pb-0 justify-content-between" (click)="routeToLogin('feeding-times')">
               <h2 class="card-title mb-0">Today's Feeding Times</h2>
               <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
             </div>
             <div class="scrolls my-2 h-125 d-flex flex-row">
-              
+
               <app-feed *ngFor="let event of events"></app-feed>
-              
+
             </div>
           </div>
         </div>
@@ -82,18 +56,13 @@
       <ion-col size="6">
         <div class="rounded primaryBg-gradient h-100">
           <div class="card-body p-2">
-            <div
-              class="d-flex pb-0 justify-content-between"
-              (click)="redirect('events-notifs')"
-            >
+            <div class="d-flex pb-0 justify-content-between" (click)="routeToLogin('events-notifs')">
               <h2 class="card-title mb-0">Events</h2>
               <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
             </div>
-            <div
-              class="scrolls-vertically h-200p d-flex flex-column align-items-center"
-            >
+            <div class="scrolls-vertically h-200p d-flex flex-column align-items-center">
               <app-event *ngFor="let event of events" [event]="event"></app-event>
-              
+
             </div>
           </div>
         </div>
@@ -103,14 +72,9 @@
           <ion-col>
             <div class="rounded primaryBg-gradient">
               <div class="card-body p-2">
-                <div
-                  class="d-flex pb-0 justify-content-between"
-                  (click)="redirect('index-main')"
-                >
+                <div class="d-flex pb-0 justify-content-between" (click)="redirect('index-main')">
                   <h2 class="card-title mb-0">Pet Index</h2>
-                  <mat-icon class="h1 mt-0 mt-n2"
-                    >keyboard_arrow_right</mat-icon
-                  >
+                  <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
                 </div>
                 <p class="card-text">
                   Learn about other creatures you can care for
@@ -123,14 +87,9 @@
           <ion-col>
             <div class="rounded primaryBg-gradient">
               <div class="card-body p-2">
-                <div
-                  class="d-flex pb-0 justify-content-between"
-                  (click)="redirect('quiz-main')"
-                >
+                <div class="d-flex pb-0 justify-content-between" (click)="redirect('quiz-main')">
                   <h2 class="card-title mb-0">Pick My Pet</h2>
-                  <mat-icon class="h1 mt-0 mt-n2"
-                    >keyboard_arrow_right</mat-icon
-                  >
+                  <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
                 </div>
                 <p class="card-text">
                   Take our quiz to find out which pet is right for you
@@ -143,14 +102,9 @@
           <ion-col>
             <div class="rounded primaryBg-gradient">
               <div class="card-body p-2">
-                <div
-                  class="d-flex pb-0 justify-content-between"
-                  (click)="redirect('documents-main')"
-                >
+                <div class="d-flex pb-0 justify-content-between" (click)=" routeToLogin('documents-main')">
                   <h2 class="card-title mb-0">Docs</h2>
-                  <mat-icon class="h1 mt-0 mt-n2"
-                    >keyboard_arrow_right</mat-icon
-                  >
+                  <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
                 </div>
               </div>
             </div>
@@ -162,4 +116,3 @@
 </ion-content>
 
 <app-bottom-nav></app-bottom-nav>
-

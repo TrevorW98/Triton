@@ -1,4 +1,5 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IAnimals } from 'src/app/interfaces/animals';
 import { ILogin } from 'src/app/interfaces/ILogin';
 import { IUser } from 'src/app/interfaces/IUser';
@@ -24,7 +25,7 @@ export class IndexMainPage implements OnInit {
   };  
 
   
-  constructor(private dService: DataService, private iService: IndexService,  private fService: FavoritesService) { }
+  constructor(private dService: DataService, private iService: IndexService,  private fService: FavoritesService, private router: Router) { }
   
   public category;
   
@@ -45,12 +46,18 @@ export class IndexMainPage implements OnInit {
     this.fService.getFavorites(email);
   }
   setFavBool(){
-    this.fService.setFavBool();
+    if(this.login.email != ''){
+      this.fService.setFavBool();
+    }
   }
   setCategoryIndexMain(string){
     this.iService.setCategory(string);
   }
- 
+  routeLogin(){
+    if(this.login.email == ''){
+      this.router.navigate(['login']);
+    }
+  }
   
   
 }
