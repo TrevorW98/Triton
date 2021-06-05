@@ -15,7 +15,7 @@ export class EventsNotifsPage implements OnInit {
   public event: IEvent[];
   constructor(private eService: EventService, private dService: DataService) { }
   public login: IUser = {
-    Id: 0,
+    id: 0,
     email: '',
     profilePicture: '',
     StaySignedIn: false

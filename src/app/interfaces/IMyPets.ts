@@ -1,7 +1,7 @@
 export interface IMyPets {
     id: number;
     petName: string;
-    userId: string;
+    userId: number;
     petDescription: string;
     petPicture: string;
     events: string;
