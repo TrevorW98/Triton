@@ -19,11 +19,15 @@ export class PetInfoPage implements OnInit {
 
   constructor(private pService: MypetsService) { }
 
+  // chosenPet: IMyPets[];
   chosenPet: IMyPets;
   currentDetail: string;
   id: number;
   // Gotta pull daily needs in the ngOnInIt (right away when we get to this page so we need the pet name info)
   ngOnInit() {
+    // this.chosenPet = ( this.pService.myPets.filter((s)=> {
+    //   return s.petName == this.pService.chosenPet;
+    // }));
    this.chosenPet = this.pService.myPets.filter((pet)=>pet.petName == this.pService.chosenPet)[0];
   //  console.log(this.chosenPet);
   //  I have a long list of my pets. I wanna filter it to only pets whos name is equal to this chosen pet's name from pet service. THEN we do index of 0 to chose the first one of the list
