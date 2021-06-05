@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
 import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +19,8 @@ import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
     IonicModule,
     AnimalInfoPageRoutingModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+   
   ],
   declarations: [AnimalInfoPage, BottomNavComponent, TopNavComponent]
 })

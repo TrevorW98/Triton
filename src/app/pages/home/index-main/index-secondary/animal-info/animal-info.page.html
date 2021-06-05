@@ -12,6 +12,7 @@
           </ion-item>
           <ion-card-content>
             <img src={{src}} alt="An Alaskan Malamute">
+            <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
           </ion-card-content>
         </ion-card>
       </ion-col>
