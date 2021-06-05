@@ -24,6 +24,6 @@ export class AddPetPage implements OnInit {
   // Here we are going to add a pet by pushing into the db
   // We will push picture, name, and description into the db here.
   addPet(){
-
+    
   }
 }

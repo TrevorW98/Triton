@@ -3,7 +3,7 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
 
-    <ion-row *ngIf="dService.User.Id == 0" class="d-flex justify-content-center">
+    <ion-row *ngIf="dService.User.id == 0" class="d-flex justify-content-center">
       <app-sign-in-suggestion></app-sign-in-suggestion>
     </ion-row>
     <ion-row>
@@ -15,9 +15,11 @@
               <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
             </div>
             <div class="scrolls my-2 h-125">
-              <a routerLink="/pet-info">
-                <img src="../../../../assets/images/doge.jpg" class="animalPic mx-2" alt="Yoda" />
-              </a>
+              <div *ngIf="petsService.myPets.length">
+                <a *ngFor="let pet of petsService.myPets" routerLink="/pet-info">
+                  <img src="{{pet.petPicture == 'temp.string' ? pet.petPicture : '../../../../assets/images/doge.jpg'}}" class="animalPic mx-2" alt="{{pet.petName}}" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@ export class JournalMainPage implements OnInit {
   constructor(private jService: JournalService, private dService: DataService) { }
 
   public login: IUser = {
-    Id: 0,
+    id: 0,
     email: '',
     profilePicture: '',
     StaySignedIn: false,

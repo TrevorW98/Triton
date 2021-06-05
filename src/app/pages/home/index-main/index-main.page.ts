@@ -18,7 +18,7 @@ export class IndexMainPage implements OnInit {
   title = 'Pet Index';
 
   public login: IUser = {
-    Id: 0,
+    id: 0,
     email: '',
     profilePicture: '',
     StaySignedIn: false,
