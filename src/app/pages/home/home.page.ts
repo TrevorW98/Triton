@@ -5,6 +5,8 @@ import { ILogin } from 'src/app/interfaces/ILogin';
 import { IEvent } from 'src/app/interfaces/IEvent';
 import { EventService } from 'src/app/services/event.service';
 import { IUser } from 'src/app/interfaces/IUser';
+import { MypetsService } from 'src/app/services/mypets.service';
+import { IMyPets } from 'src/app/interfaces/IMyPets';
 // import {MatButtonModule} from '@angular/material/button';
 
 
@@ -21,8 +23,8 @@ export class HomePage implements OnInit {
     Email: '',
     Password: '',
   };
-  public login: IUser = {
-    Id: 0,
+  User: IUser = {
+    id: 0,
     email: '',
     profilePicture: '',
     StaySignedIn: false,
@@ -30,7 +32,8 @@ export class HomePage implements OnInit {
   constructor(
     private router: Router,
     public dService: DataService,
-    private eventService: EventService
+    private eventService: EventService,
+    public petsService: MypetsService
   ) {}
 
   events: IEvent[] = [];
@@ -43,6 +46,17 @@ export class HomePage implements OnInit {
     this.SignedInUser = this.dService.getlogin();
     console.log(this.SignedInUser);
     this.getEvents();
+  }
+
+  ionViewWillEnter(): void {
+    this.User = this.dService.User;
+    console.log(this.User);
+    this.petsService.getMyPets(this.User.id)
+      .subscribe((pets: IMyPets[]) => {
+        console.log(pets);
+        this.petsService.myPets = pets;
+        console.log(this.petsService.myPets);
+      });
   }
 
   getEvents(): void {

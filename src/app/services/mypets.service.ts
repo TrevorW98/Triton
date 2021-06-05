@@ -12,8 +12,9 @@ export class MypetsService {
 
   private baseUrl: string = "http://localhost:5000";
   private myPetsAddition: string = "/pets?userid=";
+  public myPets: IMyPets[] = [];
   private add: string = '/pets/add';
-  public myPets: IMyPets[];
+
   public chosenPet: string;
   // public addUserPet: IMyPets[];
 
