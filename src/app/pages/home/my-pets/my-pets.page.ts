@@ -13,7 +13,7 @@ export class MyPetsPage implements OnInit {
   backLocation: string = 'home';
   title: string = 'My Pets';
   
-  constructor(private pService: MypetsService, private dService: DataService) { }
+  constructor(private petsService: MypetsService, private dService: DataService) { }
 
   public login: IUser = {
     id: 0,
@@ -21,22 +21,26 @@ export class MyPetsPage implements OnInit {
     profilePicture: '',
     StaySignedIn: false,
   }; 
-  public myPets: IMyPets[];
+  public myPets: IMyPets[] = [];
   
   ngOnInit() {
-    this.login = this.dService.User;
-    this.pService.getMyPets("4").subscribe((s: IMyPets[]) =>{
-      console.log(s);
-      this.myPets = s;
-      this.pService.setPetArr(this.myPets);
-      console.log(this.myPets);
-      console.log(this.pService.myPets);
-    });
+    // this.login = this.dService.User;
+    // this.pService.getMyPets("4").subscribe((s: IMyPets[]) =>{
+    //   console.log(s);
+    //   this.myPets = s;
+    //   this.pService.setPetArr(this.myPets);
+    //   console.log(this.myPets);
+    //   console.log(this.pService.myPets);
+    // });
+  }
+
+  ionViewWillEnter():void {
+    this.myPets = this.petsService.myPets;
   }
   // petName = ["Nala", "Tauni", "Triton", "Yoda", "Floofy McFloof Mc Floofer-Kins"];
 
   setPetName(petName: string){
-    this.pService.setPetChoice(petName);
+    this.petsService.setPetChoice(petName);
   }
 
 
