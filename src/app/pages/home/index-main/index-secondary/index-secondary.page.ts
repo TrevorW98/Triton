@@ -35,6 +35,7 @@ title = 'Pet Index';
 
 
   ngOnInit() {
+    this.iService.setAnimalChoice("");
     this.favoritesBool = this.fService.favoritesBool;
     this.SignedInUser = this.dService.getlogin();
     this.animals = this.iService.animalArr.filter(a => {
