@@ -19,7 +19,7 @@ export class PetInfoPage implements OnInit {
 
   constructor(private pService: MypetsService) { }
 
-  // chosenPet: IMyPets[];
+    // chosenPet: IMyPets[];
   chosenPet: IMyPets;
   currentDetail: string;
   id: number;
