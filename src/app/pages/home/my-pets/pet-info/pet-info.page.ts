@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { IMyPets } from 'src/app/interfaces/IMyPets';
 import { MypetsService } from 'src/app/services/mypets.service';
 import { MyPetsPage } from '../my-pets.page';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pet-info',
@@ -17,35 +18,43 @@ export class PetInfoPage implements OnInit {
   inputBox = '';
   addInfo: FormGroup;
 
-  constructor(private pService: MypetsService) { }
+  constructor(
+    private petsService: MypetsService,
+    private route: ActivatedRoute) { }
 
-    chosenPet: IMyPets[];
+    chosenPet?: IMyPets;
   // chosenPet: IMyPets;
   currentDetail: string;
   id: number;
   // Gotta pull daily needs in the ngOnInIt (right away when we get to this page so we need the pet name info)
   ngOnInit() {
-    this.chosenPet = ( this.pService.myPets.filter((s)=> {
-      return s.petName == this.pService.chosenPet;
-    }));
+    // this.chosenPet = ( this.pService.myPets.filter((s)=> {
+    //   return s.petName == this.pService.chosenPet;
+    // }));
   //  this.chosenPet = this.pService.myPets.filter(pet => pet.petName == this.pService.chosenPet)[0];
   //  console.log(this.chosenPet);
   //  I have a long list of my pets. I wanna filter it to only pets whos name is equal to this chosen pet's name from pet service. THEN we do index of 0 to chose the first one of the list
-    console.log(this.pService.chosenPet);
+    // console.log(this.pService.chosenPet);
       // this.id = this.chosenPet.id;
   }
-  // this will change the color and insert all the information from the pull into the box in one function.
 
+  ionViewWillEnter(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.petsService.getPet(id)
+      .subscribe((pet: IMyPets) => this.chosenPet = pet);
+  }
+  
   editMe() {
     this.inputOn = true;
-
-  }
-  submitForm(){
-      alert("successfully added");
     
   }
-
-
+  submitForm(){
+    alert("successfully added");
+    
+  }
+  
+  
+  // this will change the color and insert all the information from the pull into the box in one function.
   colorChange(card, color) {
     // this first if else group will remove all the former backgrounds so it won't stack on top of each other.
     if (card.el.classList.contains('primaryBg')) {

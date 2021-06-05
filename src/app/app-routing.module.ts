@@ -96,7 +96,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/my-pets/add-pet/add-pet.module').then( m => m.AddPetPageModule)
   },
   {
-    path: 'pet-info',
+    path: 'pet-info/:id',
     loadChildren: () => import('./pages/home/my-pets/pet-info/pet-info.module').then( m => m.PetInfoPageModule)
   },
   {
