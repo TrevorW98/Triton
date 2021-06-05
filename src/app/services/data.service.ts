@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { IAnimals } from '../interfaces/animals';
+import { IndexService } from './index.service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -37,6 +38,10 @@ export class DataService {
     profilePicture: '',
     StaySignedIn: false,
   };
+
+  
+
+
 
   constructor(private http: HttpClient, private route: Router) {}
 
@@ -128,6 +133,8 @@ export class DataService {
     }
     return of(message);
   }
+
+  
 
   
 }
