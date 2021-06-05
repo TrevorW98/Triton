@@ -26,6 +26,7 @@ export class AnimalInfoPage implements OnInit {
   removeFavorite: IFavoritesID[];
   favoriteBool: boolean;
   login: ILogin;
+  src: string;
 
   ngOnInit() {
     // this.login = this.dService.getlogin();
@@ -35,6 +36,11 @@ export class AnimalInfoPage implements OnInit {
       return b.breedSpeciesName == this.iService.animalChoice;
     })
     console.log(this.animalChoice);
+    this.convertToImage();
+  }
+  convertToImage(){
+    this.src = "data:image/jpeg;base64," + atob(this.animalChoice[0].breedSpeciesPicture);
+    console.log(this.src); 
   }
   // setFavorite(){
   //   if(!this.favoriteBool){
