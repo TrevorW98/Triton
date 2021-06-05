@@ -8,6 +8,8 @@ import { AnimalInfoPageRoutingModule } from './animal-info-routing.module';
 import {MatIconModule} from '@angular/material/icon';
 import { AnimalInfoPage } from './animal-info.page';
 import { MatButtonModule } from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 @NgModule({
   imports: [
@@ -18,6 +20,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule
   ],
-  declarations: [AnimalInfoPage]
+  declarations: [AnimalInfoPage, BottomNavComponent, TopNavComponent]
 })
 export class AnimalInfoPageModule {}

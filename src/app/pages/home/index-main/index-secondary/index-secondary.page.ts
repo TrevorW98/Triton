@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./index-secondary.page.scss'],
 })
 export class IndexSecondaryPage implements OnInit {
+  backLocation = 'index-main';
+title = 'Pet Index';
   // Call API for animal information buttons, we need animal breed/species in an array to then generate
   // components for each item in the array. Need to generate a row and col for each ion-item containing a Button.
   // And also an item divider and label for each letter of the alphabet that is represented in the array

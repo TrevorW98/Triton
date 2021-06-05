@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from './data.service';
-import { IMyPets } from '../interfaces/imypets';
+import { IMyPets } from '../interfaces/IMyPets';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class MypetsService {
   private myPetsAddition: string = "/pets?userid=";
   public myPets: IMyPets[];
   public chosenPet: string;
-
+  // public addUserPet: IMyPets[];
 
   getMyPets(id){
     return this.http.get(this.baseUrl+this.myPetsAddition+id);
@@ -28,5 +28,15 @@ export class MypetsService {
   setPetArr(pets: IMyPets[]){
     this.myPets = pets;
   }
+
+// Post: Add pets
+
+
+
+
+// Update: My Pets Info
+
+
+
 
 }

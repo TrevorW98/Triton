@@ -15,6 +15,8 @@ import { IndexService } from 'src/app/services/index.service';
 
 export class AnimalInfoPage implements OnInit {
 
+  backLocation = 'index-secondary';
+  title = 'Pet Index';
   
   constructor(private iService: IndexService, private dService: DataService, private fService: FavoritesService) { 
     
