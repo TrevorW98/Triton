@@ -31,7 +31,6 @@ export class MypetsService {
   }
 
 // Post: Add pets
-
   addMyPets(addPets: IMyPets){
     return this.dService.post(this.add, addPets).toPromise();
   }
