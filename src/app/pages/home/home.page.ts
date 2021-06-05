@@ -4,6 +4,7 @@ import { DataService } from 'src/app/services/data.service';
 import { ILogin } from 'src/app/interfaces/ILogin';
 import { IEvent } from 'src/app/interfaces/IEvent';
 import { EventService } from 'src/app/services/event.service';
+import { IUser } from 'src/app/interfaces/IUser';
 // import {MatButtonModule} from '@angular/material/button';
 
 
@@ -20,6 +21,12 @@ export class HomePage implements OnInit {
     Email: '',
     Password: '',
   };
+  public login: IUser = {
+    Id: 0,
+    email: '',
+    profilePicture: '',
+    StaySignedIn: false,
+  };  
   constructor(
     private router: Router,
     public dService: DataService,
@@ -34,6 +41,7 @@ export class HomePage implements OnInit {
 
   ngOnInit(): void {
     this.SignedInUser = this.dService.getlogin();
+    console.log(this.SignedInUser);
     this.getEvents();
   }
 
@@ -42,5 +50,13 @@ export class HomePage implements OnInit {
       this.events = events;
     });
   }
+  routeToLogin(string){
+    if(this.SignedInUser.Email == ''){
+      this.router.navigate(['login'])
+    } else {
+     this.redirect(string);
+    }
+  }
+
   
 }
