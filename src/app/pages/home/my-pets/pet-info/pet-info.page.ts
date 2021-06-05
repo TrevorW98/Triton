@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { IMyPets } from 'src/app/interfaces/imypets';
+import { IMyPets } from 'src/app/interfaces/IMyPets';
 import { MypetsService } from 'src/app/services/mypets.service';
 import { MyPetsPage } from '../my-pets.page';
 
