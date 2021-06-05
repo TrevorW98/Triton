@@ -5,6 +5,7 @@ import { DataService } from 'src/app/services/data.service';
 import { ILogin } from 'src/app/interfaces/ILogin';
 import { IFavorites } from 'src/app/interfaces/IFavorites';
 import { FavoritesService } from 'src/app/services/favorites.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index-secondary',
@@ -17,7 +18,7 @@ title = 'Pet Index';
   // Call API for animal information buttons, we need animal breed/species in an array to then generate
   // components for each item in the array. Need to generate a row and col for each ion-item containing a Button.
   // And also an item divider and label for each letter of the alphabet that is represented in the array
-  constructor(private iService: IndexService, private dService: DataService, private fService: FavoritesService) { }
+  constructor(private iService: IndexService, private dService: DataService, private fService: FavoritesService, private router: Router) { }
 
   public animals: IAnimals[];
   public favorites: IFavorites[];
@@ -34,6 +35,7 @@ title = 'Pet Index';
 
 
   ngOnInit() {
+    this.iService.setAnimalChoice("");
     this.favoritesBool = this.fService.favoritesBool;
     this.SignedInUser = this.dService.getlogin();
     this.animals = this.iService.animalArr.filter(a => {
@@ -68,6 +70,7 @@ title = 'Pet Index';
   setAnimalChoice(name: string){
     this.iService.setAnimalChoice(name);
   }
+  
  
 
   
