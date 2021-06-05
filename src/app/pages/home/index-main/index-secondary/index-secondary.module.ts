@@ -8,6 +8,8 @@ import { IndexSecondaryPageRoutingModule } from './index-secondary-routing.modul
 import {MatIconModule} from '@angular/material/icon';
 import { IndexSecondaryPage } from './index-secondary.page';
 import { MatButtonModule } from '@angular/material/button';
+import { BottomNavComponent } from 'src/app/components/bottom-nav/bottom-nav.component';
+import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
 
 
 @NgModule({
@@ -20,6 +22,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     
   ],
-  declarations: [IndexSecondaryPage]
+  declarations: [IndexSecondaryPage, BottomNavComponent, TopNavComponent]
 })
 export class IndexSecondaryPageModule {}

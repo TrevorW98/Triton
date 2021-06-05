@@ -14,7 +14,7 @@ export class MypetsService {
   private myPetsAddition: string = "/pets?userid=";
   public myPets: IMyPets[];
   public chosenPet: string;
-
+  // public addUserPet: IMyPets[];
 
   getMyPets(id){
     return this.http.get(this.baseUrl+this.myPetsAddition+id);
@@ -28,5 +28,15 @@ export class MypetsService {
   setPetArr(pets: IMyPets[]){
     this.myPets = pets;
   }
+
+// Post: Add pets
+
+
+
+
+// Update: My Pets Info
+
+
+
 
 }
