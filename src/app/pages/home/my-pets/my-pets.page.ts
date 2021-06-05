@@ -16,7 +16,7 @@ export class MyPetsPage implements OnInit {
   constructor(private pService: MypetsService, private dService: DataService) { }
 
   public login: IUser = {
-    Id: 0,
+    id: 0,
     email: '',
     profilePicture: '',
     StaySignedIn: false,

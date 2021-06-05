@@ -1,5 +1,5 @@
 export interface IUser {
-    Id: number;
+    id: number;
     email: string;
     profilePicture: string;
     StaySignedIn: boolean;
