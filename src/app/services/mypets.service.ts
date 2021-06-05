@@ -8,10 +8,11 @@ import { IMyPets } from '../interfaces/IMyPets';
 })
 export class MypetsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private dService: DataService) { }
 
   private baseUrl: string = "http://localhost:5000";
   private myPetsAddition: string = "/pets?userid=";
+  private add: string = '/pets/add';
   public myPets: IMyPets[];
   public chosenPet: string;
   // public addUserPet: IMyPets[];
@@ -31,6 +32,9 @@ export class MypetsService {
 
 // Post: Add pets
 
+  addMyPets(addPets: IMyPets){
+    return this.dService.post(this.add, addPets).toPromise();
+  }
 
 
 
