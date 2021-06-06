@@ -21,7 +21,7 @@ export class EventService {
   public event:IEvent[];
 
   getEvents(): Observable<IEvent[]>{
-    return this.http.get<IEvent[]>(this.eventEnd+this.dService.User.id);
+    return this.http.get<IEvent[]>(this.baseUrl+this.eventEnd+this.dService.User.id);
   }
 
   getUserEvents(id){

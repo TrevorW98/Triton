@@ -22,6 +22,7 @@ export class HomePage implements OnInit {
   SignedInUser: ILogin = {
     Email: '',
     Password: '',
+    StaySignedIn: false
   };
   User: IUser = {
     id: 0,
@@ -46,18 +47,19 @@ export class HomePage implements OnInit {
   ngOnInit(): void {
     // this.SignedInUser = this.dService.getlogin();
     // console.log(this.SignedInUser);
+    this.dService.checkIfSignedIn();
   }
   
   ionViewWillEnter(): void {
-    this.User = this.dService.User;
-    console.log(this.User);
-    this.petsService.getMyPets(this.User.id)
+    if(this.dService.User.id != 0){
+      this.petsService.getMyPets(this.User.id)
     .subscribe((pets: IMyPets[]) => {
       console.log(pets);
       this.petsService.myPets = pets;
       console.log(this.petsService.myPets);
     });
     this.getEvents();
+  };
   }
 
   getEvents(): void {
