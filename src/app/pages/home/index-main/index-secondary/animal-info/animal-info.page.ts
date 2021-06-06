@@ -39,7 +39,11 @@ export class AnimalInfoPage implements OnInit {
     this.convertToImage();
   }
   convertToImage(){
-    this.src = "data:image/jpeg;base64," + atob(this.animalChoice[0].breedSpeciesPicture);
+    if(this.animalChoice[0].breedSpeciesPicture == '' || this.animalChoice[0].breedSpeciesPicture == "temp. string"){
+      this.src = '../../../../../assets/sunset.jpg'
+    } else{
+      this.src = "data:image/jpeg;base64," + atob(this.animalChoice[0].breedSpeciesPicture);
+    }
     console.log(this.src); 
   }
   onFileSelected(event): void {
@@ -56,9 +60,11 @@ export class AnimalInfoPage implements OnInit {
        
         const convertBase64 = btoa(result);
         console.log(convertBase64);
-
         //reconvert to image on the screen
         this.iService.setBase64(convertBase64);
+        setTimeout(()=> {
+          this.iService.updateAnimal();
+        }, 2000)
       };
       reader.readAsDataURL(file);
     }

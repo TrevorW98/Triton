@@ -10,7 +10,10 @@ import { DataService } from './data.service';
 })
 export class EventService {
 
-  constructor(private http: HttpClient, private dService: DataService) { }
+  constructor(
+    private http: HttpClient,
+    private dService: DataService
+  ) { }
   private baseUrl: string = 'http://localhost:5000';
 
   private eventEnd: string = '/events?userId=';
@@ -18,8 +21,7 @@ export class EventService {
   public event:IEvent[];
 
   getEvents(): Observable<IEvent[]>{
-    const events = of(EVENTS);
-    return events;
+    return this.http.get<IEvent[]>(this.baseUrl+this.eventEnd+this.dService.User.id);
   }
 
   getUserEvents(id){

@@ -56,6 +56,7 @@ export class IndexService {
   }
 
   updateAnimal(){
+    console.log("running");
     this.http.put(this.updateAnimalUrl,this.animalPhoto).subscribe(s => {
       console.log(s);
     })
