@@ -68,18 +68,18 @@ export class PetInfoPage implements OnInit {
 
     if (color == 'dailyNeeds') {
       card.el.classList.add('primaryBg');
-      this.currentDetail = this.chosenPet[0].dailyNeeds;
+      this.currentDetail = this.chosenPet.dailyNeeds;
 
 
 
     } else if (color == 'food') {
       card.el.classList.add('accentBg');
-      this.currentDetail = this.chosenPet[0].foodTreats;
+      this.currentDetail = this.chosenPet.foodTreats;
 
 
     } else if (color == 'medical') {
       card.el.classList.add('warnBg');
-      this.currentDetail = this.chosenPet[0].medical;
+      this.currentDetail = this.chosenPet.medical;
 
 
     }
