@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IEvent } from 'src/app/interfaces/IEvent';
 
 @Component({
   selector: 'app-feed',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feed.component.scss'],
 })
 export class FeedComponent implements OnInit {
+
+  @Input() event?: IEvent; 
 
   constructor() { }
 

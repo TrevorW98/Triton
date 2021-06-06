@@ -15,7 +15,7 @@ export const EVENTS: IEvent[] = [
     petname: 'Yoda',
     date: 'May 10, 2021 09:00:00',
     occurance: 'Daily',
-    eventType: 'Feeding',
+    eventType: 'feeding',
   },
   {
     id: 3,

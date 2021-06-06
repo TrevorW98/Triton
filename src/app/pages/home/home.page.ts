@@ -37,31 +37,33 @@ export class HomePage implements OnInit {
   ) {}
 
   events: IEvent[] = [];
+  feeds: IEvent[] = [];
 
   redirect(path: string) {
     this.router.navigate([path]);
   }
 
   ngOnInit(): void {
-    this.SignedInUser = this.dService.getlogin();
-    console.log(this.SignedInUser);
-    this.getEvents();
+    // this.SignedInUser = this.dService.getlogin();
+    // console.log(this.SignedInUser);
   }
-
+  
   ionViewWillEnter(): void {
     this.User = this.dService.User;
     console.log(this.User);
     this.petsService.getMyPets(this.User.id)
-      .subscribe((pets: IMyPets[]) => {
-        console.log(pets);
-        this.petsService.myPets = pets;
-        console.log(this.petsService.myPets);
-      });
+    .subscribe((pets: IMyPets[]) => {
+      console.log(pets);
+      this.petsService.myPets = pets;
+      console.log(this.petsService.myPets);
+    });
+    this.getEvents();
   }
 
   getEvents(): void {
     this.eventService.getEvents().subscribe((events) => {
-      this.events = events;
+      this.events = events.filter(e => e.eventType != 'feeding');
+      this.feeds = events.filter(e => e.eventType == 'feeding');
     });
   }
   routeToLogin(string){
