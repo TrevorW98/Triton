@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { ImageService } from 'src/app/services/image.service';
 
@@ -7,16 +7,18 @@ import { ImageService } from 'src/app/services/image.service';
   templateUrl: './account.page.html',
   styleUrls: ['./account.page.scss'],
 })
-export class AccountPage implements DoCheck {
+export class AccountPage implements OnInit {
   backLocation = 'home';
   title = 'Account';
+  imgSrc;
 
   constructor(private imageConverter: ImageService,
               public dService: DataService) { }
 
-  imgSrc;
+  ngOnInit() { }
 
-  ngDoCheck() {
+
+  ionViewWillEnter() {
     if (this.dService.User.profilePicture != ''){
       console.log(this.dService.User.profilePicture);
       this.imgSrc = this.dService.User.profilePicture;
