@@ -37,8 +37,8 @@ export class IndexMainPage implements OnInit {
     this.getAnimals();
     this.getFavorites(this.login.email);
     console.log(this.fService.favsArr);
-    console.log()
   }
+
  
   getAnimals(): void{
     this.iService.getAnimals();

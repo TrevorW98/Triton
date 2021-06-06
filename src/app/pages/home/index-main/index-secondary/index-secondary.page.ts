@@ -47,6 +47,9 @@ title = 'Pet Index';
     console.log(this.favorites);
     this.setTitle();
   }
+  ionViewWillEnter(){
+    this.iService.setAnimalChoice("");
+  }
   
   
   setTitle(){
