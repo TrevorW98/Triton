@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
       let loginAttempt = {
         Email: this.LoginForm.controls['Email'].value,
         Password:this.LoginForm.controls['Password'].value,
-        StaySignedIn:this.LoginForm.controls['StaySignedIn'].value != ''
+        staySignedIn:this.LoginForm.controls['StaySignedIn'].value != ''
       }
       this.dService.signIn(loginAttempt);
       this.LoginForm.reset();
