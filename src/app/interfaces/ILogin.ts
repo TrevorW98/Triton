@@ -1,5 +1,5 @@
 export interface ILogin {
     Email: string;
     Password: string;
-    StaySignedIn: boolean;
+    staySignedIn: boolean;
 }

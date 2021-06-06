@@ -21,7 +21,8 @@ export class JournalMainPage implements OnInit {
     id: 0,
     email: '',
     profilePicture: '',
-    StaySignedIn: false,
+    staySignedIn: false,
+    name: ''
 
   };
   public journal: IJournal[];

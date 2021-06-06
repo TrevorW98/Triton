@@ -22,13 +22,15 @@ export class HomePage implements OnInit {
   SignedInUser: ILogin = {
     Email: '',
     Password: '',
-    StaySignedIn: false
+    staySignedIn: false,
   };
+
   User: IUser = {
     id: 0,
     email: '',
     profilePicture: '',
-    StaySignedIn: false,
+    staySignedIn: false,
+    name: ''
   };  
   constructor(
     private router: Router,

@@ -21,7 +21,8 @@ export class IndexMainPage implements OnInit {
     id: 0,
     email: '',
     profilePicture: '',
-    StaySignedIn: false,
+    staySignedIn: false,
+    name: ''
   };  
 
   

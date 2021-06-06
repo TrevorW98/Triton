@@ -31,7 +31,7 @@ title = 'Pet Index';
   SignedInUser: ILogin = {
     Email: '',
     Password: '',
-    StaySignedIn: false
+    staySignedIn: false
   };
 
 

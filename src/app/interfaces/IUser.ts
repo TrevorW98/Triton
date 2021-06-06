@@ -2,5 +2,6 @@ export interface IUser {
     id: number;
     email: string;
     profilePicture: string;
-    StaySignedIn: boolean;
+    staySignedIn: boolean;
+    name: string;
 }
