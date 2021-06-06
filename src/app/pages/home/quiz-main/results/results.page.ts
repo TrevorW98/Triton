@@ -43,7 +43,7 @@ export class ResultsPage implements OnInit {
       break;
 
       case "Insects": this.description = "Based on your answers, a bug (or bugs) may be the best selection for you! Despite their outwards appearance, bugs can be great pets! Below are some species to explore."; 
-      this.animal1 = "Hercules Beetle"; this.animal2 = "Jumping Spider"; this.animal3 = "Stick Insect"; this.animal4 = "Curly Hair Tarantula";this.animalImg="../../../../../assets/quizBug.jpg";
+      this.animal1 = "Hercules Beetle"; this.animal2 = "Jumping Spider"; this.animal3 = "Phasmatodea"; this.animal4 = "Curlyhair Tarantula";this.animalImg="../../../../../assets/quizBug.jpg";
       indexBtn.classList.add("insect");
       this.setCategory("Insect");
       break;
