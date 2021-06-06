@@ -31,7 +31,7 @@ title = 'Pet Index';
   SignedInUser: ILogin = {
     Email: '',
     Password: '',
-    StaySignedIn: false
+    staySignedIn: false
   };
 
 
@@ -46,6 +46,9 @@ title = 'Pet Index';
     console.log(this.animals);
     console.log(this.favorites);
     this.setTitle();
+  }
+  ionViewWillEnter(){
+    this.iService.setAnimalChoice("");
   }
   
   

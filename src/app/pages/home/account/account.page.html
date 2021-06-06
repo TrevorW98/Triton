@@ -13,7 +13,7 @@
           <img class="profilePic" src="{{ imgSrc || '../../../../../assets/images/TritonDarkAccent.png' }}"
             alt="Add Pet Picture">
         </div>
-        <div *ngIf="dService.User.Id != 0" class="camera d-flex align-items-end">
+        <div *ngIf="dService.User.id" class="camera d-flex align-items-end">
           <label for="fileInput">
             <mat-icon class="greyCamera">camera_enhance</mat-icon>
           </label>
@@ -24,7 +24,7 @@
       <ion-col size="8" class="mt-4">
         <ion-item class="inputBox">
           <ion-label position="stacked">My Name</ion-label>
-          <ion-input type="text" placeholder="James Barnes"></ion-input>
+          <ion-input type="text" placeholder="{{dService.User.name}}"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
@@ -59,7 +59,7 @@
       </ion-col> -->
 
       <ion-col class="bottomRight change">
-        <p routerLink="/login"><u>Sign {{ dService.User.Id == 0 ? 'In' : 'Out' }}</u></p>
+        <p routerLink="/login"><u>Sign {{ dService.User.id == 0 ? 'In' : 'Out' }}</u></p>
       </ion-col>
     </ion-row>
 

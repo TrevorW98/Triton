@@ -30,14 +30,15 @@ export class DataService {
   private login: ILogin = {
     Email: '',
     Password: '',
-    StaySignedIn: false
+    staySignedIn: false
   };
 
   public User: IUser = {
     id: 0,
     email: '',
     profilePicture: '',
-    StaySignedIn: false,
+    staySignedIn: false,
+    name: ''
   };
 
   
@@ -48,13 +49,13 @@ export class DataService {
 
   signIn(login: ILogin) {
     console.log(login);
-    let saveLogin = login.StaySignedIn;
+    let saveLogin = login.staySignedIn;
     this.http.post(this.loginUrl, login).subscribe((response: ILoginResponse) => {
       //this.setLogin(login);
       console.log(response);
       this.setUser(response.user);
-      this.User.StaySignedIn = saveLogin;
-      if(this.User.StaySignedIn){
+      this.User.staySignedIn = saveLogin;
+      if(this.User.staySignedIn){
         localStorage.setItem('savedUser',JSON.stringify(this.User));
       }
       console.log(this.User, response.user);

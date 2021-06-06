@@ -19,7 +19,8 @@ export class MyPetsPage implements OnInit {
     id: 0,
     email: '',
     profilePicture: '',
-    StaySignedIn: false,
+    staySignedIn: false,
+    name: ''
   }; 
   public myPets: IMyPets[] = [];
   
