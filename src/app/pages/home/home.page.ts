@@ -54,7 +54,7 @@ export class HomePage implements OnInit {
   
   ionViewWillEnter(): void {
     if(this.dService.User.id != 0){
-      this.petsService.getMyPets(this.User.id)
+      this.petsService.getMyPets(this.dService.User.id)
     .subscribe((pets: IMyPets[]) => {
       console.log(pets);
       this.petsService.myPets = pets;
