@@ -9,17 +9,21 @@ export class JournalService {
 
   constructor(private http: HttpClient) { }
   private baseUrl = 'http://localhost:5000';
-  // private journalEnd: string = '/journal?userid=';
-  private journalEnd: string = '/journal';
+  private journalListEnd: string = '/journal?email=';
+  private journalSingle: string = '/journal/info?id='
+  // private journalEnd: string = '/journal';
   public journal: IJournal[];
   public chosenDate: string;
+  public chosenJournal: string;
 
 
-  getJournal(){
-    // getJournal(id){
-    // return this.http.get(this.baseUrl+this.journalEnd+id);
-    console.log(this.http.get(this.baseUrl+this.journalEnd))
-    return this.http.get(this.baseUrl+this.journalEnd);
+  getJournalList(email){
+    console.log(email);
+    return this.http.get(this.baseUrl+this.journalListEnd+email);
+  }
+  getJournalChosen(){
+    console.log(this.chosenJournal);
+    return this.http.get(this.baseUrl+this.journalSingle+this.chosenJournal);
   }
 
   dateChoice(date: string): void{
@@ -28,6 +32,11 @@ export class JournalService {
 
   setDateArr(journalDate: IJournal[]){
     this.journal = journalDate;
+  }
+
+
+  setJournalChoice(id){
+    this.chosenJournal = id.toString();
   }
 
 

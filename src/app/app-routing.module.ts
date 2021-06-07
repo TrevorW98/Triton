@@ -115,6 +115,11 @@ const routes: Routes = [
     path: 'results',
     loadChildren: () => import('./pages/home/quiz-main/results/results.module').then( m => m.ResultsPageModule)
   },
+  {
+    path: 'journal-info',
+    loadChildren: () => import('./pages/home/journal-main/journal-info/journal-info.module').then( m => m.JournalInfoPageModule)
+  },
+
 ];
 
 @NgModule({

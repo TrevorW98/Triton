@@ -2,22 +2,24 @@
 
 
 <ion-content>
-<ion-grid>
-  <ion-row class="center">
-    <ion-col size="12" class="mt-3 center">
-      <div class="primaryBg rounded px-2 text-center">
-        <h2 class="mb-0">Wednesday<br>February 20, 2020</h2>
-      
-      </div>
-    </ion-col>
-    <ion-col size="10" class="mt-3 px-3 py-3 accentBg rounded">
-        <ul class="pl-3">
-          <li class="mb-2" *ngFor="let items of entry">{{items}}</li>
-        </ul>
+  <ion-grid>
+    <ion-row class="center">
+      <ion-col size="12" class="mt-3 center">
+        <div class="primaryBg rounded px-5">
+          <h2 class="mb-0 text-center">All</h2>
+          <h2 class="mb-0">Entries</h2>
+        </div>
+      </ion-col>
+      <ion-col size="9" class="mt-2" *ngFor="let item of journal">
+        <button class="btn-block border-accent" (click)="setJournalChoice(item.id)" mat-stroked-button color="white" routerLink="/journal-info">
+          {{item.date | date:"longDate"}}
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-    </ion-col>
-  </ion-row>
-</ion-grid>
 </ion-content>
+
 
 <app-bottom-nav></app-bottom-nav>
