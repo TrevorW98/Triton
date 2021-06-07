@@ -6,7 +6,7 @@ import { IAnimals } from '../interfaces/animals';
   providedIn: 'root'
 })
 export class IndexService {
-  private animalUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals";
+  
 
   constructor(private http: HttpClient) { }
    //LIVE
@@ -14,6 +14,7 @@ export class IndexService {
   //DEV
   public data: any;
   private baseUrl: string = "http://localhost:5000";
+  private get: string = "/animals";
   private updateAnimalUrl: string = this.baseUrl + '/animals/update';
 
   public animalArr: IAnimals[];
@@ -38,7 +39,7 @@ export class IndexService {
   }
 
   getAnimals(){
-    this.http.get(this.animalUrl).subscribe((animalData: IAnimals[]) =>{
+    this.http.get(this.baseUrl+this.get).subscribe((animalData: IAnimals[]) =>{
       this.animalArr = animalData;
     });
   }
