@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { IEvent } from 'src/app/interfaces/IEvent';
 import { IMyPets } from 'src/app/interfaces/IMyPets';
 import { IUser } from 'src/app/interfaces/IUser';
 import { DataService } from 'src/app/services/data.service';
@@ -18,6 +19,15 @@ export class AddEventsPage implements OnInit {
   constructor(private dService: DataService, public pService: MypetsService, private eService: EventService, private formBuilder: FormBuilder) { }
 
   AddEventForm: FormGroup;
+
+  public event: IEvent = {
+    id: 0,
+    UserId: 0,
+    petname: '',
+    date: '',
+    occurance: '',
+    eventType: '',
+  }
   public login: IUser = {
     id: 0,
     email: '',
@@ -27,8 +37,8 @@ export class AddEventsPage implements OnInit {
   };
   // pet name, event, date, time, repeat?
   ngOnInit() {
-    this.dService.checkIfSignedIn();
     this.login = this.dService.User;
+    console.log(this.login);
     this.AddEventForm = this.formBuilder.group({
       pName: new FormControl('', Validators.required),
       event: new FormControl('', Validators.required),
@@ -42,15 +52,17 @@ export class AddEventsPage implements OnInit {
     } else {
       alert('Succesful!');
       console.log(this.AddEventForm.value);
-      // this.myPets.petName = this.AddPetForm.controls['pName'].value;
-      // this.myPets.petDescription = this.AddPetForm.controls['pInfo'].value;
-      // this.myPets.petPicture = this.AddPetForm.controls['pPic'].value;
-      // console.log(this.myPets, this.login.id);
-      // this.myPets.userId = this.login.id;
-      // this.addPet();
-      // this.AddPetForm.reset();
+      this.event.petname = this.AddEventForm.controls['pName'].value;
+      this.event.eventType = this.AddEventForm.controls['event'].value;
+      this.event.date = this.AddEventForm.controls['date'].value;
+      this.event.occurance = this.AddEventForm.controls['occur'].value;
+      this.event.UserId = this.login.id;
+      console.log(this.event);
+      this.addEvent();
+      this.AddEventForm.reset();
     }
   }
+
   ionViewWillEnter(): void {
       this.pService.getMyPets(this.dService.User.id)
     .subscribe((pets: IMyPets[]) => {
@@ -60,5 +72,9 @@ export class AddEventsPage implements OnInit {
     });
     // this.getEvents();
   }
-
+  addEvent() {
+    this.eService.addEvents(this.event).then((res:any)=>{
+      console.log(res);
+    })
+  }
 }
