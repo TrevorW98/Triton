@@ -38,7 +38,7 @@ export class AddEventsPage implements OnInit {
   // pet name, event, date, time, repeat?
   ngOnInit() {
     this.login = this.dService.User;
-    console.log(this.login);
+    // console.log(this.login);
     this.AddEventForm = this.formBuilder.group({
       pName: new FormControl('', Validators.required),
       event: new FormControl('', Validators.required),
@@ -51,13 +51,13 @@ export class AddEventsPage implements OnInit {
       alert('Fix errors on form');
     } else {
       alert('Succesful!');
-      console.log(this.AddEventForm.value);
+      // console.log(this.AddEventForm.value);
       this.event.petname = this.AddEventForm.controls['pName'].value;
       this.event.eventType = this.AddEventForm.controls['event'].value;
       this.event.date = this.AddEventForm.controls['date'].value;
       this.event.occurance = this.AddEventForm.controls['occur'].value;
       this.event.UserId = this.login.id;
-      console.log(this.event);
+      // console.log(this.event);
       this.addEvent();
       this.AddEventForm.reset();
     }
@@ -68,7 +68,7 @@ export class AddEventsPage implements OnInit {
     .subscribe((pets: IMyPets[]) => {
       // console.log(pets);
       this.pService.myPets = pets;
-      console.log(this.pService.myPets);
+      // console.log(this.pService.myPets);
     });
     // this.getEvents();
   }

@@ -23,6 +23,7 @@ export class EventsNotifsPage implements OnInit {
   };
 
   ngOnInit() {
+    console.log(this.event);
     this.login = this.dService.User;
     // user Id will eventually go into the getUserEvents(userId)
     this.eService.getUserEvents(this.login.id).subscribe((response:IEvent[]) => {
