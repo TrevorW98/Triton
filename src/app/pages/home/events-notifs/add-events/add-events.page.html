@@ -9,7 +9,7 @@
         <h2 class="center">Create An Event</h2>
         <ion-item class="mb-2">
           <ion-label>My Pet</ion-label>
-          <ion-select value="" okText="Save" cancelText="Cancel">
+          <ion-select value="" formControlName='pName' okText="Save" cancelText="Cancel">
             <ion-select-option *ngFor="let pet of pService.myPets" value="{{pet.petName}}">{{pet.petName}}</ion-select-option>
 
           </ion-select>
@@ -17,15 +17,15 @@
         <ion-item>
           
           <ion-label position="stacked">Event Title</ion-label>
-          <ion-input placeholder="Triton's Play Date"></ion-input>
+          <ion-input formControlName='event' placeholder="Triton's Play Date"></ion-input>
 
         </ion-item>
         <!-- This is where the calendar is going to be! -->
-          <input class="mt-2" type="datetime-local">
+          <input class="mt-2" formControlName='date' name='date and time picker' type="datetime-local">
 
         <ion-item class="mt-2">
           <ion-label>Repeats</ion-label>
-          <ion-select value="" okText="Save" cancelText="Cancel">
+          <ion-select value="" formControlName='occur' okText="Save" cancelText="Cancel">
             <ion-select-option *ngFor="let i of repeat" value="{{i}}">{{i}}</ion-select-option>
 
           </ion-select>

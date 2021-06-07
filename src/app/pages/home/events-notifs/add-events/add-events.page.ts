@@ -41,7 +41,7 @@ export class AddEventsPage implements OnInit {
       alert('Fix errors on form');
     } else {
       alert('Succesful!');
-      // // console.log(this.AddPetForm.value);
+      console.log(this.AddEventForm.value);
       // this.myPets.petName = this.AddPetForm.controls['pName'].value;
       // this.myPets.petDescription = this.AddPetForm.controls['pInfo'].value;
       // this.myPets.petPicture = this.AddPetForm.controls['pPic'].value;
