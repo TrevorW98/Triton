@@ -9,12 +9,12 @@
         </button>
       </ion-col>
       <ion-col size="6" class="end">
-        <button mat-icon-button routerLink='/pet-edit'>
+        <button mat-icon-button routerLink='/pet-edit/{{chosenPet.id}}'>
           <mat-icon>create</mat-icon>
         </button>
       </ion-col>
       <ion-col size="12" class="center">
-        <img class="circleProfile" src="{{chosenPet.petPicture == 'temp.string' ? chosenPet.petPicture : '../../../../assets/images/doge.jpg'}}" alt="Yoda">
+        <img class="circleProfile" src="{{chosenPet.petPicture || '../../../../assets/images/doge.jpg'}}" alt="Yoda">
       </ion-col>
 
       <ion-col size="12">

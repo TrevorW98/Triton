@@ -19,7 +19,7 @@
             <div class="scrolls my-2 h-125">
               <div *ngIf="petsService.myPets.length">
                 <a *ngFor="let pet of petsService.myPets" routerLink="/pet-info/{{pet.id}}">
-                  <img src="{{pet.petPicture == 'temp.string' ? pet.petPicture : '../../../../assets/images/doge.jpg'}}" class="animalPic mx-2" alt="{{pet.petName}}" />
+                  <img src="{{pet.petPicture || '../../../../assets/images/doge.jpg'}}" class="animalPic mx-2" alt="{{pet.petName}}" />
                 </a>
               </div>
             </div>
