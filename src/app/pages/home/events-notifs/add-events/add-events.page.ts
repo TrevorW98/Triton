@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { IMyPets } from 'src/app/interfaces/IMyPets';
+import { IUser } from 'src/app/interfaces/IUser';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { MypetsService } from 'src/app/services/mypets.service';
@@ -17,10 +18,23 @@ export class AddEventsPage implements OnInit {
   constructor(private dService: DataService, public pService: MypetsService, private eService: EventService, private formBuilder: FormBuilder) { }
 
   AddEventForm: FormGroup;
-
+  public login: IUser = {
+    id: 0,
+    email: '',
+    profilePicture: '',
+    staySignedIn: false,
+    name: ''
+  };
+  // pet name, event, date, time, repeat?
   ngOnInit() {
     this.dService.checkIfSignedIn();
-
+    this.login = this.dService.User;
+    this.AddEventForm = this.formBuilder.group({
+      pName: new FormControl('', Validators.required),
+      event: new FormControl('', Validators.required),
+      date: new FormControl('', Validators.required),
+      occur: new FormControl('', Validators.required)
+    })
   }
   submitForm(){
     if (this.AddEventForm.invalid) {
