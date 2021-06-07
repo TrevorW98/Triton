@@ -4,20 +4,40 @@
 <ion-grid>
     <ion-row class="center mt-4">
         <ion-col size="10">
-            <h2 class="center">Create An Entry</h2>
-            <ion-item>
-                <ion-label position="stacked">Notes</ion-label>
-                <ion-textarea placeholder="Add your notes here!"></ion-textarea>
-            </ion-item>
-            <!-- This is where the calendar is going to be! -->
-            <input class="mt-2" type="date">
+            <form size="12" class="p-0 m-0" [formGroup]="AddEntryForm" (ngSubmit)="submitForm()">
+                <ion-col size="12">
+                  <div class="overFlow">
+                    <ion-item class="inputBox">
+                      <ion-label position="stacked">Pet Name</ion-label>
+                      <ion-input type="text" placeholder="e.g. Triton" formControlName='pName'></ion-input>
+                    </ion-item>
+                  </div>
+        
+                  <div class="overFlow mt-1">
+                    <ion-item class="inputBox">
+                      <ion-label position="stacked">Pet Description</ion-label>
+                      <ion-input type="text" placeholder="e.g. Axolotl" formControlName="Summary"></ion-input>
+                    </ion-item>
+                  </div>
 
+                  <div class="overFlow mt-1">
+                    <ion-item class="inputBox">
+                      <ion-label position="stacked">Date</ion-label>
+                      <ion-input  type="date" formControlName="Date"></ion-input>
+                    </ion-item>
+                  </div>
+                </ion-col>
+                <ion-col size="12" class="end">
+                  <!-- <button type="button" (mousedown)="cancel()" mat-raised-button class="mr-1 grey">Cancel</button> -->
+                  <button [disabled]="!AddEntryForm.valid" type="submit" class="btn1" mat-raised-button color="primary" >Save</button>
+                </ion-col>
+              </form>
         </ion-col>
-        <ion-col size="10" class="end">
+        <!-- <ion-col size="10" class="end center">
             <button mat-raised-button class="mr-1 grey">Cancel</button>
             <button class="btn1" mat-raised-button color="primary">Save</button>
-            <!-- save these changes to db push to users entries -->
-        </ion-col>
+           
+        </ion-col> -->
     </ion-row>
 </ion-grid>
 </ion-content>

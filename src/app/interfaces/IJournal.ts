@@ -3,7 +3,7 @@
 export interface IJournal {
     id: number;
     email: string;
-    date: string;
+    date: Date;
     petName: string;
     summary: string;
     notes: string;

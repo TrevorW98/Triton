@@ -38,7 +38,7 @@ export class IndexService {
   }
 
   getAnimals(){
-    return this.http.get(this.animalUrl).subscribe((animalData: IAnimals[]) =>{
+    this.http.get(this.animalUrl).subscribe((animalData: IAnimals[]) =>{
       this.animalArr = animalData;
     });
   }

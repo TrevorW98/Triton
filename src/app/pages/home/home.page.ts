@@ -8,6 +8,8 @@ import { IUser } from 'src/app/interfaces/IUser';
 import { MypetsService } from 'src/app/services/mypets.service';
 import { IMyPets } from 'src/app/interfaces/IMyPets';
 import { ResultsPageRoutingModule } from './quiz-main/results/results-routing.module';
+import { JournalService } from 'src/app/services/journal.service';
+import { IJournal } from 'src/app/interfaces/IJournal';
 // import {MatButtonModule} from '@angular/material/button';
 
 
@@ -37,7 +39,8 @@ export class HomePage implements OnInit {
     private router: Router,
     public dService: DataService,
     private eventService: EventService,
-    public petsService: MypetsService
+    public petsService: MypetsService,
+    private journalService: JournalService
   ) {}
 
   events: IEvent[] = [];
@@ -58,6 +61,7 @@ export class HomePage implements OnInit {
     // this.SignedInUser = this.dService.getlogin();
     // console.log(this.SignedInUser);
     this.dService.checkIfSignedIn();
+   
   }
   
   ionViewWillEnter(): void {
@@ -69,6 +73,7 @@ export class HomePage implements OnInit {
       console.log(this.petsService.myPets);
     });
     this.getEvents();
+    
   };
   }
 

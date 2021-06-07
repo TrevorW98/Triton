@@ -100,7 +100,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/my-pets/pet-info/pet-info.module').then( m => m.PetInfoPageModule)
   },
   {
-    path: 'pet-edit',
+    path: 'pet-edit/:id',
     loadChildren: () => import('./pages/home/my-pets/pet-info/pet-edit/pet-edit.module').then( m => m.PetEditPageModule)
   },
   {
@@ -115,6 +115,11 @@ const routes: Routes = [
     path: 'results',
     loadChildren: () => import('./pages/home/quiz-main/results/results.module').then( m => m.ResultsPageModule)
   },
+  {
+    path: 'journal-info',
+    loadChildren: () => import('./pages/home/journal-main/journal-info/journal-info.module').then( m => m.JournalInfoPageModule)
+  },
+
 ];
 
 @NgModule({
