@@ -3,6 +3,9 @@ import { IJournal } from 'src/app/interfaces/IJournal';
 import { JournalService } from 'src/app/services/journal.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IUser } from 'src/app/interfaces/IUser';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { DataService } from 'src/app/services/data.service';
 // import { Calendar } from '@ionic-native/calendar/ngx';
 
 @Component({
@@ -14,7 +17,11 @@ export class AddAnEntryPage implements OnInit {
   backLocation = 'journal-main';
   title = 'Pet Journal';
 
-  constructor(private jService: JournalService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(
+    private jService: JournalService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private dService: DataService) { }
   
   AddEntryForm: FormGroup;
 
@@ -27,7 +34,9 @@ export class AddAnEntryPage implements OnInit {
     notes: ""
   }
 
+
   ngOnInit() {
+    
     this.AddEntryForm = this.formBuilder.group({
       pName: new FormControl('', Validators.required),
       Summary: new FormControl('', Validators.required),
@@ -45,13 +54,14 @@ export class AddAnEntryPage implements OnInit {
     } else {
       alert('Succesful!');
       // console.log(this.AddPetForm.value);
+      this.newEntry.email = this.dService.User.email;
       this.newEntry.petName = this.AddEntryForm.controls['pName'].value;
       this.newEntry.summary = this.AddEntryForm.controls['Summary'].value;
       this.newEntry.date = this.AddEntryForm.controls['Date'].value;
       console.log(this.newEntry);
       this.save();
       this.AddEntryForm.reset();
-      this.router.navigate(['/home']);
+      this.router.navigate(['/journal-main']);
     }
   }
 
