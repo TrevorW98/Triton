@@ -79,8 +79,8 @@ export class HomePage implements OnInit {
 
   getEvents(): void {
     this.eventService.getEvents().subscribe((events) => {
-      this.events = events.filter(e => e.eventType != 'feeding');
-      this.feeds = events.filter(e => e.eventType == 'feeding');
+      this.events = events.filter(e => e.eventType.toLowerCase() != 'feeding');
+      this.feeds = events.filter(e => e.eventType.toLowerCase() == 'feeding');
     });
   }
   routeToLogin(string){
