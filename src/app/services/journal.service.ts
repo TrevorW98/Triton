@@ -10,7 +10,8 @@ export class JournalService {
   constructor(private http: HttpClient) { }
   private baseUrl = 'http://localhost:5000';
   private journalListEnd: string = '/journal?email=';
-  private journalSingle: string = '/journal/info?id='
+  private journalSingle: string = '/journal/info?id=';
+  private journalAdd: string = "/journal/new";
   // private journalEnd: string = '/journal';
   public journal: IJournal[];
   public chosenDate: string;
@@ -37,6 +38,10 @@ export class JournalService {
 
   setJournalChoice(id){
     this.chosenJournal = id.toString();
+  }
+
+  newEntry(newEntry: IJournal){
+   return this.http.post(this.baseUrl+this.journalAdd, newEntry).toPromise();
   }
 
 

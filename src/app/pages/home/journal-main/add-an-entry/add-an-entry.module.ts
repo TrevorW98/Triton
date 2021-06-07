@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import {MatIconModule} from '@angular/material/icon';
 import { AddAnEntryPageRoutingModule } from './add-an-entry-routing.module';
@@ -18,7 +17,8 @@ import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
     IonicModule,
     AddAnEntryPageRoutingModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   declarations: [AddAnEntryPage, BottomNavComponent, TopNavComponent]
 })
