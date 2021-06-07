@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IJournal } from 'src/app/interfaces/IJournal';
 import { JournalService } from 'src/app/services/journal.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 // import { Calendar } from '@ionic-native/calendar/ngx';
 
 @Component({
@@ -13,7 +14,7 @@ export class AddAnEntryPage implements OnInit {
   backLocation = 'journal-main';
   title = 'Pet Journal';
 
-  constructor(private jService: JournalService, private formBuilder: FormBuilder) { }
+  constructor(private jService: JournalService, private formBuilder: FormBuilder, private router: Router) { }
   
   AddEntryForm: FormGroup;
 
@@ -50,6 +51,7 @@ export class AddAnEntryPage implements OnInit {
       console.log(this.newEntry);
       this.save();
       this.AddEntryForm.reset();
+      this.router.navigate(['/home']);
     }
   }
 
