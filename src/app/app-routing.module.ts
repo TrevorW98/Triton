@@ -100,7 +100,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/my-pets/pet-info/pet-info.module').then( m => m.PetInfoPageModule)
   },
   {
-    path: 'pet-edit',
+    path: 'pet-edit/:id',
     loadChildren: () => import('./pages/home/my-pets/pet-info/pet-edit/pet-edit.module').then( m => m.PetEditPageModule)
   },
   {

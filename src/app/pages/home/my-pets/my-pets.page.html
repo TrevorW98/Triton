@@ -9,7 +9,7 @@
             <ion-row>
               <ion-col>
                 <p class="start mr-2" style="float: left">
-                  <img src="{{myPet.petPicture == 'temp.string' ? myPet.petPicture : '../../../../assets/images/doge.jpg'}}" class="animalPic" alt="Yoda" />
+                  <img src="{{myPet.petPicture || '../../../../assets/images/doge.jpg'}}" class="animalPic" alt="Yoda" />
                 </p>
                 <div class="overFlow">
                   <h2 class="petName start">
