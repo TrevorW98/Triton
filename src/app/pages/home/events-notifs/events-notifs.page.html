@@ -4,11 +4,11 @@
 
 <ion-row *ngFor="let i of event" class="my-4 border-bottom pb-3">
   <div class="col-12 d-flex flex-column justify-content-center mb-1">
-    <p class="lead my-0">{{i.petname}} </p>
+    <p class="lead my-0">{{i.eventType}}</p>
   </div>
-  <div class="col-12">
-    <small class="my-0">{{i.eventType}}</small>
-  </div>
+  <!-- <div class="col-12">
+    <p class="my-0">{{i.eventType}}</p>
+  </div> -->
   <div class="col flex-column align-items-center">
     <p class="my-0">{{i.date | date:"MMM"}}</p><p class="lead my-0">{{i.date | date:"dd"}}</p>
   </div>

@@ -40,7 +40,6 @@ export class MypetsService {
 
 // Post: Add pets
   addMyPets(addPets: IMyPets){
-
     // console.log()
     return this.dService.post(this.add, addPets).toPromise();
 

@@ -4,38 +4,41 @@
 <ion-content>
   <ion-grid>
     <ion-row class="center mt-4">
+      <form [formGroup]="AddEventForm" (ngSubmit)="submitForm()">
       <ion-col size="10">
         <h2 class="center">Create An Event</h2>
         <ion-item class="mb-2">
           <ion-label>My Pet</ion-label>
-          <ion-select value="" okText="Save" cancelText="Cancel">
-            <ion-select-option *ngFor="let i of pets" value="{{i}}">{{i}}</ion-select-option>
+          <ion-select value="" formControlName='pName' okText="Save" cancelText="Cancel">
+            <ion-select-option *ngFor="let pet of pService.myPets" value="{{pet.petName}}">{{pet.petName}}</ion-select-option>
 
           </ion-select>
         </ion-item>
         <ion-item>
           
           <ion-label position="stacked">Event Title</ion-label>
-          <ion-input placeholder="Triton's Day Off"></ion-input>
+          <ion-input formControlName='event' placeholder="Triton's Play Date"></ion-input>
 
         </ion-item>
         <!-- This is where the calendar is going to be! -->
-        <input class="my-2" type="date">
-        <input type="time">
+          <input class="mt-2" formControlName='date' name='date and time picker' type="datetime-local">
+
         <ion-item class="mt-2">
           <ion-label>Repeats</ion-label>
-          <ion-select value="" okText="Save" cancelText="Cancel">
+          <ion-select value="" formControlName='occur' okText="Save" cancelText="Cancel">
             <ion-select-option *ngFor="let i of repeat" value="{{i}}">{{i}}</ion-select-option>
 
           </ion-select>
         </ion-item>
 
       </ion-col>
-      <ion-col size="10" class="end">
-        <button mat-raised-button class="mr-1 grey">Cancel</button>
-        <button class="btn1" mat-raised-button color="primary">Save</button>
+      <ion-col size="12" class="end">
+        <!-- <button mat-raised-button class="mr-1 grey">Cancel</button> -->
+        <button [disabled]="!AddEventForm.valid" type="submit" class="btn1" mat-raised-button color="primary">Save</button>
         <!-- save these changes to db push to users entries -->
       </ion-col>
+              
+    </form>
     </ion-row>
 
 
