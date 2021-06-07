@@ -9,14 +9,14 @@
         <ion-item class="mb-2">
           <ion-label>My Pet</ion-label>
           <ion-select value="" okText="Save" cancelText="Cancel">
-            <ion-select-option *ngFor="let i of pets" value="{{i}}">{{i}}</ion-select-option>
+            <ion-select-option *ngFor="let pet of pService.myPets" value="{{pet.petName}}">{{pet.petName}}</ion-select-option>
 
           </ion-select>
         </ion-item>
         <ion-item>
           
           <ion-label position="stacked">Event Title</ion-label>
-          <ion-input placeholder="Triton's Day Off"></ion-input>
+          <ion-input placeholder="Triton's Mani-Pedi"></ion-input>
 
         </ion-item>
         <!-- This is where the calendar is going to be! -->

@@ -31,7 +31,7 @@ export class EventService {
     // console.log(this.http.get(this.baseUrl+this.eventEnd));
     // return this.http.get(this.baseUrl+this.eventEnd);
   }
-  addEvents(eventToAdd){
+  addEvents(eventToAdd: IEvent){
     // console.log(this.http.post(this.baseUrl + this.add))
     // return this.http.post(this.baseUrl + this.add)
     return this.dService.post(this.add, eventToAdd).toPromise();
