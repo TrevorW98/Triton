@@ -12,7 +12,6 @@ export class AddEventsPage implements OnInit {
   backLocation = 'events-notifs';
   title= 'Events';
   repeat = ['Daily', 'Yearly', 'Monthly', 'Hourly', 'Never'];
-  // pets = ["Nala", "Simba", "Tauni", "Triton"];
   constructor(private dService: DataService, public pService: MypetsService) { }
 
   ngOnInit() {
