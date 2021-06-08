@@ -28,10 +28,10 @@
         <form size="12" class="p-0 m-0" [formGroup]="AddDocname" (ngSubmit)="setName()">
           <div class="overFlow">
             <ion-item class="inputBox">
-              <ion-label position="stacked">Document name</ion-label>
+              <ion-label position="stacked">Enter document name</ion-label>
               <ion-input type="text" placeholder="enter document name" formControlName='docName'></ion-input>
               <button [disabled]="!AddDocname.valid" type="submit" class="btn1" mat-raised-button
-              color="primary">Save</button>
+                color="primary">Save</button>
             </ion-item>
           </div>
         </form>

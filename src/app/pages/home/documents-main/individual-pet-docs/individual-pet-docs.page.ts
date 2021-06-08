@@ -104,10 +104,11 @@ export class IndividualPetDocsPage implements OnInit {
   addDocument() {
     this.docService.addDocument().then((res: any) => {
       console.log(res);
-    });
-    this.docService.getDocsEmail();
-    this.docArr = this.docService.DocArrEmail.filter(a => {
-      return a.petName == this.petName;
+      this.docService.getDocsEmail();
+    }).then(()=>{
+      this.docArr = this.docService.DocArrEmail.filter(a => {
+        return a.petName == this.petName;
+      });
     });
   }
 }
