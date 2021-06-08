@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IEvent } from 'src/app/interfaces/IEvent';
+import { MypetsService } from 'src/app/services/mypets.service';
 
 @Component({
   selector: 'app-event',
@@ -9,9 +10,15 @@ import { IEvent } from 'src/app/interfaces/IEvent';
 export class EventComponent implements OnInit {
 
   @Input() event?: IEvent;
+  petName: string = '';
 
-  constructor() { }
+  constructor(private petsService: MypetsService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.petName = this.petsService.myPets.find(p => p.id == this.event?.petId).petName;
+  }
+
+  ionViewWillEnter() {
+  }
 
 }
