@@ -45,6 +45,7 @@ export class HomePage implements OnInit {
 
   events: IEvent[] = [];
   feeds: IEvent[] = [];
+  petNames = {};
 
   redirect(path: string) {
     if(path == 'quiz-main' || path == 'index-main'){
@@ -73,6 +74,8 @@ export class HomePage implements OnInit {
       console.log(this.petsService.myPets);
     });
     this.getEvents();
+    this.petsService.myPets.forEach(pet =>
+      this.petNames[pet.id.toString()] = pet.petName);
     
   };
   }

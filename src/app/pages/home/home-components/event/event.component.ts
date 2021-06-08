@@ -10,15 +10,11 @@ import { MypetsService } from 'src/app/services/mypets.service';
 export class EventComponent implements OnInit {
 
   @Input() event?: IEvent;
-  petName: string = '';
+  @Input() petName?;
 
   constructor(private petsService: MypetsService) { }
 
   ngOnInit() {
-    this.petName = this.petsService.myPets.find(p => p.id == this.event?.petId).petName;
-  }
-
-  ionViewWillEnter() {
   }
 
 }
