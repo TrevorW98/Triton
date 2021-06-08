@@ -4,28 +4,28 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col size="12" class="center">
-        <img class="circleProfile" src="../../../../../assets/images/doge.jpg" alt="Yoda">
-      </ion-col>
-
       <ion-col size="12">
         <div class="overFlow">
-          <h2 class="text-center m-0">Yoda</h2>
-          <p class="text-center"><i>Corgi</i></p>
+          <h2 class="text-center m-0">{{petName}}</h2>
         </div>
       </ion-col>
     </ion-row>
 
-    <ion-row>
-      <ion-col size="12" >
+    <ion-row *ngFor="let doc of docArr">
+      <ion-col size="12" class="center">
         <div>
-          <button mat-raised-button color="primary" class="partial"><u class="start"></u></button>
-         
+         <a href={{doc.document}}></a>
         </div>
-
       </ion-col>
+    </ion-row>
+    <ion-row>
       <ion-col class="center">
-        <button mat-raised-button color="primary" class="full"><u>+ Add New File</u></button>
+        <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngIf="submit">
+        <button mat-raised-button color="primary" class="partial" (click)="addDocument()">Submit Document</button>
       </ion-col>
     </ion-row>
   </ion-grid>

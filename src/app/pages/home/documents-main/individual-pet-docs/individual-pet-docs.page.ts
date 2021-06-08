@@ -19,26 +19,19 @@ export class IndividualPetDocsPage implements OnInit {
     private dService: DataService) { }
   AddDoc: FormGroup;
   docArr: IDocs[];
+  email: string;
+  document: string;
+  submit: boolean = false;
+  petName: string;
   
   ngOnInit() {
-    this.docService.getDocs();
-    setTimeout(()=>{
-      this.docArr = this.docService.DocArr;
-      console.log(this.docArr);
-    }, 1000);
-    this.AddDoc = this.formBuilder.group({
-      petName: new FormControl('', Validators.required)
-    })
+    this.petName = this.docService.chosenPet;
+    this.email = this.dService.User.email;
+    this.docArr = this.docService.DocArrEmail.filter(a => {
+      return a.petName == this.petName;
+    });
+    console.log(this.docArr);
   }
-  submit(){
-    if (this.AddDoc.invalid) {
-      alert('Fix errors on form');
-    } else {
-      alert('Succesful!');
-      this.docService.setOtherParams(this.AddDoc.controls['petName'].value, this.dService.User.email);
-    }
-  }
-  
   onFileSelected(event): void {
     const file: File = event.target.files[0];
     if (file) {
@@ -48,10 +41,17 @@ export class IndividualPetDocsPage implements OnInit {
         let result = reader.result.toString();
         result = result.substring(result.indexOf(',') + 1);
         const convertBase64 = btoa(result);
+        console.log(convertBase64);
         //file is now encoded
-        this.docService.setBase64(convertBase64);
+        this.docService.setDocument(convertBase64);
+        this.submit = true;
       };
       reader.readAsDataURL(file);
     }
+  }
+  addDocument(){
+    this.docService.addDocument().then((res:any)=>{
+      console.log(res);
+    });
   }
 }

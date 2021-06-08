@@ -1,5 +1,5 @@
 export interface IDocs{
-    petname: string;
+    petName: string;
     email: string;
     document: string;
 }

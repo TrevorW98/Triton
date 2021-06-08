@@ -1,45 +1,50 @@
 import { Injectable } from '@angular/core';
 import { IDocs } from '../interfaces/IDocs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DocumentsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private dService: DataService) { }
   private baseUrl: string = "http://localhost:5000";
   private addDoc: string = "/documents/new";
-  private getbyPet: string = "/documents?petName=";
+  private getAllDocs: string = "/documents?email=";
+  private getAllDocsPetname: string = "/documents?petName=";
   public chosenPet: string;
 
-  public DocArr: IDocs[];
+  public DocArrEmail: IDocs[];
+  public DocArrPets: IDocs[];
   public document: IDocs = {
-    petname: "",
+    petName: "",
     email: "",
     document: ""
   }
 
-  getDocs(){
-    this.http.get(this.baseUrl+this.getbyPet+this.document.petname).subscribe((response: IDocs[]) =>{
-      this.DocArr = response;
+  
+  getDocsEmail(){
+    this.document.email = this.dService.User.email;
+    console.log(this.document.email);
+    this.http.get(this.baseUrl+this.getAllDocs+this.document.email).subscribe((response: IDocs[]) =>{
+      this.DocArrEmail = response;
     });
+  }
+  getDocsPet(){
+    this.http.get(this.baseUrl+this.getAllDocsPetname+this.document.petName).subscribe((response: IDocs[]) =>{
+      this.DocArrPets = response;
+    })
   }
   setPetChoice(petName: string): void{
     this.chosenPet = petName;
+    this.document.petName = petName;
+    this.document.email = this.dService.User.email;
   }
-  
-
-  setBase64(string){
+  setDocument(string){
     this.document.document = string;
   }
-
-  setOtherParams(pet, email){
-    this.document.petname = pet;
-    this.document.email = email;
-  }
-
-  addDocument(item: IDocs){
-    this.http.post(this.baseUrl+this.addDoc, item).toPromise();
+  addDocument(){
+    return this.http.post(this.baseUrl+this.addDoc, this.document).toPromise();
   }
 }
