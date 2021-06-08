@@ -57,7 +57,7 @@
               <mat-icon class="h1 mt-0 mt-n2">keyboard_arrow_right</mat-icon>
             </div>
             <div *ngIf="events.length" class="scrolls-vertically h-200p d-flex flex-column align-items-center">
-              <app-event *ngFor="let event of events" [event]="event"></app-event>
+              <app-event *ngFor="let event of events" [petName]="petNames[event.petId]" [event]="event"></app-event>
             </div>
           </div>
         </div>

@@ -45,14 +45,19 @@
           <ion-card-content class="p-2">
             <!-- this is where all the bulletpoints will go. -->
             <ul class="mb-2 lineFix">
-              <li>{{currentDetail}}</li>
+              <li *ngFor="let i of currentDetail">{{i}}</li>
             </ul>
             <div class="p-2" (click)="editMe()" *ngIf="!inputOn">
               <p class="mb-0"><u>Edit Me!</u></p>
             </div>
             <div *ngIf="inputOn">
-              <ion-input #inputBox type="string" class="inputBox" placeholder="+ add more info"></ion-input>
-              <button (click)="inputOn = false">Exit</button>
+              <form [formGroup]="AddPetInfo" (ngSubmit)="submitForm()">
+                <ion-input #inputBox  formControlName="pDesc" type="string" class="inputBox" placeholder="+ add more info"></ion-input>
+                <div class="end mt-2">
+                  <button mat-raised-button type="button" class="grey mr-2" (click)="inputOn = false">Exit</button>
+                  <button [disabled]="!AddPetInfo.valid" mat-raised-button class="white" type="submit">Submit</button>
+                </div>
+              </form>
             </div>
 
           </ion-card-content>

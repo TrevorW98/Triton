@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import { IonicModule } from '@ionic/angular';
 import { PetInfoPageRoutingModule } from './pet-info-routing.module';
@@ -17,6 +17,7 @@ import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
     PetInfoPageRoutingModule,
     MatIconModule,
     MatButtonModule,
+    ReactiveFormsModule,
   ],
   declarations: [PetInfoPage, BottomNavComponent, TopNavComponent]
 })

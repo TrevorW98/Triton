@@ -1,23 +1,23 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content>
-  <div *ngFor="let i of [1,2,3,4,5]" class="row my-4">
+<ion-content *ngIf="feedingTimes.length">
+  <div *ngFor="let event of feedingTimes" class="row my-4">
       
     <div
       class="col-5 ml-3 d-flex flex-column justify-content-center"
     >
-      <p class="lead my-0">Nala</p>
-      <p class="my-0">Repeats Daily</p>
+      <p class="lead my-0">{{pets[event.petId.toString()]}}</p>
+      <p class="my-0">{{event.occurance}}</p>
     </div>
     <div
       class="col-3 d-flex flex-column justify-content-center px-0"
     >
-      <span class="lead">8:30am</span>
+      <span class="lead">{{event.date | date:"h:mmaaaaa"}}</span>
     </div>
     <div
       class="col-1 d-flex align-items-center justify-content-end px-0"
     >
-      <mat-icon class="backArrow">edit</mat-icon>
+      <mat-icon class="backArrow d-none">edit</mat-icon>
     </div>
     <div
       class="col-1 d-flex align-items-center justify-content-end px-0"

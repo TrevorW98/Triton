@@ -1,8 +1,9 @@
 export interface IEvent {
   id: number;
   UserId: number;
-  petname: string;
+  petId: number;
   date: string;
   occurance: string;
   eventType: string;
+  petname: string;
 }

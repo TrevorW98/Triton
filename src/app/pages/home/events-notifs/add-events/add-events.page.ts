@@ -23,10 +23,11 @@ export class AddEventsPage implements OnInit {
   public event: IEvent = {
     id: 0,
     UserId: 0,
-    petname: '',
+    petId: 0,
     date: '',
     occurance: '',
     eventType: '',
+    petname: '',
   }
   public login: IUser = {
     id: 0,
@@ -46,6 +47,7 @@ export class AddEventsPage implements OnInit {
       occur: new FormControl('', Validators.required)
     })
   }
+
   submitForm(){
     if (this.AddEventForm.invalid) {
       alert('Fix errors on form');
@@ -57,11 +59,14 @@ export class AddEventsPage implements OnInit {
       this.event.date = this.AddEventForm.controls['date'].value;
       this.event.occurance = this.AddEventForm.controls['occur'].value;
       this.event.UserId = this.login.id;
+      this.event.petId = this.pService.myPets.find(p => p.petName == this.event.petname).id;
+        
+      }
+      
       // console.log(this.event);
       this.addEvent();
       this.AddEventForm.reset();
     }
-  }
 
   ionViewWillEnter(): void {
       this.pService.getMyPets(this.dService.User.id)
@@ -72,6 +77,7 @@ export class AddEventsPage implements OnInit {
     });
     // this.getEvents();
   }
+
   addEvent() {
     this.eService.addEvents(this.event).then((res:any)=>{
       console.log(res);
