@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { DataService } from './data.service';
 import { IMyPets } from '../interfaces/IMyPets';
 import { Observable, of } from 'rxjs';
+import { IUser } from '../interfaces/IUser';
 
 @Injectable({
   providedIn: 'root'
@@ -51,7 +52,17 @@ export class MypetsService {
     .subscribe(response => console.log(response));
   }
 
+  updateDailyNeed(pet: IMyPets){
+    // return this.dService.post(this.add, pet).toPromise();
+    return this.http.put(this.baseUrl + '/pets/updateNeeds', pet);
+  }
+  updateFood(){
 
+  }
+
+  updateMedical(){
+
+  }
 
 // Update: My Pets Info
 
