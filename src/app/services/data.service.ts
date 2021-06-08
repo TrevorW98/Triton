@@ -17,10 +17,10 @@ const httpOptions = {
 })
 export class DataService {
   //LIVE
-  // private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
   //DEV
   public data: any;
-  private baseUrl: string = "http://localhost:5000";
+  // private baseUrl: string = "http://localhost:5000";
 
 
   private loginUrl: string = this.baseUrl + '/auth/login';

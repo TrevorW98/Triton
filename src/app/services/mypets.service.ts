@@ -11,8 +11,8 @@ import { IUser } from '../interfaces/IUser';
 export class MypetsService {
   
   constructor(private http: HttpClient, private dService: DataService) { }
-  
-  private baseUrl: string = "http://localhost:5000";
+  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  // private baseUrl: string = "http://localhost:5000";
   private myPetsAddition: string = "/pets?userid=";
   public myPets: IMyPets[] = [];
   private add: string = '/pets/add';

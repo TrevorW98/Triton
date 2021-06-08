@@ -10,6 +10,7 @@ import { IMyPets } from 'src/app/interfaces/IMyPets';
 import { ResultsPageRoutingModule } from './quiz-main/results/results-routing.module';
 import { JournalService } from 'src/app/services/journal.service';
 import { IJournal } from 'src/app/interfaces/IJournal';
+import { DocumentsService } from 'src/app/services/documents.service';
 // import {MatButtonModule} from '@angular/material/button';
 
 
@@ -40,7 +41,8 @@ export class HomePage implements OnInit {
     public dService: DataService,
     private eventService: EventService,
     public petsService: MypetsService,
-    private journalService: JournalService
+    private journalService: JournalService,
+    private docService: DocumentsService
   ) {}
 
   events: IEvent[] = [];
@@ -62,6 +64,7 @@ export class HomePage implements OnInit {
     // this.SignedInUser = this.dService.getlogin();
     // console.log(this.SignedInUser);
     this.dService.checkIfSignedIn();
+    this.docService.getDocsEmail();
    
   }
   
@@ -78,6 +81,7 @@ export class HomePage implements OnInit {
       this.petNames[pet.id.toString()] = pet.petName);
     
   };
+  
   }
 
   getEvents(): void {

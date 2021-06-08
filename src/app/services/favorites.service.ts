@@ -11,17 +11,17 @@ import { IFavoritesID } from '../interfaces/IFavoritesID';
 })
 export class FavoritesService {
 
-  // private favsUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs?email=";
+  private favsUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs?email=";
 
-  // private addFavUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs/new";
+  private addFavUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs/new";
 
-  // private deleteFavUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs/delete";
+  private deleteFavUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs/delete";
 
-  private favsUrl: string = "http://localhost:5000/animals/favs?email=";
+  // private favsUrl: string = "http://localhost:5000/animals/favs?email=";
 
-  private addFavUrl: string = "http://localhost:5000/animals/favs/new";
+  // private addFavUrl: string = "http://localhost:5000/animals/favs/new";
 
-  private deleteFavUrl: string = "http://localhost:5000/animals/favs/delete";
+  // private deleteFavUrl: string = "http://localhost:5000/animals/favs/delete";
 
   constructor(private http: HttpClient) { }
 

@@ -5,7 +5,7 @@
     <ion-grid class="center">
       <ion-row *ngIf="myPets" class="mt">
         <ion-col size="12" *ngFor="let myPet of myPets">
-          <button class="btn1" mat-raised-button color="primary" routerLink="/individual-pet-docs" (click)="setPetName(myPet.petName)">
+          <button class="btn1" mat-raised-button color="primary" (click)="setPetName(myPet.petName)"  >
             <ion-grid class="start acenter">
               <ion-row>
                 <ion-col>

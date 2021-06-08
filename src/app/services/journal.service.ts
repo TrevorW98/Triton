@@ -8,7 +8,8 @@ import { IJournal } from 'src/app/interfaces/IJournal';
 export class JournalService {
 
   constructor(private http: HttpClient) { }
-  private baseUrl = 'http://localhost:5000';
+  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  // private baseUrl = 'http://localhost:5000';
   private journalListEnd: string = '/journal?email=';
   private journalSingle: string = '/journal/info?id=';
   private journalAdd: string = "/journal/new";

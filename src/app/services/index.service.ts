@@ -10,10 +10,10 @@ export class IndexService {
 
   constructor(private http: HttpClient) { }
    //LIVE
-  // private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
   //DEV
   public data: any;
-  private baseUrl: string = "http://localhost:5000";
+  // private baseUrl: string = "http://localhost:5000";
   private get: string = "/animals";
   private updateAnimalUrl: string = this.baseUrl + '/animals/update';
 

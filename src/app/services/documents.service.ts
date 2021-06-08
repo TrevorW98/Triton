@@ -9,6 +9,7 @@ import { DataService } from './data.service';
 export class DocumentsService {
 
   constructor(private http: HttpClient, private dService: DataService) { }
+  // private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
   private baseUrl: string = "http://localhost:5000";
   private addDoc: string = "/documents/new";
   private getAllDocs: string = "/documents?email=";
@@ -20,15 +21,15 @@ export class DocumentsService {
   public document: IDocs = {
     petName: "",
     email: "",
-    document: ""
+    document: "",
+    docName: ""
   }
 
   
   getDocsEmail(){
-    this.document.email = this.dService.User.email;
-    console.log(this.document.email);
-    this.http.get(this.baseUrl+this.getAllDocs+this.document.email).subscribe((response: IDocs[]) =>{
+   this.http.get(this.baseUrl+this.getAllDocs+this.dService.User.email).subscribe((response: IDocs[]) =>{
       this.DocArrEmail = response;
+      console.log(this.DocArrEmail);
     });
   }
   getDocsPet(){
@@ -46,5 +47,8 @@ export class DocumentsService {
   }
   addDocument(){
     return this.http.post(this.baseUrl+this.addDoc, this.document).toPromise();
+  }
+  setName(string){
+    this.document.docName = string;
   }
 }
