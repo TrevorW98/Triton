@@ -71,7 +71,9 @@ export class IndividualPetDocsPage implements OnInit {
   }
   getContent(i) {
     // return URL.createObjectURL(this.sanitizer.bypassSecurityTrustUrl(this.docArr[i].document));
-    return this.sanitizer.bypassSecurityTrustUrl(this.docArr[i].document);
+    //return this.sanitizer.bypassSecurityTrustUrl(this.docArr[i].document);
+    return this.sanitizer.bypassSecurityTrustUrl("data:application/pdf;base64," + this.docArr[i].document);
+    //return "data:application/pdf;base64," + this.docArr[i].document;
     // this.fileTransfer.download(this.docArr[i].document, File.dataDirectory+'file.pdf');
   }
 
