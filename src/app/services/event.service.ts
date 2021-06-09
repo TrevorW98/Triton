@@ -13,8 +13,8 @@ export class EventService {
     private http: HttpClient,
     private dService: DataService
   ) { }
-  // private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
-  private baseUrl: string = 'http://localhost:5000';
+  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  // private baseUrl: string = 'http://localhost:5000';
 
   private eventEnd: string = '/events?userId=';
   private add: string = '/events/add';
