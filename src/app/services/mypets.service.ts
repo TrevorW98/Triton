@@ -11,8 +11,8 @@ import { IUser } from '../interfaces/IUser';
 export class MypetsService {
   
   constructor(private http: HttpClient, private dService: DataService) { }
-  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
-  // private baseUrl: string = "http://localhost:5000";
+  // private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  private baseUrl: string = "http://localhost:5000";
   private myPetsAddition: string = "/pets?userid=";
   public myPets: IMyPets[] = [];
   private add: string = '/pets/add';
@@ -56,12 +56,12 @@ export class MypetsService {
     // return this.dService.post(this.add, pet).toPromise();
     return this.http.put(this.baseUrl + '/pets/updateNeeds', pet);
   }
-  updateFood(){
-
+  updateFood(pet: IMyPets){
+    return this.http.put(this.baseUrl + '/pets/updateSnacks', pet);
   }
 
-  updateMedical(){
-
+  updateMedical(pet: IMyPets){
+    return this.http.put(this.baseUrl + '/pets/updateMedical', pet);
   }
 
 // Update: My Pets Info
