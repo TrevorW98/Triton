@@ -56,12 +56,12 @@ export class MypetsService {
     // return this.dService.post(this.add, pet).toPromise();
     return this.http.put(this.baseUrl + '/pets/updateNeeds', pet);
   }
-  updateFood(){
-
+  updateFood(pet: IMyPets){
+    return this.http.put(this.baseUrl + '/pets/updateSnacks', pet);
   }
 
-  updateMedical(){
-
+  updateMedical(pet: IMyPets){
+    return this.http.put(this.baseUrl + '/pets/updateMedical', pet);
   }
 
 // Update: My Pets Info

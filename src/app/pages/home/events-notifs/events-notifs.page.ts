@@ -30,12 +30,6 @@ export class EventsNotifsPage implements OnInit {
   };
 
   ionViewWillEnter() {
-    this.petsService.myPets.forEach( pet => {
-      this.pets[pet.id.toString()] = pet.petName;
-    });
-  }
-
-  ngOnInit() {
     this.login = this.dService.User;
     // user Id will eventually go into the getUserEvents(userId)
     this.eService.getUserEvents(this.login.id).subscribe((response:IEvent[]) => {
@@ -43,8 +37,19 @@ export class EventsNotifsPage implements OnInit {
       this.event = response;
       // console.log(this.event);
     });
+    this.petsService.myPets.forEach( pet => {
+      this.pets[pet.id.toString()] = pet.petName;
+    });
   }
 
+  ngOnInit() {
+  }
+
+  rmEvent(eventId: number) {
+    this.eService.deleteEvent(this.event.find(e => e.id == eventId))
+      .subscribe(res => console.log(res));
+    this.event.splice(this.event.indexOf(this.event.find(e=> e.id == eventId)), 1);
+  }
 
 
 

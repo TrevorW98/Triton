@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { AddFeedingPageRoutingModule } from './add-feeding-routing.module';
@@ -17,7 +17,8 @@ import { TopNavComponent } from 'src/app/components/top-nav/top-nav.component';
     IonicModule,
     AddFeedingPageRoutingModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
   ],
   declarations: [AddFeedingPage, BottomNavComponent, TopNavComponent]
 })

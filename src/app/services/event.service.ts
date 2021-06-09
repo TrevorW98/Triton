@@ -18,6 +18,7 @@ export class EventService {
 
   private eventEnd: string = '/events?userId=';
   private add: string = '/events/add';
+  private delete: string = '/events/delete';
   public event:IEvent[];
 
   getEvents(): Observable<IEvent[]>{
@@ -37,9 +38,8 @@ export class EventService {
     return this.dService.post(this.add, eventToAdd).toPromise();
   }
 
-
-
-
-
+  deleteEvent(event: IEvent) {
+    return  this.http.put( this.baseUrl+ this.delete, event);
+  }
 
 }
