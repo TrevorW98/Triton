@@ -63,7 +63,7 @@ export class AddEventsPage implements OnInit {
         
       }
       
-      // console.log(this.event);
+      console.log(this.event);
       this.addEvent();
       this.AddEventForm.reset();
     }
