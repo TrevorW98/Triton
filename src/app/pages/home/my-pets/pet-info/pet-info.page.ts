@@ -73,7 +73,7 @@ export class PetInfoPage implements OnInit {
   }
 
   ionViewWillEnter(): void {
-    
+
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.petsService.getPet(id)
       .subscribe((pet: IMyPets) => this.chosenPet = pet);
@@ -98,25 +98,58 @@ export class PetInfoPage implements OnInit {
       console.log(this.BoxColor);
       if (this.BoxColor == 'dailyNeeds') {
         this.myPets.dailyNeeds = this.AddPetInfo.controls['pDesc'].value + "|";
+        console.log(this.myPets, this.login.id);
+        this.myPets.userId = this.login.id;
+        this.myPets.id = this.Petid;
+        console.log(this.myPets);
+        this.Update('dailyNeeds');
       } else if (this.BoxColor == 'food') {
         this.myPets.foodTreats = this.AddPetInfo.controls['pDesc'].value + "|";
+        console.log(this.myPets, this.login.id);
+        this.myPets.userId = this.login.id;
+        this.myPets.id = this.Petid;
+        console.log(this.myPets);
+        this.Update('food');
       } else if (this.BoxColor == 'medical') {
         this.myPets.medical = this.AddPetInfo.controls['pDesc'].value + "|";
+        console.log(this.myPets, this.login.id);
+        this.myPets.userId = this.login.id;
+        this.myPets.id = this.Petid;
+        console.log(this.myPets);
+        this.Update('medical');
       }
-      console.log(this.myPets, this.login.id);
-      this.myPets.userId = this.login.id;
-      this.myPets.id = this.Petid;
-      console.log(this.myPets);
-      this.Update();
+      // this.Update(this.BoxColor);
       this.AddPetInfo.reset();
     }
   }
 
-  Update() {
-    this.petsService.updateDailyNeed(this.myPets).subscribe((res: any) => {
-      console.log(res)
-    })
+  Update(color) {
+    if(color == 'dailyNeeds'){
+      this.petsService.updateDailyNeed(this.myPets).subscribe((res: any) => {
+        console.log(res)
+      })
+    }else if(color == 'food'){
+      this.petsService.updateFood(this.myPets).subscribe((res: any) => {
+        console.log(res)
+      })
+    }else if(color == 'medical'){
+      this.petsService.updateMedical(this.myPets).subscribe((res: any) => {
+        console.log(res)
+      })
+    }
+
   }
+  // Update(color) {
+  //   if(color == 'dailyNeeds'){
+  //     this.petsService.updateDailyNeed(this.myPets).subscribe((res: any) => {
+  //       console.log(res)
+  //     })
+  //   }else if(color == 'food'){
+      
+  //   }else if(color == 'medical'){
+
+  //   }
+  // }
 
 
   // this will change the color and insert all the information from the pull into the box in one function.
