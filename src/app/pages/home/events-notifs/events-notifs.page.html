@@ -18,8 +18,8 @@
     <!-- <small #never>Repeat?:Never</small> -->
   </div>
   <div class="col d-flex align-items-center justify-content-end">
-    <mat-icon class="mr-2 backArrow">edit</mat-icon>
-    <mat-icon class="backArrow">close</mat-icon>
+    <mat-icon class="mr-2 backArrow d-none">edit</mat-icon>
+    <mat-icon (click)="rmEvent(i.id)" class="backArrow">close</mat-icon>
   </div>
 </ion-row>
 
