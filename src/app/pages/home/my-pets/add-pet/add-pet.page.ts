@@ -57,7 +57,7 @@ export class AddPetPage implements OnInit {
       this.myPets.petName = this.AddPetForm.controls['pName'].value;
       this.myPets.petDescription = this.AddPetForm.controls['pInfo'].value;
       this.myPets.petPicture = this.AddPetForm.controls['pPic'].value;
-      console.log(this.myPets, this.login.id);
+      // console.log(this.myPets, this.login.id);
       this.myPets.userId = this.login.id;
       this.addPet();
       this.AddPetForm.reset();

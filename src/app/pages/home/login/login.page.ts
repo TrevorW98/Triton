@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
   }
 
   submitForm() {
-    console.log('running submit');
+    // console.log('running submit');
     if (this.LoginForm.invalid) {
       alert('Fix errors on form');
     } else {

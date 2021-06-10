@@ -33,10 +33,10 @@ export class IndexMainPage implements OnInit {
 
   ngOnInit() {
     this.login = this.dService.User;
-    console.log(this.login.email);
+    // console.log(this.login.email);
     this.getAnimals();
     this.getFavorites(this.login.email);
-    console.log(this.fService.favsArr);
+    // console.log(this.fService.favsArr);
   }
 
  
@@ -48,10 +48,11 @@ export class IndexMainPage implements OnInit {
   }
   setFavBool(){
     if(this.login.email != ''){
-      this.fService.setFavBool();
+      this.fService.setFavBool(true);
     }
   }
   setCategoryIndexMain(string){
+    this.fService.setFavBool(false);
     this.iService.setCategory(string);
   }
   routeLogin(){

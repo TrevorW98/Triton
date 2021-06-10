@@ -42,7 +42,7 @@ export class AddFeedingPage implements OnInit {
 
   ngOnInit() {
     this.login = this.dService.User;
-    console.log(this.login);
+    // console.log(this.login);
     this.AddEventForm = this.formBuilder.group({
       pName: new FormControl('', Validators.required),
       // event: new FormControl('', Validators.required),
@@ -67,7 +67,7 @@ export class AddFeedingPage implements OnInit {
 
     }
 
-    console.log(this.event);
+    // console.log(this.event);
     this.addEvent();
     this.AddEventForm.reset();
   }

@@ -58,7 +58,7 @@ export class AddAnEntryPage implements OnInit {
       this.newEntry.petName = this.AddEntryForm.controls['pName'].value;
       this.newEntry.summary = this.AddEntryForm.controls['Summary'].value;
       this.newEntry.date = this.AddEntryForm.controls['Date'].value;
-      console.log(this.newEntry);
+      // console.log(this.newEntry);
       this.save();
       this.AddEntryForm.reset();
       this.router.navigate(['/journal-main']);

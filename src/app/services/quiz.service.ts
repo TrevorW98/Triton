@@ -15,7 +15,7 @@ export class QuizService {
   getQuestions(){
     return this.http.get(this.quizUrl).subscribe((quizData: Iquizdata[]) =>{
       this.questionArr = quizData;
-      console.log(this.questionArr);
+      // console.log(this.questionArr);
     });
   }
   setResults(animal: string){

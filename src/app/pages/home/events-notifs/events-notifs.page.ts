@@ -47,7 +47,7 @@ export class EventsNotifsPage implements OnInit {
 
   rmEvent(eventId: number) {
     this.eService.deleteEvent(this.event.find(e => e.id == eventId))
-      .subscribe(res => console.log(res));
+      .subscribe();
     this.event.splice(this.event.indexOf(this.event.find(e=> e.id == eventId)), 1);
   }
 

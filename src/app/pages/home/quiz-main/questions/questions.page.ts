@@ -37,7 +37,7 @@ export class QuestionsPage implements OnInit {
     this.firstQuestions = this.Qservice.questionArr.filter((s) => {
       return s.important == true;
     });
-    console.log(this.firstQuestions);
+    // console.log(this.firstQuestions);
   }
 
   nextQuestion() {
@@ -54,7 +54,7 @@ export class QuestionsPage implements OnInit {
     } else if (btn4.hasAttribute("checked")) {
       this.catsDogs++;
     };
-    console.log(this.amphibiansFish, this.birdsReptiles, this.insectsSmallAnimals, this.catsDogs);
+    // console.log(this.amphibiansFish, this.birdsReptiles, this.insectsSmallAnimals, this.catsDogs);
     btn1.removeAttribute("checked");
     btn2.removeAttribute("checked");
     btn3.removeAttribute("checked");
@@ -149,7 +149,7 @@ export class QuestionsPage implements OnInit {
     this.nextBtn = false;
   }
   narrowResults() {
-    console.log("running")
+    // console.log("running")
     if (this.amphibiansFish > this.birdsReptiles && this.amphibiansFish > this.insectsSmallAnimals && this.amphibiansFish > this.catsDogs) {
       let r = Math.floor(Math.random() * 2);
       if (r === 1) {
@@ -157,9 +157,9 @@ export class QuestionsPage implements OnInit {
       } else {
         this.result = "Fish";
       }
-      console.log(this.result);
+      // console.log(this.result);
       this.Qservice.setResults(this.result);
-      console.log(this.Qservice.result);
+      // console.log(this.Qservice.result);
      
     } else if (this.birdsReptiles > this.amphibiansFish && this.birdsReptiles > this.insectsSmallAnimals && this.birdsReptiles > this.catsDogs) {
       let r = Math.floor(Math.random() * 2);
@@ -168,7 +168,7 @@ export class QuestionsPage implements OnInit {
       } else {
         this.result = "Reptiles";
       }
-      console.log(this.result);
+      // console.log(this.result);
       this.Qservice.setResults(this.result);
       console.log(this.Qservice.result);
     } else if (this.insectsSmallAnimals > this.amphibiansFish && this.insectsSmallAnimals > this.birdsReptiles && this.insectsSmallAnimals > this.catsDogs) {
@@ -178,9 +178,9 @@ export class QuestionsPage implements OnInit {
       } else {
         this.result = "Small animals";
       }
-      console.log(this.result);
+      // console.log(this.result);
       this.Qservice.setResults(this.result);
-      console.log(this.Qservice.result);
+      // console.log(this.Qservice.result);
     } else if (this.catsDogs > this.amphibiansFish && this.catsDogs > this.insectsSmallAnimals && this.catsDogs > this.birdsReptiles) {
       let r = Math.floor(Math.random() * 2);
       if (r == 1) {
@@ -188,7 +188,7 @@ export class QuestionsPage implements OnInit {
       } else {
         this.result = "Dogs";
       }
-      console.log(this.result);
+      // console.log(this.result);
       this.Qservice.setResults(this.result);
       console.log(this.Qservice.result);
     }

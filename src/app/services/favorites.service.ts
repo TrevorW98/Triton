@@ -35,21 +35,18 @@ export class FavoritesService {
       this.favsArr = favsData;
     });
   }
-  setFavBool(){
-    this.favoritesBool = true;
-    console.log(this.favoritesBool);
+  setFavBool(isFavs: boolean){
+    this.favoritesBool = isFavs;
+    // console.log(this.favoritesBool);
   }
+
   newFav(animal: IFavorites[]){
-    console.log(animal);
-    this.http.post(this.addFavUrl,animal).subscribe((response)=>{
-      console.log(response);
-    });
+    // console.log(animal);
+    this.http.post(this.addFavUrl,animal).subscribe();
   }
   removeFav(animal){
-    console.log(animal);
-    this.http.delete(this.deleteFavUrl,animal).subscribe((response)=>{
-      console.log(response);
-    })
+    // console.log(animal);
+    this.http.delete(this.deleteFavUrl,animal).subscribe()
   }
 
 

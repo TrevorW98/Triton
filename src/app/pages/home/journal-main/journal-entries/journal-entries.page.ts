@@ -35,9 +35,9 @@ export class JournalEntriesPage implements OnInit {
 
   ngOnInit() {
     this.login = this.dService.User;
-    console.log(this.login.email);
+    // console.log(this.login.email);
     this.jService.getJournalList(this.login.email).subscribe((response: IJournal[]) => {
-      console.log(response);
+      // console.log(response);
       this.journal = response;
     });
   }
