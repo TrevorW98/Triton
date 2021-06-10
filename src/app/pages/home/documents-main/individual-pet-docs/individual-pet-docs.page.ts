@@ -4,9 +4,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { DataService } from 'src/app/services/data.service';
 import { IDocs } from 'src/app/interfaces/IDocs';
 import { DomSanitizer } from '@angular/platform-browser';
-// import { Downloader, DownloadRequest, NotificationVisibility } from '@ionic-native/downloader/ngx';
-// import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
-// import { File } from '@ionic-native/file';
+
 
 
 @Component({
@@ -22,10 +20,8 @@ export class IndividualPetDocsPage implements OnInit {
     private sanitizer: DomSanitizer,
     private formBuilder: FormBuilder,
     private docService: DocumentsService,
-    private dService: DataService,
-    // private downloader: Downloader,
-    // private transfer: FileTransfer,
-    //  private file: File
+    private dService: DataService
+    
      ) { }
     AddDocname: FormGroup;
     docArr: IDocs[];
@@ -36,20 +32,7 @@ export class IndividualPetDocsPage implements OnInit {
     petName: string;
 
 
-  // request: DownloadRequest = {
-  //   uri: "",
-  //   title: 'MyDownload',
-  //   description: '',
-  //   mimeType: '',
-  //   visibleInDownloadsUi: true,
-  //   notificationVisibility: NotificationVisibility.VisibleNotifyCompleted,
-  //   destinationInExternalFilesDir: {
-  //     dirType: 'Downloads',
-  //     subPath: 'MyFile.apk'
-  //   }
-  // };
-  // fileTransfer: FileTransferObject = this.transfer.create();
-
+ 
   ngOnInit() {
     this.submit = false;
     this.submit2=false;
@@ -70,11 +53,9 @@ export class IndividualPetDocsPage implements OnInit {
 
   }
   getContent(i) {
-    // return URL.createObjectURL(this.sanitizer.bypassSecurityTrustUrl(this.docArr[i].document));
-    //return this.sanitizer.bypassSecurityTrustUrl(this.docArr[i].document);
-    return this.sanitizer.bypassSecurityTrustUrl("data:application/pdf;base64," + this.docArr[i].document);
-    //return "data:application/pdf;base64," + this.docArr[i].document;
-    // this.fileTransfer.download(this.docArr[i].document, File.dataDirectory+'file.pdf');
+
+    return "data:image/jpeg;base64," + atob(this.docArr[i].document);
+   
   }
 
 

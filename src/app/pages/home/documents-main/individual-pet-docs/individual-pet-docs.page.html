@@ -14,7 +14,7 @@
     <ion-row *ngFor="let doc of docArr; let i = index">
       <ion-col size="12" class="center">
         <ion-item>
-          <a download="file.pdf" [href]="getContent(i)">{{doc.docName}}</a>
+          <a download={{doc.docName}} [href]="getContent(i)">{{doc.docName}}</a>
         </ion-item>
       </ion-col>
     </ion-row>

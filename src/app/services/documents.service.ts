@@ -9,8 +9,8 @@ import { DataService } from './data.service';
 export class DocumentsService {
 
   constructor(private http: HttpClient, private dService: DataService) { }
-  // private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
-  private baseUrl: string = "http://localhost:5000";
+  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  // private baseUrl: string = "http://localhost:5000";
   private addDoc: string = "/documents/new";
   private getAllDocs: string = "/documents?email=";
   private getAllDocsPetname: string = "/documents?petName=";
