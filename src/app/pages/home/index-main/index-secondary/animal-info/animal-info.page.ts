@@ -35,7 +35,7 @@ export class AnimalInfoPage implements OnInit {
     this.animalChoice = this.iService.animalArr.filter(b => {
       return b.breedSpeciesName == this.iService.animalChoice;
     })
-    console.log(this.animalChoice);
+    // console.log(this.animalChoice);
     this.convertToImage();
   }
   convertToImage(){
@@ -44,7 +44,7 @@ export class AnimalInfoPage implements OnInit {
     } else{
       this.src = "data:image/jpeg;base64," + atob(this.animalChoice[0].breedSpeciesPicture);
     }
-    console.log(this.src); 
+    // console.log(this.src); 
   }
   onFileSelected(event): void {
 
@@ -59,7 +59,7 @@ export class AnimalInfoPage implements OnInit {
         result = result.substring(result.indexOf(',') + 1);
        
         const convertBase64 = btoa(result);
-        console.log(convertBase64);
+        // console.log(convertBase64);
         //reconvert to image on the screen
         this.iService.setBase64(convertBase64);
         setTimeout(()=> {

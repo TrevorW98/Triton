@@ -48,17 +48,17 @@ export class DataService {
   constructor(private http: HttpClient, private route: Router) {}
 
   signIn(login: ILogin) {
-    console.log(login);
+    // console.log(login);
     let saveLogin = login.staySignedIn;
     this.http.post(this.loginUrl, login).subscribe((response: ILoginResponse) => {
       //this.setLogin(login);
-      console.log(response);
+      // console.log(response);
       this.setUser(response.user);
       this.User.staySignedIn = saveLogin;
       if(this.User.staySignedIn){
         localStorage.setItem('savedUser',JSON.stringify(this.User));
       }
-      console.log(this.User, response.user);
+      // console.log(this.User, response.user);
       this.route.navigate(['home']);
     });
   }
@@ -68,7 +68,7 @@ export class DataService {
   }
 
   setUser(user: IUser): void {
-    console.log("Setting user...");
+    // console.log("Setting user...");
     this.User = user;
   }
 
@@ -81,17 +81,17 @@ export class DataService {
   }
 
   addUser(user) {
-    console.log(user);
+    // console.log(user);
     this.http.post(this.addUserUrl, user).subscribe((data2) => {
-      console.log(data2);
+      // console.log(data2);
       this.setUser(user);
       this.route.navigate(['home']);
     });
   }
 
   updateUser() {
-    console.log("sending photo...");
-    this.http.put(this.updateUserUrl, this.User).subscribe(response => {console.log(response)});
+    // console.log("sending photo...");
+    this.http.put(this.updateUserUrl, this.User).subscribe();
   }
 
     // This our POST Function.

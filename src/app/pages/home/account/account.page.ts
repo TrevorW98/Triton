@@ -20,9 +20,9 @@ export class AccountPage implements OnInit {
 
   ionViewWillEnter() {
     if (this.dService.User.profilePicture != ''){
-      console.log(this.dService.User.profilePicture);
+      // console.log(this.dService.User.profilePicture);
       this.imgSrc = this.dService.User.profilePicture;
-      console.log(this.imgSrc);
+      // console.log(this.imgSrc);
 
     }
   }

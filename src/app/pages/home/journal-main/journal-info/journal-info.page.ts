@@ -20,7 +20,7 @@ export class JournalInfoPage implements OnInit {
   ngOnInit() {
     this.jService.getJournalChosen().subscribe((response: IJournal[]) => {
       this.journal = response;
-      console.log(this.journal);
+      // console.log(this.journal);
     });
   }
   

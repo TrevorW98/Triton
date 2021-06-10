@@ -20,11 +20,11 @@ export class JournalService {
 
 
   getJournalList(email){
-    console.log(email);
+    // console.log(email);
     return this.http.get(this.baseUrl+this.journalListEnd+email);
   }
   getJournalChosen(){
-    console.log(this.chosenJournal);
+    // console.log(this.chosenJournal);
     return this.http.get(this.baseUrl+this.journalSingle+this.chosenJournal);
   }
 

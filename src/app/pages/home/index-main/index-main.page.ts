@@ -33,10 +33,10 @@ export class IndexMainPage implements OnInit {
 
   ngOnInit() {
     this.login = this.dService.User;
-    console.log(this.login.email);
+    // console.log(this.login.email);
     this.getAnimals();
     this.getFavorites(this.login.email);
-    console.log(this.fService.favsArr);
+    // console.log(this.fService.favsArr);
   }
 
  

@@ -72,9 +72,9 @@ export class HomePage implements OnInit {
     if(this.dService.User.id != 0){
       this.petsService.getMyPets(this.dService.User.id)
     .subscribe((pets: IMyPets[]) => {
-      console.log(pets);
+      // console.log(pets);
       this.petsService.myPets = pets;
-      console.log(this.petsService.myPets);
+      // console.log(this.petsService.myPets);
     });
     this.getEvents();
     this.petsService.myPets.forEach(pet =>

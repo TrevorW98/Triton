@@ -49,7 +49,7 @@ export class MypetsService {
   updatePet(chosenPet: IMyPets) {
     this.myPets.splice(this.myPets.indexOf(this.myPets.find(p => p.id == chosenPet.id)), 1, chosenPet);
     this.http.put(this.baseUrl + this.update, chosenPet)
-    .subscribe(response => console.log(response));
+    .subscribe();
   }
 
   updateDailyNeed(pet: IMyPets){

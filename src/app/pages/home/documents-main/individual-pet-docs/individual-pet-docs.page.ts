@@ -66,7 +66,7 @@ export class IndividualPetDocsPage implements OnInit {
     this.docArr = this.docService.DocArrEmail.filter(a => {
       return a.petName == this.petName;
     });
-    console.log(this.docArr);
+    // console.log(this.docArr);
 
   }
   getContent(i) {
@@ -87,7 +87,7 @@ export class IndividualPetDocsPage implements OnInit {
         let result = reader.result.toString();
         result = result.substring(result.indexOf(',') + 1);
         const convertBase64 = btoa(result);
-        console.log(convertBase64);
+        // console.log(convertBase64);
         //file is now encoded
         this.docService.setDocument(convertBase64);
         this.submit = true;
@@ -105,7 +105,7 @@ export class IndividualPetDocsPage implements OnInit {
   }
   addDocument() {
     this.docService.addDocument().then((res: any) => {
-      console.log(res);
+      // console.log(res);
       this.docService.getDocsEmail();
     }).then(()=>{
       this.docArr = this.docService.DocArrEmail.filter(a => {

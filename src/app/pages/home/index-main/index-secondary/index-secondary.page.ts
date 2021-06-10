@@ -43,8 +43,8 @@ title = 'Pet Index';
       return a.category == this.iService.category;
     });
     this.favorites = this.fService.favsArr;
-    console.log(this.animals);
-    console.log(this.favorites);
+    // console.log(this.animals);
+    // console.log(this.favorites);
     this.setTitle();
   }
   ionViewWillEnter(){

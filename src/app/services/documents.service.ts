@@ -29,7 +29,7 @@ export class DocumentsService {
   getDocsEmail(){
    this.http.get(this.baseUrl+this.getAllDocs+this.dService.User.email).subscribe((response: IDocs[]) =>{
       this.DocArrEmail = response;
-      console.log(this.DocArrEmail);
+      // console.log(this.DocArrEmail);
     });
   }
   getDocsPet(){

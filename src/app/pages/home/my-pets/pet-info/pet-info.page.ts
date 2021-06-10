@@ -79,7 +79,7 @@ export class PetInfoPage implements OnInit {
       .subscribe((pet: IMyPets) => this.chosenPet = pet);
     
     this.Petid = id;
-    console.log(this.Petid, this.login.id);
+    // console.log(this.Petid, this.login.id);
   }
 
   editMe() {
@@ -95,27 +95,27 @@ export class PetInfoPage implements OnInit {
       //   // console.log(this.AddPetForm.value);
       //   this.myPets.petName = this.AddPetForm.controls['pName'].value;
       //   this.myPets.petDescription = this.AddPetForm.controls['pInfo'].value;
-      console.log(this.BoxColor);
+      // console.log(this.BoxColor);
       if (this.BoxColor == 'dailyNeeds') {
         this.myPets.dailyNeeds = this.AddPetInfo.controls['pDesc'].value + "|";
-        console.log(this.myPets, this.login.id);
+        // console.log(this.myPets, this.login.id);
         this.myPets.userId = this.login.id;
         this.myPets.id = this.Petid;
-        console.log(this.myPets);
+        // console.log(this.myPets);
         this.Update('dailyNeeds');
       } else if (this.BoxColor == 'food') {
         this.myPets.foodTreats = this.AddPetInfo.controls['pDesc'].value + "|";
-        console.log(this.myPets, this.login.id);
+        // console.log(this.myPets, this.login.id);
         this.myPets.userId = this.login.id;
         this.myPets.id = this.Petid;
-        console.log(this.myPets);
+        // console.log(this.myPets);
         this.Update('food');
       } else if (this.BoxColor == 'medical') {
         this.myPets.medical = this.AddPetInfo.controls['pDesc'].value + "|";
-        console.log(this.myPets, this.login.id);
+        // console.log(this.myPets, this.login.id);
         this.myPets.userId = this.login.id;
         this.myPets.id = this.Petid;
-        console.log(this.myPets);
+        // console.log(this.myPets);
         this.Update('medical');
       }
       // this.Update(this.BoxColor);
@@ -125,17 +125,11 @@ export class PetInfoPage implements OnInit {
 
   Update(color) {
     if(color == 'dailyNeeds'){
-      this.petsService.updateDailyNeed(this.myPets).subscribe((res: any) => {
-        console.log(res)
-      })
+      this.petsService.updateDailyNeed(this.myPets).subscribe()
     }else if(color == 'food'){
-      this.petsService.updateFood(this.myPets).subscribe((res: any) => {
-        console.log(res)
-      })
+      this.petsService.updateFood(this.myPets).subscribe()
     }else if(color == 'medical'){
-      this.petsService.updateMedical(this.myPets).subscribe((res: any) => {
-        console.log(res)
-      })
+      this.petsService.updateMedical(this.myPets).subscribe()
     }
 
   }
