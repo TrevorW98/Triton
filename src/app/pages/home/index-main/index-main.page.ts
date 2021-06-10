@@ -48,10 +48,11 @@ export class IndexMainPage implements OnInit {
   }
   setFavBool(){
     if(this.login.email != ''){
-      this.fService.setFavBool();
+      this.fService.setFavBool(true);
     }
   }
   setCategoryIndexMain(string){
+    this.fService.setFavBool(false);
     this.iService.setCategory(string);
   }
   routeLogin(){

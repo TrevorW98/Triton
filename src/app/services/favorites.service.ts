@@ -35,10 +35,11 @@ export class FavoritesService {
       this.favsArr = favsData;
     });
   }
-  setFavBool(){
-    this.favoritesBool = true;
+  setFavBool(isFavs: boolean){
+    this.favoritesBool = isFavs;
     console.log(this.favoritesBool);
   }
+
   newFav(animal: IFavorites[]){
     console.log(animal);
     this.http.post(this.addFavUrl,animal).subscribe((response)=>{
