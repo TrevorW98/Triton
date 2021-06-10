@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IAnimals } from '../interfaces/animals';
-
+import {environment} from '../../environments/environment.prod'
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +10,7 @@ export class IndexService {
 
   constructor(private http: HttpClient) { }
    //LIVE
-  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+   private baseUrl: string = environment.URL;
   //DEV
   public data: any;
   // private baseUrl: string = "http://localhost:5000";

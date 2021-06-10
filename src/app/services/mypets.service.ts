@@ -4,14 +4,14 @@ import { DataService } from './data.service';
 import { IMyPets } from '../interfaces/IMyPets';
 import { Observable, of } from 'rxjs';
 import { IUser } from '../interfaces/IUser';
-
+import {environment} from '../../environments/environment.prod'
 @Injectable({
   providedIn: 'root'
 })
 export class MypetsService {
   
   constructor(private http: HttpClient, private dService: DataService) { }
-  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  private baseUrl: string = environment.URL;
   // private baseUrl: string = "http://localhost:5000";
   private myPetsAddition: string = "/pets?userid=";
   public myPets: IMyPets[] = [];

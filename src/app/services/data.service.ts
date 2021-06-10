@@ -8,7 +8,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { IAnimals } from '../interfaces/animals';
 import { IndexService } from './index.service';
-
+import {environment} from '../../environments/environment.prod'
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
@@ -17,7 +17,7 @@ const httpOptions = {
 })
 export class DataService {
   //LIVE
-  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  private baseUrl: string = environment.URL;
   //DEV
   public data: any;
   // private baseUrl: string = "http://localhost:5000";

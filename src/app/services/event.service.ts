@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { IEvent } from '../interfaces/IEvent';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from './data.service';
-
+import {environment} from '../../environments/environment.prod'
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +13,7 @@ export class EventService {
     private http: HttpClient,
     private dService: DataService
   ) { }
-  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  private baseUrl: string = environment.URL;
   // private baseUrl: string = 'http://localhost:5000';
 
   private eventEnd: string = '/events?userId=';

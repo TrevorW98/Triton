@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { IDocs } from '../interfaces/IDocs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { DataService } from './data.service';
-
+import {environment} from '../../environments/environment.prod'
 @Injectable({
   providedIn: 'root'
 })
 export class DocumentsService {
 
   constructor(private http: HttpClient, private dService: DataService) { }
-  private baseUrl: string = "https://tritondatabasedeployment.azurewebsites.net";
+  private baseUrl: string = environment.URL;
   // private baseUrl: string = "http://localhost:5000";
   private addDoc: string = "/documents/new";
   private getAllDocs: string = "/documents?email=";

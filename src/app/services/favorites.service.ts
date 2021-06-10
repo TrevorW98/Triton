@@ -4,18 +4,19 @@ import { IFavorites } from '../interfaces/IFavorites';
 import { ILogin } from '../interfaces/ILogin';
 import { DataService } from './data.service';
 import { IFavoritesID } from '../interfaces/IFavoritesID';
-
+import {environment} from '../../environments/environment.prod'
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritesService {
+  private baseUrl: string = environment.URL;
 
-  private favsUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs?email=";
+  private favsUrl: string = "/animals/favs?email=";
 
-  private addFavUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs/new";
+  private addFavUrl: string = "/animals/favs/new";
 
-  private deleteFavUrl: string = "https://tritondatabasedeployment.azurewebsites.net/animals/favs/delete";
+  private deleteFavUrl: string = "/animals/favs/delete";
 
   // private favsUrl: string = "http://localhost:5000/animals/favs?email=";
 
@@ -31,7 +32,7 @@ export class FavoritesService {
 
 
   getFavorites(email){
-    return this.http.get(this.favsUrl+email).subscribe((favsData) =>{
+    return this.http.get(this.baseUrl+this.favsUrl+email).subscribe((favsData) =>{
       this.favsArr = favsData;
     });
   }
@@ -42,11 +43,11 @@ export class FavoritesService {
 
   newFav(animal: IFavorites[]){
     // console.log(animal);
-    this.http.post(this.addFavUrl,animal).subscribe();
+    this.http.post(this.baseUrl+this.addFavUrl,animal).subscribe();
   }
   removeFav(animal){
     // console.log(animal);
-    this.http.delete(this.deleteFavUrl,animal).subscribe()
+    this.http.delete(this.baseUrl+this.deleteFavUrl,animal).subscribe()
   }
 
 
