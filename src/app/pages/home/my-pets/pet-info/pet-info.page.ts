@@ -33,7 +33,7 @@ export class PetInfoPage implements OnInit {
 
   chosenPet?: IMyPets;
   // chosenPet: IMyPets;
-  currentDetail: any;
+  currentDetail: string[] = [];
   Petid: number;
   // Gotta pull daily needs in the ngOnInIt (right away when we get to this page so we need the pet name info)
   AddPetInfo: FormGroup;
@@ -75,11 +75,12 @@ export class PetInfoPage implements OnInit {
   ionViewWillEnter(): void {
 
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.petsService.getPet(id)
-      .subscribe((pet: IMyPets) => this.chosenPet = pet);
+    // this.petsService.getPet(id)
+    //   .subscribe((pet: IMyPets) => this.chosenPet = pet);
+    this.chosenPet = this.petsService.myPets.find( p => p.id == id);
     
     this.Petid = id;
-    // console.log(this.Petid, this.login.id);
+    this.currentDetail = this.chosenPet.dailyNeeds.split("|").filter(detail => detail != '');
   }
 
   editMe() {
@@ -95,27 +96,34 @@ export class PetInfoPage implements OnInit {
       //   // console.log(this.AddPetForm.value);
       //   this.myPets.petName = this.AddPetForm.controls['pName'].value;
       //   this.myPets.petDescription = this.AddPetForm.controls['pInfo'].value;
-      // console.log(this.BoxColor);
+      console.log(this.BoxColor);
+      console.log("dailyNeeds: ", this.chosenPet.dailyNeeds);
       if (this.BoxColor == 'dailyNeeds') {
-        this.myPets.dailyNeeds = this.AddPetInfo.controls['pDesc'].value + "|";
-        // console.log(this.myPets, this.login.id);
-        this.myPets.userId = this.login.id;
-        this.myPets.id = this.Petid;
-        // console.log(this.myPets);
+        this.currentDetail.unshift(this.AddPetInfo.controls['pDesc'].value);
+        this.chosenPet.dailyNeeds = this.AddPetInfo.controls['pDesc'].value + "|" + this.chosenPet.dailyNeeds;
+        // this.myPets.dailyNeeds = this.AddPetInfo.controls['pDesc'].value + "|" + this.myPets.dailyNeeds;
+        console.log(this.myPets, this.login.id);
+        // this.myPets.userId = this.login.id;
+        // this.myPets.id = this.Petid;
+        console.log(this.myPets);
         this.Update('dailyNeeds');
       } else if (this.BoxColor == 'food') {
-        this.myPets.foodTreats = this.AddPetInfo.controls['pDesc'].value + "|";
-        // console.log(this.myPets, this.login.id);
-        this.myPets.userId = this.login.id;
-        this.myPets.id = this.Petid;
-        // console.log(this.myPets);
+        this.currentDetail.unshift(this.AddPetInfo.controls['pDesc'].value);
+        this.chosenPet.foodTreats = this.AddPetInfo.controls['pDesc'].value + "|" + this.chosenPet.foodTreats;
+        // this.myPets.foodTreats = this.AddPetInfo.controls['pDesc'].value + "|" + this.myPets.foodTreats;
+        console.log(this.myPets, this.login.id);
+        // this.myPets.userId = this.login.id;
+        // this.myPets.id = this.Petid;
+        console.log(this.myPets);
         this.Update('food');
       } else if (this.BoxColor == 'medical') {
-        this.myPets.medical = this.AddPetInfo.controls['pDesc'].value + "|";
-        // console.log(this.myPets, this.login.id);
-        this.myPets.userId = this.login.id;
-        this.myPets.id = this.Petid;
-        // console.log(this.myPets);
+        this.currentDetail.unshift(this.AddPetInfo.controls['pDesc'].value);
+        this.chosenPet.medical = this.AddPetInfo.controls['pDesc'].value + "|" + this.chosenPet.medical;
+        // this.myPets.medical = this.AddPetInfo.controls['pDesc'].value + "|" + this.myPets.medical;
+        console.log(this.myPets, this.login.id);
+        // this.myPets.userId = this.login.id;
+        // this.myPets.id = this.Petid;
+        console.log(this.myPets);
         this.Update('medical');
       }
       // this.Update(this.BoxColor);
@@ -125,11 +133,11 @@ export class PetInfoPage implements OnInit {
 
   Update(color) {
     if(color == 'dailyNeeds'){
-      this.petsService.updateDailyNeed(this.myPets).subscribe()
+      this.petsService.updateDailyNeed(this.chosenPet).subscribe()
     }else if(color == 'food'){
-      this.petsService.updateFood(this.myPets).subscribe()
+      this.petsService.updateFood(this.chosenPet).subscribe()
     }else if(color == 'medical'){
-      this.petsService.updateMedical(this.myPets).subscribe()
+      this.petsService.updateMedical(this.chosenPet).subscribe()
     }
 
   }
@@ -163,19 +171,19 @@ export class PetInfoPage implements OnInit {
 
     if (color == 'dailyNeeds') {
       card.el.classList.add('primaryBg');
-      this.currentDetail = this.chosenPet.dailyNeeds.split("|");
-      // console.log(this.currentDetail)
+      this.currentDetail = this.chosenPet.dailyNeeds.split("|").filter(detail => detail != '');
+      console.log(this.currentDetail)
 
 
 
     } else if (color == 'food') {
       card.el.classList.add('accentBg');
-      this.currentDetail = this.chosenPet.foodTreats.split("|");
+      this.currentDetail = this.chosenPet.foodTreats.split("|").filter(detail => detail != '');
 
 
     } else if (color == 'medical') {
       card.el.classList.add('warnBg');
-      this.currentDetail = this.chosenPet.medical.split("|");
+      this.currentDetail = this.chosenPet.medical.split("|").filter(detail => detail != '');
 
 
     }

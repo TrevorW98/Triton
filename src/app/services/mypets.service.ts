@@ -53,6 +53,7 @@ export class MypetsService {
   }
 
   updateDailyNeed(pet: IMyPets){
+    console.log(pet.dailyNeeds);
     // return this.dService.post(this.add, pet).toPromise();
     return this.http.put(this.baseUrl + '/pets/updateNeeds', pet);
   }
