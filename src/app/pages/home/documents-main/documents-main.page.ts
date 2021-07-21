@@ -24,6 +24,7 @@ export class DocumentsMainPage implements OnInit {
     public myPets: IMyPets[] = [];
   
   ngOnInit() {
+    this.docService.getDocsEmail();
   }
   ionViewWillEnter():void {
     this.myPets = this.petsService.myPets;

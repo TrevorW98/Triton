@@ -46,6 +46,7 @@ export class AnimalInfoPage implements OnInit {
     }
     // console.log(this.src); 
   }
+  
   onFileSelected(event): void {
 
     const file: File = event.target.files[0];
