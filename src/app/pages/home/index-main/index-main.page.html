@@ -1,9 +1,9 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 
-<ion-content>
+<ion-content class="darkModeBackground">
   <ion-grid>
-    <ion-row>
+    <ion-row *ngIf="!loading">
       <ion-col class="center" size="12">
         <button (click)="setCategoryIndexMain('Dog')" class="indexBtns dog" mat-raised-button color="primary" routerLink='/index-secondary' >Dogs</button>
       </ion-col>
@@ -28,8 +28,13 @@
       <ion-col class="center" size="12">
         <button (click)="setCategoryIndexMain('Aquatic')" class="indexBtns aquatic" mat-raised-button color="primary" routerLink='/index-secondary'>Aquatics</button>
       </ion-col>
-      <ion-col class="center" size="12">
+      <!-- <ion-col class="center" size="12">
         <button class="indexBtns favs" (click)="setFavBool()" (click)="routeLogin()" mat-raised-button color="primary" routerLink='/index-secondary'>Favorites</button>
+      </ion-col> -->
+    </ion-row>
+    <ion-row *ngIf="loading">
+      <ion-col class="spinner" size="12">
+        <ion-spinner name="crescent"></ion-spinner>
       </ion-col>
     </ion-row>
   </ion-grid>

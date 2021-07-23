@@ -1,6 +1,6 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content>
+<ion-content class="darkModeBackground">
   <ion-grid>
     <ion-row>
       <ion-col class="center" size="12">
@@ -15,7 +15,7 @@
       <ion-col>
         <ion-card>
           <ion-card-content>
-            <img src={{src}} alt="An Alaskan Malamute">
+            <img src={{animalChoice[0].breedSpeciesPicture}} alt="An Alaskan Malamute">
             <!-- <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload> -->
           </ion-card-content>
         </ion-card>

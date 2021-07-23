@@ -1,6 +1,6 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content [fullscreen]="true">
+<ion-content class="darkModeBackground" [fullscreen]="true">
   <ion-grid>
 
     <ion-row *ngIf="dService.User.id == 0" class="d-flex justify-content-center">

@@ -13,8 +13,8 @@ export class IndexService {
    private baseUrl: string = environment.URL;
   //DEV
   public data: any;
-  // private baseUrl: string = "http://localhost:5000";
-  private get: string = "/animals";
+   //private baseUrl: string = "http://localhost:5000";
+  private getInfo: string = "/animals";
   private updateAnimalUrl: string = this.baseUrl + '/animals/update';
 
   public animalArr: IAnimals[];
@@ -39,8 +39,10 @@ export class IndexService {
   }
 
   getAnimals(){
-    this.http.get(this.baseUrl+this.get).subscribe((animalData: IAnimals[]) =>{
+    this.http.get(this.baseUrl+this.getInfo).subscribe((animalData: IAnimals[]) =>{
       this.animalArr = animalData;
+      console.log(animalData);
+      console.log(this.animalArr);
     });
   }
 

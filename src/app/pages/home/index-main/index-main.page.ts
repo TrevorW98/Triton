@@ -16,6 +16,7 @@ import { IndexService } from 'src/app/services/index.service';
 export class IndexMainPage implements OnInit {
   backLocation = 'home';
   title = 'Pet Index';
+  loading = true;
 
   public login: IUser = {
     id: 0,
@@ -29,19 +30,19 @@ export class IndexMainPage implements OnInit {
   constructor(private dService: DataService, private iService: IndexService,  private fService: FavoritesService, private router: Router) { }
   
   public category;
-  
+
 
   ngOnInit() {
     this.login = this.dService.User;
-    // console.log(this.login.email);
     this.getAnimals();
-    this.getFavorites(this.login.email);
-    // console.log(this.fService.favsArr);
+    //this.getFavorites(this.login.email);
   }
-
  
   getAnimals(): void{
     this.iService.getAnimals();
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000);
   }
   getFavorites(email: string): void{
     this.fService.getFavorites(email);
