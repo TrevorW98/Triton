@@ -49,13 +49,16 @@
   width: 144px !important;
   // padding-top: 5px !important;
   font-size: 28px;
+  color: white;
 }
 .smolbtn {
   width: 35px !important;
   height: 35px !important;
+  color: white;
 }
 .backArrow {
   font-size: 28px;
+  color: white;
 }
 .overFlow {
   overflow-x: scroll;
@@ -144,7 +147,7 @@
   display: flex;
 }
 .greyCamera {
-  color: rgb(207, 207, 207);
+  color: rgb(255, 255, 255);
 }
 .grey{
   background: #313131;
@@ -155,4 +158,8 @@
 }
 .darkModeBackground{
   background-color: #121212;
+  height: 100%;
+}
+.white{
+  color: white;
 }

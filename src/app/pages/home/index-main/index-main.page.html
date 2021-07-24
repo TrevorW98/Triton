@@ -1,8 +1,8 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 
-<ion-content class="darkModeBackground">
-  <ion-grid>
+<ion-content >
+  <ion-grid class="darkModeBackground">
     <ion-row *ngIf="!loading">
       <ion-col class="center" size="12">
         <button (click)="setCategoryIndexMain('Dog')" class="indexBtns dog" mat-raised-button color="primary" routerLink='/index-secondary' >Dogs</button>
