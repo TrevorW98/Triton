@@ -1,9 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>feedingTimes</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content>
+<ion-content *ngIf="feedingTimes.length"  >
+  <div *ngFor="let event of feedingTimes" class="row my-4" class="darkModeBackground">
+      
+    <div
+      class="col-5 ml-3 d-flex flex-column justify-content-center"
+    >
+      <p class="lead my-0">{{pets[event.petId.toString()]}}</p>
+      <p class="my-0">{{event.occurance}}</p>
+    </div>
+    <div
+      class="col-3 d-flex flex-column justify-content-center px-0"
+    >
+      <span class="lead">{{event.date | date:"h:mmaaaaa"}}</span>
+    </div>
+    <div
+      class="col-1 d-flex align-items-center justify-content-end px-0"
+    >
+      <mat-icon class="backArrow d-none">edit</mat-icon>
+    </div>
+    <div
+      class="col-1 d-flex align-items-center justify-content-end px-0"
+    >
+      <mat-icon class="backArrow">close</mat-icon>
+    </div>
+  </div>
 
+  <div class="row" class="darkModeBackground">
+    <!-- <div class="col-1 mx-2"> -->
+      <!-- <mat-icon class="display-4">add</mat-icon> -->
+    <!-- </div> -->
+    <div class="col pl-4 center">
+      <p routerLink="/add-feeding" class="my-0">+ <u>Add Feeding Time</u></p>
+    </div>
+  </div>
 </ion-content>
+
+<app-bottom-nav></app-bottom-nav>

@@ -8,10 +8,7 @@ const routes: Routes = [
     path: '',
     component: FindVetPage
   },
-  {
-    path: 'vet-info',
-    loadChildren: () => import('./vet-info/vet-info.module').then( m => m.VetInfoPageModule)
-  }
+
 ];
 
 @NgModule({

@@ -1,9 +1,75 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>pet-info</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content>
+<ion-content >
+  <ion-grid class="darkModeBackground">
+    <ion-row *ngIf="chosenPet">
+      <ion-col size="6">
+        <button mat-icon-button routerLink='/individual-pet-docs'>
+          <mat-icon>folder_special</mat-icon>
+        </button>
+      </ion-col>
+      <ion-col size="6" class="end">
+        <button mat-icon-button routerLink='/pet-edit/{{chosenPet.id}}'>
+          <mat-icon>create</mat-icon>
+        </button>
+      </ion-col>
+      <ion-col size="12" class="center">
+        <img class="circleProfile" src="{{chosenPet.petPicture || '../../../../assets/images/doge.jpg'}}" alt="Yoda">
+      </ion-col>
+
+      <ion-col size="12">
+        <div class="overFlow">
+          <h2 class="text-center m-0">{{chosenPet.petName}}</h2>
+          <p class="text-center"><i>{{chosenPet.petDescription}}</i></p>
+        </div>
+
+
+      </ion-col>
+      <ion-col size="12" class="mx-3">
+        <div class="mr-4">
+          <p class='noMarY'><i>Upcoming Events:</i></p>
+          <p></p>
+        </div>
+      </ion-col>
+
+      <ion-col size="12" class="mb-0">
+        <div class="text-center">
+          <button mat-raised-button (click)="colorChange(myCard, 'dailyNeeds')" class="my-0 mr-1" color="primary">Daily
+            Needs</button>
+          <button mat-raised-button (click)="colorChange(myCard, 'food')" class="my-0 mx-2" color="accent">Food</button>
+          <button mat-raised-button (click)="colorChange(myCard, 'medical')" class="my-0 ml-2"
+            color="warn">Medical</button>
+        </div>
+
+        <ion-card #myCard class="primaryBg">
+          <ion-card-content class="p-2">
+            <!-- this is where all the bulletpoints will go. -->
+            <ul class="mb-2 lineFix">
+              <li *ngFor="let i of currentDetail">{{i}}</li>
+            </ul>
+            <div class="p-2" (click)="editMe()" *ngIf="!inputOn">
+              <p class="mb-0"><u>Edit Me!</u></p>
+            </div>
+            <div *ngIf="inputOn">
+              <form [formGroup]="AddPetInfo" (ngSubmit)="submitForm()">
+                <ion-input #inputBox  formControlName="pDesc" type="string" class="inputBox" placeholder="+ add more info"></ion-input>
+                <div class="end mt-2">
+                  <button mat-raised-button type="button" class="grey mr-2" (click)="inputOn = false">Exit</button>
+                  <button [disabled]="!AddPetInfo.valid" mat-raised-button class="white" type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
+    </ion-row>
+
+  </ion-grid>
+
 
 </ion-content>
+
+<app-bottom-nav></app-bottom-nav>

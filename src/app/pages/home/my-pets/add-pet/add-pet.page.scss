@@ -1,0 +1,19 @@
+
+  .picture{
+    height: 100px;
+  }
+  .camera{
+    position:relative;
+    top: -15px;
+    left: 35px;
+    height: 0px;
+  }
+.inputBox{
+  border-radius: 5px;
+}
+.mat-button-disabled{
+  color: grey !important;
+}
+.darkModeBackground{
+  background-color: #121212;
+}

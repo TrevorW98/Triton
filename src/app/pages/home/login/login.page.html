@@ -1,9 +1,42 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="row d-flex justify-content-center align-items-center h-100 black-filter darkModeBackground">
+    <div class="col fixed-top mt-2">
+      <button class="smolbtn" mat-icon-button>
+        <mat-icon routerLink="/home" class="backArrow">keyboard_arrow_left</mat-icon>
+      </button>
+    </div>
+    <div class="col-8">
+      <ion-grid class="vertical-center horizontal-center">
+        <ion-row>
+          <ion-col size="12">
+            <fieldset class="text-white">
+              <legend class="font-weight-bold">Sign In</legend>
+              <p>New user? <a routerLink="/register">Create an account</a></p>
 
+              <form [formGroup]="LoginForm" (ngSubmit)="submitForm()">
+                <div class="form-group">
+                  <label for="Email">Email</label>
+                  <input type="text" class="form-control" id="Email" formControlName="Email" />
+                </div>
+
+                <div class="form-group">
+                  <label for="Password">Password</label>
+                  <input type="password" class="form-control" id="Password" formControlName="Password" />
+                </div>
+
+                <div class="form-group">
+                  <input type="checkbox" id="StaySignedIn" formControlName="StaySignedIn" />
+                  <label for="StaySignedIn" class="mx-2">Keep me signed in</label>
+                </div>
+
+                <button type="submit" class="btn btn-info my-2" [disabled]="!LoginForm.valid">
+                  Log In
+                </button>
+              </form>
+            </fieldset>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 </ion-content>

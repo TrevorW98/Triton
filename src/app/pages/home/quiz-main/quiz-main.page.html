@@ -1,9 +1,51 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>quizMain</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 <ion-content>
+  <ion-grid  class="darkModeBackground">
+    <ion-row>
+      <ion-col>
+        <ion-card class="descriptionSpecs">
+          <!-- <img src="" alt="A picture of multiple types of pets, happily surrounding their owner"> -->
+            <ion-slides pager="true" [options]="slideOpts">
+              <ion-slide>
+               <img src="../../../../assets/frogQuizSlide2.jpg" alt="A small frog sitting on a rock, facing the camera">
+              </ion-slide>
+              <ion-slide>
+               <img src="../../../../assets/beardieQuizSLide3.jpg" alt="A close up photo of a bearded dragon, a lovely reptile">
+              </ion-slide>
+              <ion-slide>
+                <img src="../../../../assets/gerbilQuizSlide4.jpg" alt="">
+              </ion-slide>
+              <ion-slide>
+                <img src="../../../../assets/catQuizSlide5.jpg" alt="">
+              </ion-slide>
+              <ion-slide>
+                <img src="../../../../assets/lovebirdsQuizSLide1.jpg" alt="">
+              </ion-slide>
+            </ion-slides>
+          <ion-card-header class="center">
+            <ion-card-title class="desc">Pick My Pet Quiz</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="text-center content">
+            Are you ready to find the perfect pet for you? This quiz will help us determine what kind of animal would
+            best suit your environment and ability to care for them. You will encounter 25 questions and at the end,
+            receive
+            results based upon your answers. Click below to begin!
+          </ion-card-content>
+        </ion-card>
+       
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="center">
+        <button mat-raised-button class="startBtn" routerLink='/questions'>Get Started!</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
 
 </ion-content>
+
+<app-bottom-nav></app-bottom-nav>

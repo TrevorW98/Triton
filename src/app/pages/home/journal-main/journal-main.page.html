@@ -1,9 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>journalMain</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content>
+
+<ion-content >
+  <ion-grid class="darkModeBackground">
+    <ion-row class="center">
+      <ion-col size="12" class="mt-3 center">
+        <div class="primaryBg rounded px-5">
+          <h2 class="mb-0">Recent<br />Entries</h2>
+        </div>
+      </ion-col>
+      <ion-col size="9" class="mt-2" *ngFor="let item of journal | slice:0:5">
+        <button class="btn-block border-accent" (click)="setJournalChoice(item.id)" mat-stroked-button color="white" routerLink="/journal-info">
+          {{item.date | date:"longDate"}}
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </ion-col>
+      <ion-col size="12" class="center mt-4">
+        <p><u routerLink="/journal-entries">Past Entries</u></p>
+        <!-- Would load things? -->
+      </ion-col>
+      <ion-col size="12" class="center mt-3">
+        <p routerLink='/add-an-entry'>+ <u>Add Journal Entry</u></p>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
+
+
+<app-bottom-nav></app-bottom-nav>

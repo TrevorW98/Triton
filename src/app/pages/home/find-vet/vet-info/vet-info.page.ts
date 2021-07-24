@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vet-info.page.scss'],
 })
 export class VetInfoPage implements OnInit {
-
+  backLocation = 'find-vet';
+  title = 'My Vet';
+  myMainVet = "Please Choose Vet";
+  vetAddress = "1234 Hammer Lane Stockton, Ca 95210";
+  vetHours = "Unavailable";
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }

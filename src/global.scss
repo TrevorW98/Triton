@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,142 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import "~bootstrap/scss/bootstrap";
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+.btwn {
+  display: flex;
+  justify-content: space-between;
+}
+.start {
+  display: flex;
+  justify-content: start;
+}
+.end {
+  display: flex;
+  justify-content: flex-end;
+}
+.navTitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px !important;
+  width: 144px !important;
+  // padding-top: 5px !important;
+  font-size: 28px;
+  color: white;
+}
+.smolbtn {
+  width: 35px !important;
+  height: 35px !important;
+  color: white;
+}
+.backArrow {
+  font-size: 28px;
+  color: white;
+}
+.overFlow {
+  overflow-x: scroll;
+}
+
+.primaryBg {
+  background: #00838f !important;
+  color: white !important;
+}
+//#0f0c3a possible change in gradient color instead of black
+.primaryBg-gradient {
+  background: linear-gradient(320deg, #00838f, #0f0c3a) !important;
+  color: white !important;
+}
+.accentBg {
+  background: #283593;
+  color: white;
+}
+.warnBg {
+  background: #c62828;
+  color: white;
+}
+
+.primary {
+  color: #00838f;
+}
+.accent {
+  color: #283593;
+}
+.warn {
+  color: #c62828;
+}
+.primaryBg {
+  background: #00838f;
+  color: white;
+}
+.btn-outline-primary{
+  border: #00838f 1px solid !important;
+  color: #00838f !important;
+}
+.btn-outline-primary:hover{
+  background: #00838f !important;
+  color: white !important;
+}
+.btn-outline-accent{
+  border: #4D5599 1px solid !important;
+  color: #4D5599 !important;
+}
+
+.accentBg {
+  background: #283593;
+  color: white;
+}
+.btn-outline-accent:hover{
+  background: #283593 !important;
+  color: white !important;
+}
+.border-accent{
+  border: #283593 1px solid !important;
+}
+
+.warnBg {
+  background: #c62828;
+  color: white;
+}
+.noMarY {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.circleProfile {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.bottomRight {
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+.bottomLeft {
+  position: absolute;
+  bottom: 3px;
+  left: 15px;
+  display: flex;
+}
+.greyCamera {
+  color: rgb(255, 255, 255);
+}
+.grey{
+  background: #313131;
+  color: white;
+}
+.mat-button-disabled{
+  color: grey !important;
+}
+.darkModeBackground{
+  background-color: #121212;
+  height: 100%;
+}
+.white{
+  color: white;
+}

@@ -13,6 +13,14 @@
   line-height: 26px;
 }
 
+.h-200p {
+  height: 200px;
+}
+
+a {
+  color: white;
+}
+
 #container p {
   font-size: 16px;
   line-height: 22px;
@@ -24,4 +32,36 @@
 
 #container a {
   text-decoration: none;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.scrolls {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 100px;
+  white-space: nowrap;
+}
+
+.scrolls-vertically {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  white-space: nowrap;
+}
+
+.animalPic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+}
+.darkModeBackground{
+  background-color: #121212;
+  height: 100%;
 }

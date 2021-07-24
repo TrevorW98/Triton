@@ -1,0 +1,25 @@
+.center{
+    display: flex;
+    justify-content: center;
+}
+ 
+.desc{
+  color: white;
+  font-size: 20px;
+}
+
+.content{
+  font-size: 15px;
+  color: white;
+}
+.startBtn{
+  background-color: #00838f !important;
+  color: white;
+  width: 380px;
+}
+ion-slides {
+  height: 100%;
+}
+.darkModeBackground{
+  background-color: #121212;
+}

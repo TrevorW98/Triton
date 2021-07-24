@@ -1,0 +1,78 @@
+.center{
+  display: flex;
+  justify-content: center;
+}
+.indexBtns{
+  width: 250px;
+  height: 50px;
+  font-size: 25px;
+  margin-top: 30px;
+}
+.centerBtns{
+  display: flex;
+  align-items: center;
+}
+.spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+}
+.darkModeBackground{
+  background-color: #121212;
+}
+.dog{
+  background: linear-gradient((#c62828b2),(#c62828b2)) , url(../../../../assets/Bulldog-laying-down.jpg);
+  background-size: 250px 150px;
+  background-position: 250px 75px ;
+ 
+}
+.cat{
+  background: linear-gradient((#283493b2),(#283593b2)) , url(../../../../assets/cat-generic.jpg);
+  background-size: 250px 150px;
+  background-position: 250px 80px ;
+ 
+}
+.reptile{
+  background: linear-gradient((#00838fc9),(#00838fc9)) , url(../../../../assets/reptile.jpg);
+  background-size: 250px 150px;
+  background-position: 250px 100px ;
+ 
+}
+.bird{
+  background: linear-gradient((#c62828b2),(#c62828b2)) , url(../../../../assets/bird.jpg);
+  background-size: 250px 150px;
+  background-position: 250px 90px ;
+ 
+}
+.frog{
+  background: linear-gradient((#283493b2),(#283493b2)) , url(../../../../assets/freg.jpg);
+  background-size: 250px 150px;
+  background-position: 340px 90px ;
+ 
+}
+.hamster{
+  background: linear-gradient((#00838fc9),(#00838fc9)) , url(../../../../assets/gerbils.jpg);
+  background-size: 250px 150px;
+  background-position: 250px 100px ;
+ 
+}
+.insect{
+  background: linear-gradient((#c6282883),(#c6282883)) , url(../../../../assets/ladyBug.jpg);
+  background-size: 250px 150px;
+  background-position: 230px 100px ;
+ 
+}
+.aquatic{
+  background: linear-gradient((#283493b2),(#283493b2)) , url(../../../../assets/guppy.jpg);
+  background-size: 250px 150px;
+  background-position: 250px 100px;
+ 
+}
+.favs{
+  background: linear-gradient((#00838fc9),(#00838fc9)) , url(../../../../assets/sunset.jpg);
+  background-size: 250px 150px;
+  background-position: 250px 80px ;
+ 
+}

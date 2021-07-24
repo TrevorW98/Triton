@@ -1,9 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>my-pets</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content>
-
+<ion-content >
+  <ion-grid class="center darkModeBackground">
+    <ion-row *ngIf="myPets" class="mt">
+      <ion-col size="12" *ngFor="let myPet of myPets">
+        <button class="btn1" mat-raised-button color="primary" routerLink="/pet-info/{{myPet.id}}" (click)="setPetName(myPet.petName)">
+          <ion-grid class="start acenter">
+            <ion-row>
+              <ion-col>
+                <p class="start mr-2" style="float: left">
+                  <img src="{{myPet.petPicture || '../../../../assets/images/doge.jpg'}}" class="animalPic" alt="Yoda" />
+                </p>
+                <div class="overFlow">
+                  <h2 class="petName start">
+                    <u> {{myPet.petName}} </u>
+                  </h2>
+                  <i class="start overFlow">{{myPet.petDescription}}</i>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </button>
+      </ion-col>
+      
+      <ion-col size="12" class="center">
+        <button class="addPet" mat-raised-button color="primary" routerLink="/add-pet">
+          <u>+ Add Pet</u>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+<app-bottom-nav></app-bottom-nav>

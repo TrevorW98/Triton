@@ -1,0 +1,29 @@
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+ion-content {
+  --background: unset;
+  background-image: url("../../../../../assets/login-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.row {
+  backdrop-filter: brightness(42%);
+}
+
+input {
+  background: #ffffff55;
+  border: none;
+  border-radius: 5px;
+}
+
+a {
+  color: cyan;
+}
+.darkModeBackground{
+  background-color: #121212;
+}

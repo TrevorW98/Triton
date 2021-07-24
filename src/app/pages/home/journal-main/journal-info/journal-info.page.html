@@ -1,0 +1,29 @@
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
+
+
+<ion-content >
+  <ion-grid class="darkModeBackground">
+    <ion-row class="center" *ngFor="let item of journal">
+      <ion-col size="12" class="mt-3 center">
+        <div class="rounded px-5" >
+          <h2 class="mb-0 text-center">{{item.date | date:"longDate"}}</h2>
+        </div>
+      </ion-col>
+      <ion-col size="10" class="mt-2" >
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{item.petName}}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{item.summary}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+
+<app-bottom-nav></app-bottom-nav>

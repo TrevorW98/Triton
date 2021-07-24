@@ -1,0 +1,68 @@
+import { IEvent } from '../interfaces/IEvent';
+
+export const EVENTS: IEvent[] = [
+  {
+    id: 1,
+    UserId: 42,
+    petname: 'Tauni',
+    date: 'May 10, 2021 09:00:00',
+    occurance: 'Once',
+    eventType: 'Grooming',
+  },
+  {
+    id: 2,
+    UserId: 42,
+    petname: 'Yoda',
+    date: 'May 10, 2021 09:00:00',
+    occurance: 'Daily',
+    eventType: 'feeding',
+  },
+  {
+    id: 3,
+    UserId: 42,
+    petname: 'Triton',
+    date: 'May 10, 2021 09:00:00',
+    occurance: 'Daily',
+    eventType: 'Grooming',
+  },
+  {
+    id: 4,
+    UserId: 42,
+    petname: 'Nala',
+    date: 'May 10, 2021 09:00:00',
+    occurance: 'Daily',
+    eventType: 'Grooming',
+  },
+  {
+    id: 5,
+    UserId: 42,
+    petname: 'Lyra',
+    date: 'May 10, 2021 09:00:00',
+    occurance: 'Daily',
+    eventType: 'Grooming',
+  },
+  {
+    id: 6,
+    UserId: 42,
+    petname: 'Webster',
+    date: 'May 10, 2021 09:00:00',
+    occurance: 'Daily',
+    eventType: 'Grooming',
+  },
+  {
+    id: 7,
+    UserId: 42,
+    petname: 'Albert',
+    date: 'May 10, 2021 09:00:00',
+    occurance: 'Daily',
+    eventType: 'Grooming',
+  },
+  {
+    id: 8,
+    UserId: 42,
+    petname: 'Ochaco-chan',
+    date: 'May 10, 2021 09:00:00',
+    occurance: 'Daily',
+    eventType: 'Grooming',
+  },
+];

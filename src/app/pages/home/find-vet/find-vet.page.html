@@ -1,9 +1,49 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>find-vet</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content>
+<ion-content >
+  <ion-grid  class="darkModeBackground">
+    <ion-row>
+      <ion-col class="center mt-2" size="12">
+        <div>
+          <h2>Find A Vet Near You!</h2>
+          <p>Enter Your City or ZIP Code</p>
+        </div>
+      </ion-col>
+      
+      <ion-col size="2" class="end mt-2">
+          <mat-icon color="white">location_on</mat-icon>
+      </ion-col>
+        
+      <ion-col size="8">
+          <ion-item>
+            <ion-input type="text" placeholder="Enter City or ZIP Code"></ion-input>
+          </ion-item>
+        </ion-col>
+        
+        <ion-col size="2">
+          <button class="py-2">
+            <mat-icon color="white">search</mat-icon>
+          </button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      <!-- this is where things will populate. -->
+      <!-- this is the template for the things that will be populating -->
+      <ion-col class="end" size="2">
+        <mat-icon>star</mat-icon>
+      </ion-col>
+      <ion-col size="10">
+        <h3 class="mb-0">{{vetHospital}}</h3>
+        <a class="mb-2" href="{{address}}">{{address}}</a>
+        <br>
+        <a href={{phone}}>{{phone}}</a>
+        <h3 class="mb-0">Hours:</h3>
+        <p>{{hours}}</p>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
+
+<app-bottom-nav></app-bottom-nav>

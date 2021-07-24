@@ -1,9 +1,47 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>index-secondary</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content>
+<ion-content >
+  <ion-grid class="darkModeBackground">
+    <ion-row>
+      <ion-col class="center">
+        <ion-card class="animalTypeSize">
+          <ion-card-header >
+            <ion-card-title class="text-center" id="categoryTitle"></ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" id="animalList" *ngIf="!favoritesBool">
+        <ion-row *ngFor="let animal of animals" >
+          <ion-col>
+            <ion-item>
+              <button mat-button routerLink="/animal-info" (click)="setAnimalChoice(animal.breedSpeciesName)" >
+                {{animal.breedSpeciesName}}
+              </button>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" id="animalList" *ngIf="favoritesBool;">
+        <ion-row *ngFor="let favorite of favorites" >
+          <ion-col>
+            <ion-item>
+              <button mat-button routerLink="/animal-info" (click)="setAnimalChoice(favorite.breedSpeciesName)" >
+                {{favorite.breedSpeciesName}}
+              </button>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
 
 </ion-content>
+
+<app-bottom-nav></app-bottom-nav>
