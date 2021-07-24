@@ -132,7 +132,10 @@ export class QuestionsPage implements OnInit {
       let next = document.createElement('button');
       let holder = document.getElementById("holder");
       next.setAttribute("mat-button", "");
-      next.id = "next"
+      next.id = "next";
+      next.onclick = () => {
+        this.nextQuestion();
+      }
       next.classList.add("answerBG", "answerBtn");
       if(this.questionNum < 10){
         next.innerText = "Next Question";

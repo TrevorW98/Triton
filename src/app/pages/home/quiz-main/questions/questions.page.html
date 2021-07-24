@@ -1,11 +1,11 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 <ion-content >
-  <ion-grid class="mt-5 darkModeBackground">
+  <ion-grid class="darkModeBackground">
     <ion-row>
-      <ion-col class="center " >
+      <ion-col class="center mt-5" >
           <ion-card-header class="questionBG">
-            <ion-card-title class="text-center">{{firstQuestions[questionNum].question}}</ion-card-title>
+            <ion-card-title class="text-center white">{{firstQuestions[questionNum].question}}</ion-card-title>
           </ion-card-header>
       </ion-col>
     </ion-row>
@@ -30,18 +30,12 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="center">
-        <ion-item lines=none  (click)="nextQuestion()" id="holder">
-          
+      <ion-col class="center darkModeBackground">
+        <ion-item class="darkModeBackground"  lines=none  id="holder">
         </ion-item>
         <!-- After 25 questions, this button wil disappear and the submit button will appear -->
       </ion-col>
     </ion-row>
-    <!-- <ion-row>
-      <ion-col class="center mt-5">
-        <button mat-button routerLink='/results' class="answerBG answerBtn">Submit Answers</button>
-      </ion-col>
-    </ion-row> -->
   </ion-grid>
 </ion-content>
 

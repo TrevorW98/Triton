@@ -5,3 +5,24 @@
   .darkModeBackground{
     background-color: #121212;
   }
+  .colClass{
+    display: flex;
+  
+    margin-bottom: 8px;
+    flex-direction: column;
+  }
+  .colClassTwo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .colClassThree{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .colClassFour{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }

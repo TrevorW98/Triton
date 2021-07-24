@@ -6,7 +6,7 @@
     <ion-row class="center mt-4">
       <form [formGroup]="AddEventForm" (ngSubmit)="submitForm()">
       <ion-col size="10">
-        <h2 class="center">Create An Event</h2>
+        <h2 class="center white">Create An Event</h2>
         <ion-item class="mb-2">
           <ion-label>My Pet</ion-label>
           <ion-select value="" formControlName='pName' okText="Save" cancelText="Cancel">
@@ -34,7 +34,7 @@
       </ion-col>
       <ion-col size="12" class="end">
         <!-- <button mat-raised-button class="mr-1 grey">Cancel</button> -->
-        <button [disabled]="!AddEventForm.valid" type="submit" class="btn1" mat-raised-button color="primary">Save</button>
+        <button [disabled]="!AddEventForm.valid" type="submit" class="btn1 white" mat-raised-button color="primary">Save</button>
         <!-- save these changes to db push to users entries -->
       </ion-col>
               

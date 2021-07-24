@@ -12,15 +12,15 @@
       <ion-col size="9" class="mt-2" *ngFor="let item of journal | slice:0:5">
         <button class="btn-block border-accent" (click)="setJournalChoice(item.id)" mat-stroked-button color="white" routerLink="/journal-info">
           {{item.date | date:"longDate"}}
-          <mat-icon>chevron_right</mat-icon>
+          <mat-icon class="white">chevron_right</mat-icon>
         </button>
       </ion-col>
       <ion-col size="12" class="center mt-4">
-        <p><u routerLink="/journal-entries">Past Entries</u></p>
+        <p><u class="white" routerLink="/journal-entries">Past Entries</u></p>
         <!-- Would load things? -->
       </ion-col>
       <ion-col size="12" class="center mt-3">
-        <p routerLink='/add-an-entry'>+ <u>Add Journal Entry</u></p>
+        <p class="white" routerLink='/add-an-entry'>+ <u>Add Journal Entry</u></p>
 
       </ion-col>
     </ion-row>

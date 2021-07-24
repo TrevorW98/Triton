@@ -1,36 +1,35 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content >
-
-<ion-row *ngFor="let i of event" class="my-4 border-bottom pb-3" class="darkModeBackground">
-  <div class="col-12 d-flex flex-column justify-content-center mb-1">
-    <p class="lead my-0">{{pets[i.petId.toString()]}}</p>
-  </div>
-  <div class="col-12">
-    <small class="my-0">{{i.eventType}}</small>
-  </div>
-  <div class="col flex-column align-items-center">
-    <p class="my-0">{{i.date | date:"MMM"}}</p><p class="lead my-0">{{i.date | date:"dd"}}</p>
-  </div>
-  <div class="col-4 d-flex flex-column justify-content-center">
-    <span class="lead">{{i.date | date:"h:mmaaaaa"}}</span>
-    <small *ngIf="i.occurance">Repeat:{{i.occurance}}</small>
-    <!-- <small #never>Repeat?:Never</small> -->
-  </div>
-  <div class="col d-flex align-items-center justify-content-end">
-    <mat-icon class="mr-2 backArrow d-none">edit</mat-icon>
-    <mat-icon (click)="rmEvent(i.id)" class="backArrow">close</mat-icon>
-  </div>
-</ion-row>
-
-
-
-<ion-row>
-  <ion-col size="12" class="center">
-    <!-- <mat-icon style="font-size:25px;">add</mat-icon> -->
-    <p routerLink="/add-events">+ <u>Add Event</u></p>
-  </ion-col>
-</ion-row>
+<ion-content>
+  <ion-grid class="darkModeBackground">
+    <ion-row *ngFor="let i of event" class="my-4 border-bottom pb-3">
+      <ion-col class="colClass">
+        <p class="my-0 white">{{pets[i.petId.toString()]}}</p>
+      </ion-col>
+      <ion-col>
+        <small class="my-0 white">{{i.eventType}}</small>
+      </ion-col>
+      <ion-col class="colClassTwo">
+        <p class="my-0 white">{{i.date | date:"MMM"}}</p>
+        <p class="lead my-0 white">{{i.date | date:"dd"}}</p>
+      </ion-col>
+      <ion-col size="4" class="colClassThree">
+        <span class="lead white">{{i.date | date:"h:mmaaaaa"}}</span>
+        <small *ngIf="i.occurance">Repeat:{{i.occurance}}</small>
+        <!-- <small #never>Repeat?:Never</small> -->
+      </ion-col>
+      <ion-col class="colClassFour">
+        <mat-icon class="mr-2 backArrow d-none white">edit</mat-icon>
+        <mat-icon (click)="rmEvent(i.id)" class="backArrow white">close</mat-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="center">
+        <!-- <mat-icon style="font-size:25px;">add</mat-icon> -->
+        <p class="white" routerLink="/add-events">+ <u>Add Event</u></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <app-bottom-nav></app-bottom-nav>
