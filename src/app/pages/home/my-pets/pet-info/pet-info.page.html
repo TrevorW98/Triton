@@ -5,12 +5,12 @@
     <ion-row *ngIf="chosenPet">
       <ion-col size="6">
         <button mat-icon-button routerLink='/individual-pet-docs'>
-          <mat-icon>folder_special</mat-icon>
+          <mat-icon class="white">folder_special</mat-icon>
         </button>
       </ion-col>
       <ion-col size="6" class="end">
         <button mat-icon-button routerLink='/pet-edit/{{chosenPet.id}}'>
-          <mat-icon>create</mat-icon>
+          <mat-icon class="white">create</mat-icon>
         </button>
       </ion-col>
       <ion-col size="12" class="center">
@@ -19,15 +19,15 @@
 
       <ion-col size="12">
         <div class="overFlow">
-          <h2 class="text-center m-0">{{chosenPet.petName}}</h2>
-          <p class="text-center"><i>{{chosenPet.petDescription}}</i></p>
+          <h2 class="text-center m-0 white">{{chosenPet.petName}}</h2>
+          <p class="text-center white"><i>{{chosenPet.petDescription}}</i></p>
         </div>
 
 
       </ion-col>
       <ion-col size="12" class="mx-3">
         <div class="mr-4">
-          <p class='noMarY'><i>Upcoming Events:</i></p>
+          <p class='noMarY white'><i>Upcoming Events:</i></p>
           <p></p>
         </div>
       </ion-col>

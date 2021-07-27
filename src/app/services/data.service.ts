@@ -92,6 +92,7 @@ export class DataService {
   updateUser() {
     // console.log("sending photo...");
     this.http.put(this.updateUserUrl, this.User).subscribe();
+    console.log("updated");
   }
 
     // This our POST Function.
@@ -99,7 +100,7 @@ export class DataService {
   public post(route: string, item: any, optionalMsg?: string): any {
     
     return this.http.post(this.baseUrl + route, item)
-      // THE PIPE LETS YOU COMBIME MULTIPLE FUNTIONS INTO ONE FUNCTION 
+      // THE PIPE LETS YOU COMBINE MULTIPLE FUNCTIONS INTO ONE FUNCTION 
       .pipe(
 
         // Map is going through all items returned and stored in this.data variable.

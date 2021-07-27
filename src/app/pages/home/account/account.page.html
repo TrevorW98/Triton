@@ -1,7 +1,7 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 
-<ion-content >
+<ion-content>
   <!-- <button mat-raised-button routerLink='/change-email'>Change Email</button>
   <button mat-raised-button routerLink='/change-password'>Change Password</button>
   <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button> -->
@@ -21,37 +21,40 @@
         </div>
       </ion-col>
 
-      <ion-col size="8" class="mt-4">
-        <ion-item class="inputBox">
-          <ion-label position="stacked">My Name</ion-label>
-          <ion-input type="text" placeholder="{{dService.User.name}}"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label>Dark Mode</ion-label>
-          <ion-toggle slot="start" name="darkMode" color="primary" checked></ion-toggle>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Notifications</ion-label>
-          <ion-toggle slot="start" name="notifications" color="primary" checked></ion-toggle>
-        </ion-item>
-      </ion-col>
-      <ion-col size="12" class="end">
-        <button mat-raised-button class="mr-1 grey">Cancel</button>
-        <button class="btn1" mat-raised-button color="primary">Save</button>
-      </ion-col>
+      <!-- <form [formGroup]="addNameForm" (ngSubmit)="submit()"> -->
+        <ion-col size="8" class="mt-4">
+          <ion-item class="inputBox text-center">
+            <!-- <ion-label position="stacked">My Name</ion-label> -->
+            <!-- <ion-input formControlName="nameInput" type="string" placeholder="{{dService.User.name}}"></ion-input> -->
+            <ion-label>{{dService.User.email}}</ion-label>
+          </ion-item>
+        </ion-col>
+        <!-- <ion-col>
+          <ion-item>
+            <ion-label>Dark Mode</ion-label>
+            <ion-toggle slot="start" name="darkMode" color="primary" checked></ion-toggle>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>Notifications</ion-label>
+            <ion-toggle slot="start" name="notifications" color="primary" checked></ion-toggle>
+          </ion-item>
+        </ion-col> -->
+        <!-- <ion-col size="12" class="end">
+          <button type="submit" class="btn1" mat-raised-button color="primary">Save</button>
+          <button mat-raised-button class="mr-1 grey">Cancel</button>
+        </ion-col> -->
+      <!-- </form> -->
       <!-- <ion-col size="12" class="ml-2">
     <p>SergBarnes@gmail.com</p>
       </ion-col> -->
-      <ion-col size="12" class="change" routerLink='/change-email'>
+      <!-- <ion-col size="12" class="change" routerLink='/change-email'>
         <p><u class="white">Change Email</u></p>
       </ion-col>
 
       <ion-col size="12" class="change" routerLink='/change-password'>
         <p><u class="white">Change Password</u></p>
-      </ion-col>
+      </ion-col> -->
 
       <!-- <ion-col size="12" class="change" routerLink='/change-password'>
         <p><u>Notifications</u></p>
@@ -59,7 +62,7 @@
       </ion-col> -->
 
       <ion-col class="bottomRight change">
-        <p  class="white" routerLink="/login"><u>Sign {{ dService.User.id == 0 ? 'In' : 'Out' }}</u></p>
+        <p (click)="signOut()" class="white" routerLink="/home"><u>Sign {{ dService.User.id == 0 ? 'In' : 'Out' }}</u></p>
       </ion-col>
     </ion-row>
 

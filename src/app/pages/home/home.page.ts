@@ -64,8 +64,7 @@ export class HomePage implements OnInit {
     // this.SignedInUser = this.dService.getlogin();
     // console.log(this.SignedInUser);
     this.dService.checkIfSignedIn();
-   
-   
+  
   }
   
   ionViewWillEnter(): void {

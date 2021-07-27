@@ -36,6 +36,9 @@ title = 'Pet Index';
 
 
   ngOnInit() {
+    
+  }
+  ionViewWillEnter(){
     this.iService.setAnimalChoice("");
     this.favoritesBool = this.fService.favoritesBool;
     this.SignedInUser = this.dService.getlogin();
@@ -46,9 +49,6 @@ title = 'Pet Index';
     // console.log(this.animals);
     // console.log(this.favorites);
     this.setTitle();
-  }
-  ionViewWillEnter(){
-    this.iService.setAnimalChoice("");
   }
   
   

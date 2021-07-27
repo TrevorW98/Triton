@@ -1,31 +1,31 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
-<ion-content *ngIf="feedingTimes.length">
-  <div *ngFor="let event of feedingTimes" class="row my-4" class="darkModeBackground">
-
-    <div class="col-5 ml-3 d-flex flex-column justify-content-center">
-      <p class="lead my-0">{{pets[event.petId.toString()]}}</p>
-      <p class="my-0">{{event.occurance}}</p>
-    </div>
-    <div class="col-3 d-flex flex-column justify-content-center px-0">
-      <span class="lead">{{event.date | date:"h:mmaaaaa"}}</span>
-    </div>
-    <div class="col-1 d-flex align-items-center justify-content-end px-0">
-      <mat-icon class="backArrow d-none">edit</mat-icon>
-    </div>
-    <div class="col-1 d-flex align-items-center justify-content-end px-0">
-      <mat-icon class="backArrow">close</mat-icon>
-    </div>
-  </div>
-
-  <div class="row" class="darkModeBackground">
-    <!-- <div class="col-1 mx-2"> -->
-    <!-- <mat-icon class="display-4">add</mat-icon> -->
-    <!-- </div> -->
-    <div class="col pl-4 center">
-      <p routerLink="/add-feeding" class="my-0">+ <u>Add Feeding Time</u></p>
-    </div>
-  </div>
+<ion-content>
+  <ion-grid class="darkModeBackground">
+    <ion-row *ngFor="let event of feedingTimes" class="my-4">
+      <ion-col size="5" class="ml-3 d-flex flex-column justify-content-center">
+        <p class="lead my-0 white">{{pets[event.petId.toString()]}}</p>
+        <p class="my-0 white">{{event.occurance}}</p>
+      </ion-col>
+      <ion-col size="3" class="d-flex flex-column justify-content-center px-0">
+        <span class="lead white">{{event.date | date:"h:mmaaaaa"}}</span>
+      </ion-col>
+      <ion-col size="1" class="d-flex align-items-center justify-content-end px-0">
+        <mat-icon class="backArrow d-none">edit</mat-icon>
+      </ion-col>
+      <ion-col size="1" class="d-flex align-items-center justify-content-end px-0">
+        <mat-icon class="backArrow">close</mat-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <!-- <div class="col-1 mx-2"> -->
+      <!-- <mat-icon class="display-4">add</mat-icon> -->
+      <!-- </div> -->
+      <ion-col class="pl-4 center">
+        <p routerLink="/add-feeding" class="my-0 white">+ <u>Add Feeding Time</u></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <app-bottom-nav></app-bottom-nav>
