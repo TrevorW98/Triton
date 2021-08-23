@@ -6,7 +6,7 @@
   <button mat-raised-button routerLink='/change-password'>Change Password</button>
   <button mat-raised-button color="primary" routerLink = '/login'>Login Page</button> -->
 
-  <ion-grid class="darkModeBackground">
+  <ion-grid >
     <ion-row>
       <ion-col size="4">
         <div class="picture">
@@ -26,7 +26,7 @@
           <ion-item class="inputBox text-center">
             <!-- <ion-label position="stacked">My Name</ion-label> -->
             <!-- <ion-input formControlName="nameInput" type="string" placeholder="{{dService.User.name}}"></ion-input> -->
-            <ion-label>{{dService.User.email}}</ion-label>
+            <ion-label class="white">{{dService.User.email}}</ion-label>
           </ion-item>
         </ion-col>
         <!-- <ion-col>

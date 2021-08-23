@@ -1,7 +1,7 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 <ion-content>
-  <ion-grid class="darkModeBackground">
+  <ion-grid >
     <ion-row *ngFor="let event of feedingTimes" class="my-4">
       <ion-col size="5" class="ml-3 d-flex flex-column justify-content-center">
         <p class="lead my-0 white">{{pets[event.petId.toString()]}}</p>

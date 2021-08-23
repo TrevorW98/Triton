@@ -156,10 +156,10 @@
 .mat-button-disabled{
   color: grey !important;
 }
-.darkModeBackground{
-  background-color: #121212;
-  height: 100%;
-}
+
 .white{
   color: white;
+}
+ion-content{
+  --ion-background-color:#121212;
 }

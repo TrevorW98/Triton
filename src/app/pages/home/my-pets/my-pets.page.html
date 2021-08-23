@@ -1,7 +1,7 @@
 <app-top-nav [backLocation]="backLocation" [title]="title"></app-top-nav>
 
 <ion-content >
-  <ion-grid class="center darkModeBackground">
+  <ion-grid class="center">
     <ion-row *ngIf="myPets" class="mt">
       <ion-col size="12" *ngFor="let myPet of myPets">
         <button class="btn1" mat-raised-button color="primary" routerLink="/pet-info/{{myPet.id}}" (click)="setPetName(myPet.petName)">
