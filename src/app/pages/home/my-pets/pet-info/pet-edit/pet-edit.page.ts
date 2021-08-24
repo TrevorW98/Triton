@@ -38,9 +38,7 @@ export class PetEditPage implements OnInit {
   }
 
   onFileSelected(event):void {
-
     let file: File = event.target.files[0];
-
     if(file){
       this.imageConverter.convertToString(file)
       .then(str => {
